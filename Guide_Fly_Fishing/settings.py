@@ -9,8 +9,14 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os
 
 from pathlib import Path
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net'
+    
+]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +31,7 @@ SECRET_KEY = 'django-insecure-pf5oo8v-1a&b_1_$kv)bxk&%c*bz)0a2s7eg0_ey98ksl+w8mz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["8000-coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net"]
+ALLOWED_HOSTS = ['8000-coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net']
 
 
 # Application definition
@@ -37,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 ]
 
 MIDDLEWARE = [
@@ -50,6 +57,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Guide_Fly_Fishing.urls'
+
 
 TEMPLATES = [
     {
@@ -66,9 +74,6 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = 'Guide_Fly_Fishing.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
