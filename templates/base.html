@@ -99,8 +99,9 @@
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                                 href="">
                                 <div class="text-center">
+                                    <!-- shopiing bag with value  -->
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                    <p class="my-0">
+                                    <p class="my-0 mx-1">
                                         {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
                                         {% else %}
@@ -125,12 +126,7 @@
             {% include 'includes/mobile-head.html' %}
             {% include 'includes/main-nav.html' %}
         </nav>
-    </div>
-    <div id="delivery-banner" class="row text-center">
-        <div class="col bg-black text-white">
-            <h4 class="logo-font my-1">See Whats New{{ free_delivery_threshold }}!</h4>                
-        </div>            
-    </div>
+    
     </div>
 </header>
 
