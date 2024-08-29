@@ -93,3 +93,31 @@ body {
     }
 }
 
+.banner-panel {
+    top: 21%;
+    width: 75%;
+    background-color: #00537c;
+    position: relative;
+    left: 12.5%;
+    text-align: center;
+    border-radius: 1em;
+    padding: 0.5em 0;
+}
+
+.inner-panel {
+    width: 98%;
+    background-color: #001242;
+    min-height: 98%;
+    text-align: center;
+    margin: auto;
+    border-radius: 0.5em;
+    padding: 1em 0;
+    position: relative;
+
+}
+
+hr.hr-format {
+    border-top: 5px solid #005e7c;
+    margin: 0 auto;
+    width: 98%;
+}
