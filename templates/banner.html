@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block base-content %}
+<div class="banner-panel">
+    <div class="inner-panel">
+        <div class="container">
+            <div class="row">
+                {% block content %}
+                
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <hr class="hr-format">
+    
+    <div class="inner-panel">
+        some text
+    </div>
+</div>
+
+
+{% endblock %}
