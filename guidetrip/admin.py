@@ -19,5 +19,5 @@ class CategoriesAdmin(admin.ModelAdmin):
         'name',
     )
 
-admin.site.register(trips)
-admin.site.register(categories) 
+admin.site.register(trips, TripsAdmin)
+admin.site.register(categories, CategoriesAdmin) 
