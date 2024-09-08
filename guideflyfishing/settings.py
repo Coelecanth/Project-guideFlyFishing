@@ -32,7 +32,10 @@ SECRET_KEY = 'django-insecure-pf5oo8v-1a&b_1_$kv)bxk&%c*bz)0a2s7eg0_ey98ksl+w8mz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net',
+                'https://p4guideflyfishing-879a54f37efc.herokuapp.com/',
+                'locahost'
+]
 
 
 # Application definition
@@ -124,8 +127,6 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
