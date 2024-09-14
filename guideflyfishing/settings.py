@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-pf5oo8v-1a&b_1_$kv)bxk&%c*bz)0a2s7eg0_ey98ksl+w8mz
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net',
-                'https://p4guideflyfishing-879a54f37efc.herokuapp.com/',
+                'p4guideflyfishing-879a54f37efc.herokuapp.com',
                 'locahost'
 ]
 
