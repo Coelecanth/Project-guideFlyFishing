@@ -23,7 +23,7 @@ class trips(models.Model):
     description = models.TextField()
     day = models.DecimalField(max_digits=2, decimal_places=0, null=True, blank=True)
     spaces = models.DecimalField(max_digits=2, decimal_places=0, null=True, blank=True)
-    Cost = models.DecimalField(max_digits=6, decimal_places=2)
+    cost = models.DecimalField(max_digits=6, decimal_places=2)
     dates = models.DateField(verbose_name="Date of Event", blank=True) 
     location = models.CharField(max_length=254)
     locale = models.CharField(max_length=254)
