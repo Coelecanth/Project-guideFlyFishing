@@ -18,9 +18,9 @@ def all_trips(request):
                 return redirect(reverse('alltrips'))
             
             queries = Q(venue__icontains=query) | Q(description__icontains=query)
-            alltrips = all_trips.filter(queries)
+            all_trips = all_trips.filter(queries)
 
-   # alltrips is the variable called in the html file so show the data
+   # alltrips is the variable called in the html file to show the data eg {% url 'alltrips' %}
     context = {
         'alltrips': all_trips,
         'search_term': query,
