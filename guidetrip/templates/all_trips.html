@@ -15,14 +15,14 @@
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for element in alltrips %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 {% if element.image %}
-                                <a href="">
+                                <a href="{% url 'det_trips_view' element.id %}">
                                     <img class="card-img-top img-fluid" src="{{ element.image.url }}" alt="{{ element.name }}">
                                 </a>
                                 {% else %}
-                                <a href="">
+                                <a href="{% url 'det_trips_view' element.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ element.name }}">
                                 </a>
                                 {% endif %}
@@ -33,7 +33,7 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ element.cost }}</p>
+                                            <p class="lead mb-0 text-left font-weight-bold">£{{ element.cost }}</p>
                                             {% if element.rating %}
                                                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ element.rating }} / 5</small>
                                             {% else %}
