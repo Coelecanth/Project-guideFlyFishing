@@ -5,9 +5,8 @@
                 All Guided Fishing Days 
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Location</a>
-                <a href="" class="dropdown-item ">By Category</a>
+                <a href="{% url 'alltrips' %}?category=river" class="dropdown-item">UK River trips</a>
+                <a href="{% url 'alltrips' %}?category=chalk_stream" class="dropdown-item">UK Chalk stream</a>
                 <a href="{% url 'alltrips' %}" class="dropdown-item">All trips</a>
             </div>
         </li>
