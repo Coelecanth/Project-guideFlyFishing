@@ -13,6 +13,8 @@ import os
 import dj_database_url
 
 from pathlib import Path
+if os.path.exists("env.py"):
+    import env
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net'
@@ -27,10 +29,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-pf5oo8v-1a&b_1_$kv)bxk&%c*bz)0a2s7eg0_ey98ksl+w8mz'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", False) 
 
 ALLOWED_HOSTS = ['8000-coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net',
                 'p4guideflyfishing-879a54f37efc.herokuapp.com',
@@ -58,6 +60,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middelware.WhiteNoise.Middleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -117,10 +120,12 @@ WSGI_APPLICATION = 'guideflyfishing.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
+    print("Working on Live POStgres Db")
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
+    print("Wokring on local SQLite")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
