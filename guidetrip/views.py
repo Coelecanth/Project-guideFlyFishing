@@ -11,12 +11,30 @@ def all_trips(request):
     query = None
     category_list = None 
     catobjects  = None
-    
+    sort = None
+    direction = None
+    tripfilter = None
     
     if request.GET:
+        if 'sort' in request.GET:
+            print("Request: ", request)
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'venue':
+                sortkey = 'lower_name'
+                catobjects = all_trips_rec.annotate(lower_name=Lower('venue'))
+                
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+                catobjects = all_trips_rec.order_by(sortkey)
+            all_trips_rec = all_trips_rec.order_by(sortkey)
+        
         if 'category' in request.GET:
             category_list = request.GET['category'].split(',')
-            tripfilter = all_trips_rec.filter(categories__name__in=category_list)
+            # tripfilter = all_trips_rec.filter(categories__name__in=category_list)
+            all_trips_rec = all_trips_rec.filter(categories__name__in=category_list)
             catobjects  = categories.objects.filter(name__in=category_list)
          
 
@@ -27,13 +45,19 @@ def all_trips(request):
                 return redirect(reverse('alltrips'))
             
             queries = Q(venue__icontains=query) | Q(description__icontains=query)
-            all_trips = all_trips.filter(queries)
+            # all_trips = all_trips.filter(queries)
+            all_trips_rec = all_trips.filter(queries)
 
+    current_sorting = f'{sort}_{direction}'
+  
+  
    # alltrips is the variable called in the html file to show the data eg {% url 'alltrips' %}
     context = {
-        'alltrips': tripfilter,
+        # 'alltrips': tripfilter,
+        'alltrips': all_trips_rec,
         'search_term': query,
         'current_catobject': catobjects,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'all_trips.html', context )

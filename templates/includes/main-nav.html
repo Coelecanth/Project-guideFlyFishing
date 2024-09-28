@@ -21,8 +21,8 @@
                 Sort Guided Fishing trips by:  
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">By Location</a>
-                <a href="" class="dropdown-item">By Price</a>
+                <a href="{% url 'alltrips' %}?sort=cost&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'alltrips' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
             </div>
         </li>
 
