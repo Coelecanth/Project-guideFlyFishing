@@ -2,18 +2,23 @@
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Guided Fishing Days 
+                Find Guided Fishing Days by  
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'alltrips' %}?category=river" class="dropdown-item">UK River trips</a>
-                <a href="{% url 'alltrips' %}?category=chalk_stream" class="dropdown-item">UK Chalk stream</a>
+                <a href="{% url 'alltrips' %}?category=non_uk" class="dropdown-item">World Fishing Trips</a>
+                <a href="{% url 'alltrips' %}?category=rivers" class="dropdown-item">Rivers</a>
+                <a href="{% url 'alltrips' %}?category=stillwater_fishing" class="dropdown-item">Lakes and Ponds</a>
+                <a href="{% url 'alltrips' %}?category=sea_fishing" class="dropdown-item">Sea fishing</a>
+                <a href="{% url 'alltrips' %}?category=salmon_fishing" class="dropdown-item">Salmon Fishing</a>
+                <a href="{% url 'alltrips' %}?category=trout_fishing" class="dropdown-item">Trout Fishing</a>
+                <a href="{% url 'alltrips' %}?category=chalk_stream" class="dropdown-item">Chalk stream</a>
                 <a href="{% url 'alltrips' %}" class="dropdown-item">All trips</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Find Guided Fishing  
+                Sort Guided Fishing trips by:  
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
                 <a href="" class="dropdown-item">By Location</a>
@@ -21,14 +26,6 @@
             </div>
         </li>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Special Offers
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Last few Spaces</a>
-            </div>
-        </li>
+        
     </ul>
 </div>

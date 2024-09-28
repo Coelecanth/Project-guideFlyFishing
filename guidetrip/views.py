@@ -9,14 +9,9 @@ def all_trips(request):
 
     all_trips = trips.objects.all()
     query = None
-    category= None
+    
 
     if request.GET:
-        if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
-            all_trips = all_trips.filter(category__venue__in=categories)
-            categories = categories.objects.filter(category__venue__in=categories)
-
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -30,7 +25,7 @@ def all_trips(request):
     context = {
         'alltrips': all_trips,
         'search_term': query,
-        'current_categroies': categories, 
+        
     }
 
     return render(request, 'all_trips.html', context )

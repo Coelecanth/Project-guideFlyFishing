@@ -68,15 +68,15 @@ body {
 
 /* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
-/* @media (min-width: 1200px) {
+Slightly larger container on xl screens */
+@media (min-width: 1200px) {
   .container {
     max-width: 80%;
   }
 }
 
 /* fixed top navbar only on medium and up */
-/*@media (min-width: 992px) {
+@media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -89,7 +89,7 @@ body {
         padding-top: 164px;
     }
 } 
-*/
+
 
 .banner-panel {
     top: 25%;
