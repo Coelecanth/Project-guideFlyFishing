@@ -7,11 +7,19 @@ from .models import trips, categories
 def all_trips(request):
     """ A view to return the all trips and show sorting and search result"""
 
-    all_trips = trips.objects.all()
+    all_trips_rec = trips.objects.all()
     query = None
+    category_list = None 
+    catobjects  = None
     
-
+    
     if request.GET:
+        if 'category' in request.GET:
+            category_list = request.GET['category'].split(',')
+            tripfilter = all_trips_rec.filter(categories__name__in=category_list)
+            catobjects  = categories.objects.filter(name__in=category_list)
+         
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -23,9 +31,9 @@ def all_trips(request):
 
    # alltrips is the variable called in the html file to show the data eg {% url 'alltrips' %}
     context = {
-        'alltrips': all_trips,
+        'alltrips': tripfilter,
         'search_term': query,
-        
+        'current_catobject': catobjects,
     }
 
     return render(request, 'all_trips.html', context )
