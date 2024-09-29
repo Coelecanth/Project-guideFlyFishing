@@ -53,8 +53,19 @@ body {
     background: #222;
     color: white;
 }
+
+.text-det-prom {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+}
+
+.text-det-para {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+}
+
 .text-white {
-    color: #FFFF;
+    color: #FFFFFF;
 }
 
 
@@ -68,7 +79,7 @@ body {
 
 /* -------------------------------- Media Queries */
 
-Slightly larger container on xl screens */
+/* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
   .container {
     max-width: 80%;

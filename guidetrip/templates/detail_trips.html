@@ -22,20 +22,53 @@
         </div>
         <div class="col-12 col-md-6 col-lg-5">
             <div class="product-details-container mb-5 mt-md-5">
-                <p class="lead mb-0 text-left font-weight-bold">{{ det_trips_view.venue }}</p>
-                <p class="lead mb-0 text-left font-weight-bold">{{ det_trips_view.locale }}</p>
+                <!-- Venue Location -->
+                <p class="lead mb-0 text-left text-det-prom">{{ det_trips_view.venue }}</p>
+                <p class="lead mb-0 text-left text-det-prom">{{ det_trips_view.locale }}</p>
                 <hr>
+                <!-- Date, Spaces, duration -->
                 <p class="mb-0">Date commencing on :{{ det_trips_view.dates }}</p>
                 <p class="mb-0"> Number of days :{{ det_trips_view.day }}</p>
                 <p class="mb-0"> Number of People :{{ det_trips_view.spaces }}</p>
+                <!-- rating Fields  -->
                 {% if det_trips_view.rating %}
                 <small><i class="fas fa-star mr-1"></i>{{ det_trips_view.rating }} / 5</small>
                 {% else %}
                 <small>No Rating</small>
                 {% endif %}
+                <!-- Cost fields  -->
                 <p class="lead mb-0 text-left font-weight-bold">£{{ det_trips_view.cost }}</p>
                 <hr>
-                <p class="mt-3">{{ det_trips_view.description }}</p>
+                <!-- description Fields  -->
+                <p class="mt-3 text-det-para"> {{ det_trips_view.description }}</p>
+                
+                <!-- Start of form for quantiy and add to shopping bag -->
+                <form class="form" action="{% url 'add_to_bag' det_trips_view.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-12">
+                            <p class="mt-3 text-det-prom">Quantity:</p>
+                            <div class="form-group mx-auto w-50">
+                                <div class="input-group">
+                                    <input class="form-control qty_input" type="number" name="quantity" value="1"
+                                        min="1" max="99" data-item_id="{{ det_trips_view.id }}" id="id_qty_{{ det_trips_view.id }}">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12"> 
+                            <a href="{% url 'alltrips' %}" class="btn btn-outline-light text-uppercase rounded-1 mt-5">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
+                            <input type="submit" class="btn btn-outline-light rounded-1 text-uppercase mt-5" value="Add to Bag">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
