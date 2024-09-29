@@ -51,7 +51,7 @@ def all_trips(request):
     current_sorting = f'{sort}_{direction}'
   
   
-   # alltrips is the variable called in the html file to show the data eg {% url 'alltrips' %}
+   # alltrips is the defintion called in the html file to show the data eg {% url 'alltrips' %}
     context = {
         # 'alltrips': tripfilter,
         'alltrips': all_trips_rec,

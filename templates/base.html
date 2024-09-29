@@ -99,7 +99,7 @@
                         <!-- show items value in navbar  -->
                         <li class="list-inline-item">
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                                href="">
+                                href="{% url 'view_bag' %}">
                                 <div class="text-center">
                                     <!-- shopping bag with value  -->
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
@@ -107,7 +107,7 @@
                                         {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
                                         {% else %}
-                                        $0.00
+                                        £0.00
                                         {% endif %}
                                     </p>
                                 </div>
