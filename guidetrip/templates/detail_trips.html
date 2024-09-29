@@ -5,7 +5,7 @@
 <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
                 <div class="image-container my-5">
                     {% if det_trips_view.image %}
                         <a href="{{ det_trips_view.image.url }}" target="_blank">
@@ -18,11 +18,15 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-5">
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ det_trips_view.venue }}</p>
                     <p class="mb-0">{{ det_trips_view.locale }}</p>
+                    <p class="mb-0">{{ det_trips_view.dates }}</p>
+                    <p class="mb-0"> Number of days :{{ det_trips_view.day }}</p>
+                    <p class="mb-0"> Number of People :{{ det_trips_view.spaces }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ det_trips_view.cost }}</p>
+                    
                     {% if det_trips_view.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ det_trips_view.rating }} / 5</small>
                     {% else %}
