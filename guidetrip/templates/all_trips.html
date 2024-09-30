@@ -23,7 +23,7 @@
                         </a>
                         {% else %}
                         <a href="{% url 'det_trips_view' element.id %}">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                            <img class="card-img-top img-fluid" src="{% static 'img/noimage.jpg' %}" 
                                 alt="{{ element.name }}">
                         </a>
                         {% endif %}
