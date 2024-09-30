@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-<div class="container header-container">
+<div class="container">
     <div class="row">
         <div class="col"></div>
     </div>
@@ -24,19 +24,73 @@
     <div class="row">
         <div class="col">
             {% if bag_items %}
-            <div class="table-responsive rounded"></div>
-                {{ bag_items }}
-            {% else %}
-            <p class="lead mb-5">Your bag is empty.</p>
-            <a href="{% url 'alltrips' %}" class="btn btn-outline-light rounded-1 btn-lg">
-                <span class="icon">
-                    <i class="fas fa-chevron-left"></i>
-                </span>
-                <span class="text-uppercase">Keep looking for Guided Trips</span>
-            </a>
-            {% endif %}
+            
+            <div class="table-responsive rounded">
+                <table class="table table-sm table-borderless ">
+                    <thead class="text-black">
+                        <tr>
+                            <th scope="col">Trip Information</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    {% for item in bag_items %}
+                    <tr>
+                        <td class="p-3 w-25">
+                            <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                        </td>
+                        <td class="py-3 text-bag-para">
+                            <p class="my-0"><strong>{{ item.product.venue }}</strong></p>
+                            <p class="my-0 ">{{ item.product.locale }}</p>
+                            <p class="my-0 ">{{ item.product.dates }}</p>
+                        </td>
+                        <td class="py-3 text-bag-para">
+                            <p class="my-0">£{{ item.product.cost }}</p>
+                        </td>
+                        <td class="py-3 w-25 text-bag-para">
+                            <p class="my-0">{{ item.quantity }}</p>
+                        </td>
+                        <td class="py-3 text-bag-para">
+                            <p class="my-0">£{{ item.product.cost }}</p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5" class="pt-5 text-right">
+                            <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-right">
+                            <a href="{% url 'alltrips' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep looking for Guided Trips</span>
+                            </a>
+                            <a href="" class="btn btn-black rounded-0 btn-lg">
+                                <span class="text-uppercase">Secure Checkout</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                {% else %}
+                <p class="lead mb-5">Your bag is empty.</p>
+                <a href="{% url 'alltrips' %}" class="btn btn-outline-light rounded-1 btn-lg">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Keep looking for Guided Trips</span>
+                </a>
+                {% endif %}
+            </div>
         </div>
     </div>
-</div>
 
-{% endblock %}
+    {% endblock %}
