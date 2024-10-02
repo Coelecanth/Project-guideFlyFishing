@@ -16,14 +16,19 @@ body {
     font-family: "Titillium Web";
 }
 
+.det-heading {
+    text-align: center;
+    
+}
+
 /* from Bulma */
-.icon {
+/* .icon {
     align-items: center;
     display: inline-flex;
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
-}
+} */
 
 .logo-font {
     text-transform: uppercase;
@@ -113,6 +118,8 @@ body {
         padding-top: 164px;
     }
 } 
+
+
 
 
 .banner-panel {
