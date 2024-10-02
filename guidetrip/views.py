@@ -33,7 +33,6 @@ def all_trips(request):
         
         if 'category' in request.GET:
             category_list = request.GET['category'].split(',')
-            # tripfilter = all_trips_rec.filter(categories__name__in=category_list)
             all_trips_rec = all_trips_rec.filter(categories__name__in=category_list)
             catobjects  = categories.objects.filter(name__in=category_list)
          
@@ -45,7 +44,6 @@ def all_trips(request):
                 return redirect(reverse('alltrips'))
             
             queries = Q(venue__icontains=query) | Q(description__icontains=query)
-            # all_trips = all_trips.filter(queries)
             all_trips_rec = all_trips.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -53,7 +51,6 @@ def all_trips(request):
   
    # alltrips is the defintion called in the html file to show the data eg {% url 'alltrips' %}
     context = {
-        # 'alltrips': tripfilter,
         'alltrips': all_trips_rec,
         'search_term': query,
         'current_catobject': catobjects,
