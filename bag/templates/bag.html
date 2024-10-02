@@ -1,15 +1,6 @@
 {% extends "banner.html" %}
 {% load static %}
-
-{% block page_header %}
-<div class="container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %}
-
-
+{% load bag_tools %}
 
 {% block content %}
 <div class="container mb-2">
@@ -25,12 +16,12 @@
         <div class="col">
             {% if bag_items %}
             
-            <div class="table-responsive rounded">
+            <div class="table-responsive rounded-1">
                 <table class="table table-sm table-borderless ">
                     <thead class="text-black">
                         <tr>
-                            <th scope="col">Trip Information</th>
                             <th scope="col"></th>
+                            <th scope="col">Trip Information</th>
                             <th scope="col">Price</th>
                             <th scope="col">Qty</th>
                             <th scope="col">Subtotal</th>
@@ -40,7 +31,11 @@
                     {% for item in bag_items %}
                     <tr>
                         <td class="p-3 w-25">
-                            <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                           {% if item.product.image %} 
+                                <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                            {% else %}
+                                <img class="card-img-top img-fluid" src="{% static 'img/noimage.jpg' %}">
+                            {% endif %}
                         </td>
                         <td class="py-3 text-bag-para">
                             <p class="my-0"><strong>{{ item.product.venue }}</strong></p>
@@ -77,13 +72,14 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                            <a class="update-link text-success float-left"><small>Update</small></a>
+                             <a class="update-link text-success float-left"><small>Update</small></a>
                             <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                            </form>
+                           
                         </td>
                         
                         <td class="py-3 text-bag-para">
-                            <p class="my-0">£{{ item.product.cost }}</p>
+                            <p class="my-0">£{{ item.product.cost | calc_subtotal:item.quantity }}</p>
                         </td>
 
                     </tr>
@@ -141,7 +137,7 @@
             var csrfToken = "{{ csrf_token }}";
             var itemId = $(this).attr('id').split('remove_')[1];
             var url = `/bag/remove/${itemId}`;
-            var data = {'csrfmiddlewaretoken': csrfToken};
+            var data = {'csrfmiddlewaretoken': csrfToken,};
     
             $.post(url, data)
              .done(function() {

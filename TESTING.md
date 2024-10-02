@@ -407,6 +407,30 @@ This change was made in 5.3 to allow mutiple styling frameworks to be used.
     this was installed using the following command  pip3 install django-allauth==0.54.0
     
 
+### When loading alternate imnage in Bag view would get a Django error saying image not found 
+
+    On investigation there was not any checking for the image existeance in the bag page, and as this did not need to be linked to nay other 
+    I added some tempalte logic testing to make sure this worked corectly 
+
+    To fix this i added the following code 
+```html
+<!-- Original code -->
+    <td class="p-3 w-25">
+        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+    </td>
+
+<!-- Revised fix     -->
+    <td class="p-3 w-25">
+    {% if item.product.image %} 
+        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+    {% else %}
+        <img class="card-img-top img-fluid" src="{% static 'img/noimage.jpg' %}">
+    {% endif %}
+    </td>
+
+```
+
+
     ![screenshot](documentation/bugs/bug02.png)
 
     - To fix this, I _____________________.
