@@ -104,12 +104,6 @@ body {
   }
 }
 
-.container-bag {
-    max-width: 90%;
-  }
-}
-
-
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -124,9 +118,6 @@ body {
         padding-top: 164px;
     }
 } 
-
-
-
 
 .banner-panel {
     top: 25%;
@@ -151,3 +142,17 @@ body {
 
 }
 
+/* Toast formatting for toasts */
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
