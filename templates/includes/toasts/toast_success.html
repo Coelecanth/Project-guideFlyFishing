@@ -7,7 +7,37 @@
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
+    <!-- toast body and item added  -->
     <div class="toast-body bg-toast">
-        {{ message }}
+        <div class="row">
+            <div class="col">
+                {{ message }}
+                <hr class="mt-1 mb-3">
+            </div>
+        </div>
+        {% if grand_total %}
+            <p class="logo-font bg-toast py-1">Your Bag ({{ product_count }})</p>
+            <div class="bag-notification-wrapper">
+                {% for item in bag_items %}
+                    <div class="row">
+                        <div class="col-3 my-1">
+                            <img class="w-100" src="{{ item.product.image.url }}">
+                        </div>
+                        <div class="col-9">
+                            <p class="my-0"><strong>{{ item.product.venue }}</strong></p>
+                            <p class="my-0 ">Qty: {{ item.quantity }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <a href="{% url 'view_bag' %}" class="btn btn-outline-light rounded-1 ">
+                    <span class="text-uppercase">Go To Secure Checkout</span>
+                    <span class="icon">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </a>
+            </div>
+        {% endif %}
     </div>
 </div>
