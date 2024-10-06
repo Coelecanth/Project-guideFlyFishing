@@ -71,12 +71,9 @@ body {
     font-size: 1.2rem;
 }
 
-
-
 .text-white {
     color: #FFFFFF;
 }
-
 
 .text-black {
     color: #000 !important;
@@ -85,6 +82,8 @@ body {
 .border-black {
     border: 1px solid black !important;
 }
+
+
 
 /* -------------------------------- Media Queries */
 
@@ -110,7 +109,7 @@ body {
     }
 } 
 
-/* used to format back ground colour containers in banner for displaying text  */
+/* used to format back ground colour containers in banner.html for displaying text  */
 .banner-panel {
     top: 25%;
     width: 75%;
@@ -144,11 +143,10 @@ body {
 /* revised from original setting of visble */
 .custom-toast {
     overflow: auto;
-    
 }
 
 .toast-capper {
-    height: 5px;
+    height: 8px;
 }
 
 .bg-toast {    
@@ -156,6 +154,11 @@ body {
 }
 
 .bg-toast-alt {
-   
     background-color: #00537c;
 } 
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}

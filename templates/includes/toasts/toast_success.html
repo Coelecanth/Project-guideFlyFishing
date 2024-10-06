@@ -31,6 +31,14 @@
                 {% endfor %}
             </div>
             <div class="row">
+                <!-- justifies text to far right and far left of the Toast box -->
+                <div class="col d-flex justify-content-between">
+                    <span><strong>Total:</strong></span>
+                    <span><strong>£{{ total }}</strong></span>
+                  </div>
+            </div>
+            
+            <div class="row">
                 <a href="{% url 'view_bag' %}" class="btn btn-outline-light rounded-1 ">
                     <span class="text-uppercase">Go To Secure Checkout</span>
                     <span class="icon">
