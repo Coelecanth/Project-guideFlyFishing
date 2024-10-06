@@ -73,9 +73,11 @@
                                         </div>
                                     </div>
                                 </div>
-                             <a class="update-link text-success float-left"><small>Update</small></a>
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                            corecf                        
                             </form>
+                            <!-- Do not put links inside the form as this break the update funcxtion it should remain outside the form tag -->
+                            <a class="update-link text-dark float-left"><small>Update</small></a>
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                            
                         </td>
                         
@@ -129,8 +131,8 @@
     <script type="text/javascript">
         // Update quantity on click
         $('.update-link').click(function(e) {
-            var form = $(this).prev('.update-form');
-            form.submit();
+        var form = $(this).prev('.update-form');
+        form.submit();
         })
     
         // Remove item and reload on click
