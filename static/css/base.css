@@ -144,14 +144,14 @@ body {
 /* revised from original setting of visble */
 .custom-toast {
     overflow: auto;
+    
 }
 
 .toast-capper {
     height: 5px;
 }
 
-.bg-toast {
-    
+.bg-toast {    
     background-color: #001242;
 }
 
