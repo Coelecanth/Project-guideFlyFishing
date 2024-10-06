@@ -431,6 +431,93 @@ This change was made in 5.3 to allow mutiple styling frameworks to be used.
 ```
 
 
+### The Update button in the Bag page does update the values
+
+the Update function in the bag does not work and behaves like there is no link. This wwas found to be a problem with the location of the tags in Bag.html,
+which intiate the JS script to implement this function, the following code snippets how the before and after for bag.html 
+    To fix this i added the following code was changed 
+```html
+<!-- Original code -->
+            <button class="increment-qty btn btn-sm btn-black rounded-0"
+                    data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                    <span><i class="fas fa-plus fa-sm"></i></span>
+            </button>
+            </div>
+            </div>
+        </div>
+    <a class="update-link text-dark float-left"><small>Update</small></a>
+    <a class="remove-item text-danger float-rig ht" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+    </form>    
+
+<!-- Revised fix     -->
+             <button class="increment-qty btn btn-sm btn-black rounded-0"
+                    data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                    <span><i class="fas fa-plus fa-sm"></i></span>
+            </button>
+            </div>
+            </div>
+        </div>
+        </form>
+        <!-- Do not put links inside the form as this break the update funcxtion it should remain outside the form tag -->
+        <a class="update-link text-dark float-left"><small>Update</small></a>
+        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+```
+
+### Toast messages in the Appl;ication did not apply corectly  
+
+    Following the course guidance on implementing toasts in the project walk through, the explanation omitted details 
+    on the implementation of toast messages. In particualr it was not expalined that the implemetation 
+    described would produce a toast message only on the first addition of an item to the bag. It was not clear 
+    if was an oversite or by design. In my implementation I wanted the toast message to appear 
+    everytime an item was added to the bag.    
+
+    To fix this i amended/added the following code to views.py in Bag app 
+```python
+
+# Original code - where toast is only raised on the first 
+def add_to_bag(request, item_id):
+    """ Add a quantity of the specified product to the shopping bag """
+
+    product = trips.objects.get(pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+    redirect_url = request.POST.get('redirect_url')
+    bag = request.session.get('bag', {})
+
+    if item_id in list(bag.keys()):
+        bag[item_id] += quantity
+        # missing code element here here to 
+        # call toast message on subsequent additions
+    else:
+        bag[item_id] = quantity
+        messages.success(request, f'Added {product.venue} to your bag')
+
+    request.session['bag'] = bag
+    return redirect(redirect_url)
+
+# Revised code to provide toasts on all additions to the bag
+def add_to_bag(request, item_id):
+    """ Add a quantity of the specified product to the shopping bag """
+
+    product = trips.objects.get(pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+    redirect_url = request.POST.get('redirect_url')
+    bag = request.session.get('bag', {})
+
+    if item_id in list(bag.keys()):
+        bag[item_id] += quantity
+        # call toast message on subsequent additions
+        messages.success(request, f'Added {product.venue} to your bag')
+    else:
+        bag[item_id] = quantity
+        messages.success(request, f'Added {product.venue} to your bag')
+
+    request.session['bag'] = bag
+    return redirect(redirect_url)
+
+
+```
+
+
     ![screenshot](documentation/bugs/bug02.png)
 
     - To fix this, I _____________________.

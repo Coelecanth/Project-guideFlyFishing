@@ -21,15 +21,6 @@ body {
     
 }
 
-/* from Bulma */
-/* .icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
-} */
-
 .logo-font {
     text-transform: uppercase;
 }
@@ -119,6 +110,7 @@ body {
     }
 } 
 
+/* used to format back ground colour containers in banner for displaying text  */
 .banner-panel {
     top: 25%;
     width: 75%;
@@ -149,10 +141,21 @@ body {
     right: 15px;
     z-index: 99999999999;
 }
+/* revised from original setting of visble */
 .custom-toast {
-    overflow: visible;
+    overflow: auto;
 }
 
 .toast-capper {
     height: 5px;
 }
+
+.bg-toast {
+    
+    background-color: #001242;
+}
+
+.bg-toast-alt {
+   
+    background-color: #00537c;
+} 
