@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col">
             {% if bag_items %}
-            
+
             <div class="table-responsive rounded-1">
                 <table class="table table-sm table-borderless ">
                     <thead class="text-black">
@@ -29,12 +29,12 @@
                     </thead>
 
                     {% for item in bag_items %}
-                    <tr>
+                    <tr class="text-center">
                         <td class="p-3 w-25">
-                           {% if item.product.image %} 
-                                <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                            {% if item.product.image %}
+                            <img class="img-fluid rounded" src="{{ item.product.image.url }}">
                             {% else %}
-                                <img class="card-img-top img-fluid" src="{% static 'img/noimage.jpg' %}">
+                            <img class="card-img-top img-fluid" src="{% static 'img/noimage.jpg' %}">
                             {% endif %}
                         </td>
                         <td class="py-3 text-bag-para">
@@ -54,7 +54,7 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <!-- decrement button -->
-                                            <button class="decrement-qty btn btn-sm btn-black rounded-0" 
+                                            <button class="decrement-qty btn btn-sm btn-black rounded-0"
                                                 data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                 <span>
                                                     <i class="fas fa-minus fa-sm"></i>
@@ -64,8 +64,7 @@
                                         <!-- input field for quantity  -->
                                         <input class="form-control form-control-sm qty_input" type="number"
                                             name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                            data-item_id="{{ item.item_id }}"
-                                            id="id_qty_{{ item.item_id }}">
+                                            data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                         <div class="input-group-append">
                                             <!-- increment button -->
                                             <button class="increment-qty btn btn-sm btn-black rounded-0"
@@ -77,40 +76,44 @@
                                         </div>
                                     </div>
                                 </div>
-                                                   
+
                             </form>
                             <!-- Update and remove links  -->
                             <!-- Do not put links inside the form as this break the update funcxtion it should remain outside the form tag -->
                             <a class="update-link text-dark px-3"><small>Update</small></a>
-                            <a class="remove-item text-danger px-3" id="remove_{{ item.item_id }}"><small>Remove</small></a>
-                           
+                            <a class="remove-item text-danger px-3"
+                                id="remove_{{ item.item_id }}"><small>Remove</small></a>
+
                         </td>
-                        
-                        <td class="py-3 text-bag-para">
+                        <td class="py-3 text-bag-para text-right">
                             <p class="my-0">£{{ item.product.cost | calc_subtotal:item.quantity }}</p>
                         </td>
 
                     </tr>
                     {% endfor %}
                     <tr>
-                        <td colspan="5" class="pt-5 text-right">
-                            <h4 class="mt-4"><strong>Total: £{{ grand_total|floatformat:2 }}</strong></h4> 
+                        <td colspan="5">
+                            
+                                <h4 class="mt-4 text-end"><strong>Total: £{{ grand_total|floatformat:2 }}</strong>
+                                </h4>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="5" class="text-right">
-                            <a href="{% url 'alltrips' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                <span class="text-uppercase">Keep looking for Guided Trips</span>
-                            </a>
-                            <a href="" class="btn btn-black rounded-0 btn-lg">
-                                <span class="text-uppercase">Secure Checkout</span>
-                                <span class="icon">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                            </a>
+                        <td colspan="5">
+                            <div class="text-end">
+                                <a href="{% url 'alltrips' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase">Keep looking for Guided Trips</span>
+                                </a>
+                                <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                                    <span class="text-uppercase">Secure Checkout</span>
+                                    <span class="icon">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -130,28 +133,30 @@
     {% endblock %}
 
     {% block postloadjs %}
-    {{ block.super }}   
+    {{ block.super }}
     {% include 'includes/qnty_inp.html' %}
-    
+
     <script type="text/javascript">
         // Update quantity on click
-        $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
+        $('.update-link').click(function (e) {
+            var form = $(this).prev('.update-form');
+            form.submit();
         })
-    
+
         // Remove item and reload on click
-        $('.remove-item').click(function(e) {
+        $('.remove-item').click(function (e) {
             var csrfToken = "{{ csrf_token }}";
             var itemId = $(this).attr('id').split('remove_')[1];
-            
+
             var url = `/bag/remove/${itemId}/`;
-            var data = {'csrfmiddlewaretoken': csrfToken,};
-    
+            var data = {
+                'csrfmiddlewaretoken': csrfToken,
+            };
+
             $.post(url, data)
-             .done(function() {
-                 location.reload();
-             });
+                .done(function () {
+                    location.reload();
+                });
         })
     </script>
 

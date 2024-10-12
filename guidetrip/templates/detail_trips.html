@@ -1,14 +1,22 @@
 {% extends "banner.html" %}
 {% load static %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
 <div class="overlay"></div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
             <!-- Venue Location -->
-            <p class="det-heading lead mb-0 text-left text-det-prom">{{ det_trips_view.venue }}</p>
-            <p class="det heading lead mb-0 text-left text-det-prom">{{ det_trips_view.locale }}</p>
+            <p class="det-heading lead mb-0 text-center text-det-prom">{{ det_trips_view.venue }}</p>
+            <p class="det heading lead mb-0 text-center text-det-prom">{{ det_trips_view.locale }}</p>
             <hr>
         </div>
     </div>
