@@ -348,6 +348,17 @@ from the respective feature.
 | As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature09.png) |
 | repeat for all remaining user stories | x |
 
+## Automated testing 
+As part of my testing of pages I created some automated tests in Django for the purpose of testing urls and views were working Eg i could load the page, the following points explain there purpsoe in more detail.
+
+- Automated test to test URL links (as in views.py/urls.py) in Guideflyfishing 
+- Regression testing when I made changes these were still functioning as expected 
+- The pages would load e.g. no 404 errors 
+
+![screenshot](documentation/img/testing/autotest.jpg)
+
+
+
 ## Bugs
 **PRO TIP**: screenshots of bugs are extremely helpful, and go a long way!
 
