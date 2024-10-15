@@ -27,7 +27,7 @@ class URLTests(TestCase):
         self.assertEqual(response.status_code, 200)
     
     def test_checkout_url(self):
-        # Test the checkout page URL (e.g., URL 'checkout')
+        # Test the checkout page URL (e.g., URL 'checkout'), as not logged on 
         response = self.client.get(reverse('checkout')) 
         self.assertEqual(response.status_code, 302)
 
