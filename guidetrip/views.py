@@ -44,7 +44,7 @@ def all_trips(request):
                 return redirect(reverse('alltrips'))
             
             queries = Q(venue__icontains=query) | Q(description__icontains=query)
-            all_trips_rec = all_trips.filter(queries)
+            all_trips_rec = trips.objects.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
   
