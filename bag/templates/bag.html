@@ -18,7 +18,7 @@
 
             <div class="table-responsive rounded-1">
                 <table class="table table-sm table-borderless ">
-                    <thead class="text-black">
+                    <thead class="text-black text-center">
                         <tr>
                             <th scope="col"></th>
                             <th scope="col">Trip Information</th>
@@ -46,9 +46,9 @@
                             <p class="my-0">£{{ item.product.cost }}</p>
                         </td>
                         <td class="py-3 text-bag-para">
-                            <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
-                                <!-- Calculaleted quantity for items  -->
-                                {{ item.quantity }}
+                            <!-- Calculaleted quantity for items  -->
+                            {{ item.quantity }}
+                            <form class="d-flex justify-content-center form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="input-group">
@@ -62,7 +62,7 @@
                                             </button>
                                         </div>
                                         <!-- input field for quantity  -->
-                                        <input class="form-control form-control-sm qty_input" type="number"
+                                        <input class="form-control form-control-sm field-size qty_input" type="number"
                                             name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                         <div class="input-group-append">

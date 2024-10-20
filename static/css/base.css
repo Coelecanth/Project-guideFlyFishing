@@ -29,12 +29,16 @@ body {
     width: fit-content;
 }
 
-
 /* button formatting for site buttons  */
 .shop-now-button {
     background: white;
     color: black;
     min-width: 260px;
+}
+.shop-chk-button {
+    background: #ffffffbc;
+    color: black;
+    min-width: 150px;
 }
 
 .shop-now-button-small {
@@ -66,6 +70,7 @@ body {
 }
 
 /* set colour and sizing for details, bag, checkout pages  */
+.text-chk-prom,
 .text-det-prom {
     color: #FFFFFF;
     font-size: 1.5rem;
@@ -93,8 +98,19 @@ body {
     border: 1px solid black !important;
 }
 .text-err-paym {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
+
+.text-chk-emph {
+    font-weight: 700;
+    color: #FFFFFF;
+    font-size: 1.1rem;
+}
+
+.field-size {
+    max-width: 100px
+}
+
 
 
 /* -------------------------------- Media Queries */
