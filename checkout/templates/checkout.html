@@ -31,7 +31,7 @@
         <div class="col-12 col-lg-6 order-lg-last mb-5">
             <div class="row">
                 <div class="col-12">
-                    <p class="text-white text-right">Order Summary ({{ product_count }})</p>
+                    <p class="text-white">Order Summary ({{ product_count }})</p>
                 </div>
 
             </div>
@@ -50,7 +50,7 @@
                         {% if item.product.image %}
                         <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
                         {% else %}
-                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        <img class="w-100" src="{% static 'img/noimage.jpg' %}" alt="{{ product.name }}">
                         {% endif %}
                     </a>
                 </div>
@@ -80,36 +80,24 @@
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-3">
                     <legend class="fieldset-label small px-2 w-auto text-chk-para">Name and Email</legend>
-                    <div class="mb-2 mt-2">{{ order_form.full_name | as_crispy_field }}</div>
 
-                    <div class="mb-2 mt-2">{{ order_form.email | as_crispy_field }}</div>
+                    <div class="mb-2 mt-2 text-bag-para">{{ order_form.full_name | as_crispy_field }}</div>
+                    <div class="mb-2 mt-2 text-bag-para">{{ order_form.email | as_crispy_field }}</div>
 
                 </fieldset>
                 <fieldset class="rounded px-3">
                     <legend class="fieldset-label small px-2 w-auto text-chk-para">Customer Details</legend>
+                    <div class="">
+                        <div class="mb-2 mt-2">{{ order_form.phone_number | as_crispy_field }}</div>
+                        <div class="mb-2 mt-2">{{ order_form.country | as_crispy_field }}</div>
+                        <div class="mb-2 mt-2">{{ order_form.postcode | as_crispy_field }}</div>
+                        <div class="mb-2 mt-2">{{ order_form.town_or_city | as_crispy_field }}</div>
+                        <div class="mb-2 mt-2">{{ order_form.street_address1 | as_crispy_field }}</div>
+                        <div class="mb-2 mt-2">{{ order_form.street_address2 | as_crispy_field }}</div>
+                        <div class="mb-2 mt-2">{{ order_form.county | as_crispy_field }}</div>
+                    </div>
 
-                    <div class="mb-2 mt-2">
-                        {{ order_form.phone_number | as_crispy_field }}
-                    </div>
-                    <div class="mb-2 mt-2">
-                        {{ order_form.country | as_crispy_field }}
-                    </div>
-                    <div class="mb-2 mt-2">
-                        {{ order_form.postcode | as_crispy_field }}
-                    </div>
-                    <div class="mb-2 mt-2">
-                        {{ order_form.town_or_city | as_crispy_field }}
-                    </div>
-                    <div class="mb-2 mt-2">
-                        {{ order_form.street_address1 | as_crispy_field }}
-                    </div>
-                    <div class="mb-2 mt-2">
-                        {{ order_form.street_address2 | as_crispy_field }}
-                    </div>
-                    <div class="mb-2 mt-2">
-                        {{ order_form.county | as_crispy_field }}
-                    </div>
-                    <div class="form-check form-check-inline float-right mr-0">
+                    <div class="form-check form-check-inline mr-0">
                         {% if user.is_authenticated %}
                         <label class="form-check-label" for="id-save-info">Save this information to my profile</label>
                         <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info"
@@ -129,13 +117,13 @@
                     <div class="mb-3" id="card-element"></div>
 
                     <!-- Used to display form errors -->
-                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <div class="mb-3 text-danger text-err-paym" id="card-errors" role="alert"></div>
                 </fieldset>
-                <p class="text-danger my-0">
+                <p class="text-warning my-0">
                     <span class="icon">
                         <i class="fas fa-exclamation-circle"></i>
                     </span>
-                    <span>Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
+                    <span class=" ">Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
                 </p>
                 <div class="submit-button text-end mt-5 mb-2">
                     <a href="{% url 'view_bag' %}" class="text-uppercase shop-now-button-small btn btn-outline-light rounded-1">

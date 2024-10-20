@@ -29,6 +29,8 @@ body {
     width: fit-content;
 }
 
+
+/* button formatting for site buttons  */
 .shop-now-button {
     background: white;
     color: black;
@@ -90,7 +92,9 @@ body {
 .border-black {
     border: 1px solid black !important;
 }
-
+.text-err-paym {
+    font-size: 1.5rem;
+}
 
 
 /* -------------------------------- Media Queries */

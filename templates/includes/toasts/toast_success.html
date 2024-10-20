@@ -1,3 +1,4 @@
+{% load static %} 
 <div class="toast bg-toast custom-toast rounded-0 border-top-0" data-autohide="false">
     <div class="w-100 toast-capper bg-success"></div>
     <div class="toast-header bg-toast text-light">
@@ -21,7 +22,11 @@
                 {% for item in bag_items %}
                     <div class="row">
                         <div class="col-3 my-1">
-                            <img class="w-100" src="{{ item.product.image.url }}">
+                            {% if item.product.image %}
+                                <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.venue }}">
+                            {% else %}
+                                <img class="w-100" src="{% static 'img/noimage.jpg' %}" alt="Default image">
+                            {% endif %}
                         </div>
                         <div class="col-9">
                             <p class="my-0"><strong>{{ item.product.venue }}</strong></p>
