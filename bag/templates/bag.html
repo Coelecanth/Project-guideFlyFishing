@@ -118,13 +118,15 @@
                     </tr>
                 </table>
                 {% else %}
-                <p class="lead mb-5">Your bag is empty.</p>
-                <a href="{% url 'alltrips' %}" class="btn btn-outline-light rounded-1 btn-lg">
-                    <span class="icon">
-                        <i class="fas fa-chevron-left"></i>
-                    </span>
-                    <span class="text-uppercase">Keep looking for Guided Trips</span>
-                </a>
+                <p class="lead mb-5 text-center">Your bag is empty.</p>
+                <div class="text-end">
+                    <a href="{% url 'alltrips' %}" class="shop-now-button-small btn btn-outline-light rounded-1 btn-lg">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Keep looking for Guided Trips</span>
+                    </a>
+                </div>
                 {% endif %}
             </div>
         </div>
