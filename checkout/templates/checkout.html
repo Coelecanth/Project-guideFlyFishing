@@ -126,13 +126,15 @@
                     <span class=" ">Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
                 </p>
                 <div class="submit-button text-end mt-5 mb-2">
-                    <a href="{% url 'view_bag' %}" class="mt-3 text-uppercase shop-chk-button btn btn-outline-light rounded-1">
+                    <a href="{% url 'view_bag' %}"
+                        class="mt-3 text-uppercase shop-chk-button btn btn-outline-light rounded-1">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
                         <span class="font-weight-bold">Adjust Bag</span>
                     </a>
-                    <button id="submit-button" class="mt-3 text-uppercase shop-chk-button btn btn-outline-light rounded-1">
+                    <button id="submit-button"
+                        class="mt-3 text-uppercase shop-chk-button btn btn-outline-light rounded-1">
                         <span class="font-weight-bold">Complete Order</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
@@ -142,6 +144,13 @@
             </form>
         </div>
     </div>
+</div>
+<div id="loading-overlay">
+    <h1 class="text-light logo-font loading-spinner">
+        <span class="icon">
+            <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+        </span>
+    </h1>
 </div>
 {% endblock %}
 
