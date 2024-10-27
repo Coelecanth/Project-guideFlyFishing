@@ -57,10 +57,10 @@ INSTALLED_APPS = [
     'guidetrip',
     'bag',
     'checkout',
+   
 
     # Add Ons 
     'crispy_forms',
-   
 ]
 
 MIDDLEWARE = [

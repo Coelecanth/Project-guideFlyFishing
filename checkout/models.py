@@ -9,8 +9,10 @@ from django_countries.fields import CountryField
 from guidetrip.models import trips
 
 
+
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
