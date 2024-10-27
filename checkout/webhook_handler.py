@@ -31,6 +31,8 @@ class StripeWH_Handler:
         bag= intent.metadata.bag
         save_info = intent.metadata.save_info
 
+        print("Intent: ", intent)
+
         # Get the Charge object
         stripe_charge = stripe.Charge.retrieve(
         intent.latest_charge
@@ -38,6 +40,8 @@ class StripeWH_Handler:
 
         billing_details = stripe_charge.billing_details # updated
         grand_total = round(stripe_charge.amount / 100, 2) # updated
+
+        print("Billing details: ", billing_details)
 
          # Clean data in the Billing details
         for field, value in billing_details.address.items():
@@ -53,7 +57,6 @@ class StripeWH_Handler:
                     email__iexact=billing_details.email,
                     phone_number__iexact=billing_details.phone,
                     country__iexact=billing_details.address.country,
-                    postcode__iexact=billing_details.address.postal_code,
                     town_or_city__iexact=billing_details.address.city,
                     street_address1__iexact=billing_details.address.line1,
                     street_address2__iexact=billing_details.address.line2,
@@ -72,18 +75,19 @@ class StripeWH_Handler:
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
         else:
+            print("Can't find order: ")
             order = None
             try:
                 order = Order.objects.create(
-                    full_name__iexact=billing_details.name,
-                    email__iexact=billing_details.email,
-                    phone_number__iexact=billing_details.phone,
-                    country__iexact=billing_details.address.country,
-                    postcode__iexact=billing_details.address.postal_code,
-                    town_or_city__iexact=billing_details.address.city,
-                    street_address1__iexact=billing_details.address.line1,
-                    street_address2__iexact=billing_details.address.line2,
-                    county__iexact=billing_details.address.state,
+                    full_name=billing_details.name,
+                    email=billing_details.email,
+                    phone_number=billing_details.phone,
+                    country=billing_details.address.country,
+                    postcode=billing_details.address.postal_code,
+                    town_or_city=billing_details.address.city,
+                    street_address1=billing_details.address.line1,
+                    street_address2=billing_details.address.line2,
+                    county=billing_details.address.state,
                     grand_total=grand_total,
                     original_bag=bag,
                     stripe_pid=pid,
@@ -107,6 +111,7 @@ class StripeWH_Handler:
                             )
                             order_line_item.save()
             except Exception as e:
+                print("500 error here: ", e)
                 if order:
                     order.delete()
                 return HttpResponse(
