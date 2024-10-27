@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'guidetrip',
     'bag',
     'checkout',
-   
+    'profiles',
 
     # Add Ons 
     'crispy_forms',
