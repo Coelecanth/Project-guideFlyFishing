@@ -111,6 +111,11 @@ body {
     max-width: 100px
 }
 
+.field-size-logon {
+    max-width: 325px
+}
+
+
 
 
 /* -------------------------------- Media Queries */
