@@ -5,7 +5,7 @@ from .models import trips, categories
 class ProductForm(forms.ModelForm):
 
     class Meta:
-        model = Product
+        model = trips
         fields = '__all__'
 
     def __init__(self, *args, **kwargs):
@@ -15,4 +15,4 @@ class ProductForm(forms.ModelForm):
 
         self.fields['categories'].choices = friendly_names
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-black rounded-0'
+            field.widget.attrs['class'] = 'border-black rounded-1'
