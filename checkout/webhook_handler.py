@@ -31,8 +31,7 @@ class StripeWH_Handler:
         bag= intent.metadata.bag
         save_info = intent.metadata.save_info
 
-        print("Intent: ", intent)
-
+        
         # Get the Charge object
         stripe_charge = stripe.Charge.retrieve(
         intent.latest_charge
@@ -41,8 +40,7 @@ class StripeWH_Handler:
         billing_details = stripe_charge.billing_details # updated
         grand_total = round(stripe_charge.amount / 100, 2) # updated
 
-        print("Billing details: ", billing_details)
-
+        
          # Clean data in the Billing details
         for field, value in billing_details.address.items():
             if value == "":
@@ -75,7 +73,6 @@ class StripeWH_Handler:
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
         else:
-            print("Can't find order: ")
             order = None
             try:
                 order = Order.objects.create(
