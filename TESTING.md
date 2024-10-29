@@ -166,37 +166,21 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | Tablet (DevTools) | ![screenshot](documentation/responsiveness/responsive-tablet-home.png) | ![screenshot](documentation/responsiveness/responsive-tablet-about.png) | ![screenshot](documentation/responsiveness/responsive-tablet-contact.png) | ![screenshot](documentation/responsiveness/responsive-tablet-etc.png) | Works as expected |
 | Desktop | ![screenshot](documentation/responsiveness/responsive-desktop-home.png) | ![screenshot](documentation/responsiveness/responsive-desktop-about.png) | ![screenshot](documentation/responsiveness/responsive-desktop-contact.png) | ![screenshot](documentation/responsiveness/responsive-desktop-etc.png) | Works as expected |
 | XL Monitor | ![screenshot](documentation/responsiveness/responsive-xl-home.png) | ![screenshot](documentation/responsiveness/responsive-xl-about.png) | ![screenshot](documentation/responsiveness/responsive-xl-contact.png) | ![screenshot](documentation/responsiveness/responsive-xl-etc.png) | Scaling starts to have minor issues |
-| 4K Monitor | ![screenshot](documentation/responsiveness/responsive-4k-home.png) | ![screenshot](documentation/responsiveness/responsive-4k-about.png) | ![screenshot](documentation/responsiveness/responsive-4k-contact.png) | ![screenshot](documentation/responsiveness/responsive-4k-etc.png) | Noticeable scaling issues |
 | Google Pixel 7 Pro | ![screenshot](documentation/responsiveness/responsive-pixel-home.png) | ![screenshot](documentation/responsiveness/responsive-pixel-about.png) | ![screenshot](documentation/responsiveness/responsive-pixel-contact.png) | ![screenshot](documentation/responsiveness/responsive-pixel-etc.png) | Works as expected |
-| iPhone 14 | ![screenshot](documentation/responsiveness/responsive-iphone-home.png) | ![screenshot](documentation/responsiveness/responsive-iphone-about.png) | ![screenshot](documentation/responsiveness/responsive-iphone-contact.png) | ![screenshot](documentation/responsiveness/responsive-iphone-etc.png) | Works as expected |
+
 | repeat for any other tested devices | x | x | x | x | x |
 
 ## Lighthouse Audit
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to discuss testing the live/deployed site's Lighthouse Audit reports.
-Avoid testing the local version (especially if developing in Gitpod), as this can have knock-on effects of performance.
-
-If you don't have Lighthouse in your Developer Tools,
-it can be added as an [extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk).
-
-Don't just test the home page (unless it's a single-page application).
-Make sure to test the Lighthouse Audit results for all of your pages.
-
-**IMPORTANT**: You must provide screenshots of the results, to "prove" that you've actually tested them.
-
-Sample Lighthouse testing documentation:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
 | Page | Mobile | Desktop | Notes |
 | --- | --- | --- | --- |
 | Home | ![screenshot](documentation/lighthouse/lighthouse-home-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-home-desktop.png) | Some minor warnings |
-| About | ![screenshot](documentation/lighthouse/lighthouse-about-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-about-desktop.png) | Some minor warnings |
-| Gallery | ![screenshot](documentation/lighthouse/lighthouse-gallery-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-gallery-desktop.png) | Slow response time due to large images |
+| All Trips | ![screenshot](documentation/lighthouse/lighthouse-about-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-about-desktop.png) | Some minor warnings |
+| Detail trips  | ![screenshot](documentation/lighthouse/lighthouse-gallery-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-gallery-desktop.png) | Slow response time due to large images |
+| Bag  | ![screenshot](documentation/lighthouse/lighthouse-gallery-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-gallery-desktop.png) | Slow response time due to large images |
+| checkout  | ![screenshot](documentation/lighthouse/lighthouse-gallery-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-gallery-desktop.png) | Slow response time due to large images |
 | x | x | x | repeat for any other tested pages/sizes |
 
 ## Defensive Programming
@@ -216,40 +200,6 @@ PP3 (Python-only):
 - Users must enter a valid letter/word/string when prompted
 - Users must choose from a specific list only
 
-MS3 (Flask) | MS4/PP4/PP5 (Django):
-- Users cannot brute-force a URL to navigate to a restricted page
-- Users cannot perform CRUD functionality while logged-out
-- User-A should not be able to manipulate data belonging to User-B, or vice versa
-- Non-Authenticated users should not be able to access pages that require authentication
-- Standard users should not be able to access pages intended for superusers
-
-You'll want to test all functionality on your application, whether it's a standard form,
-or uses CRUD functionality for data manipulation on a database.
-Make sure to include the `required` attribute on any form-fields that should be mandatory.
-Try to access various pages on your site as different user types (User-A, User-B, guest user, admin, superuser).
-
-You should include any manual tests performed, and the expected results/outcome.
-
-Testing should be replicable.
-Ideally, tests cases should focus on each individual section of every page on the website.
-Each test case should be specific, objective, and step-wise replicable.
-
-Instead of adding a general overview saying that everything works fine,
-consider documenting tests on each element of the page
-(ie. button clicks, input box validation, navigation links, etc.) by testing them in their happy flow,
-and also the bad/exception flow, mentioning the expected and observed results,
-and drawing a parallel between them where applicable.
-
-Consider using the following format for manual test cases:
-
-Expected Outcome / Test Performed / Result Received / Fixes Implemented
-
-- **Expected**: "Feature is expected to do X when the user does Y."
-- **Testing**: "Tested the feature by doing Y."
-- (either) **Result**: "The feature behaved as expected, and it did Y."
-- (or) **Result**: "The feature did not respond to A, B, or C."
-- **Fix**: "I did Z to the code because something was missing."
-
 Use the table below as a basic start, and expand on it using the logic above.
 
 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
@@ -258,15 +208,15 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | Page | Expectation | Test | Result | Fix | Screenshot |
 | --- | --- | --- | --- | --- | --- |
-| Home | | | | | |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/features/feature01.png) |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature did not respond to A, B, or C. | I did Z to the code because something was missing | ![screenshot](documentation/features/feature02.png) |
-| About | | | | | |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/features/feature03.png) |
+| checkout | | | | | |
+| | All customer fields on this page are mandatory with the exception of "street addres 2", and county and postcode | Tested by entering data in ome dtaa field at a time and then trying to submit the form | The feature behaved as expected, was prompted to complete fields | Test concluded and passed | ![screenshot](documentation/img/testing/checkout1.jpg) |
+| | Credit card field and CC data fileds are mandatory | Tested by completing address fields and then trying to submit the form without CC details| The feature behaved as expected, was prompted to complete fields | test concluded and passed | ![screenshot](documentation/img/testing/checkout2.jpg) |
+| profile  | | | | | |
+| | You should only be able to see your own order history in profile | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/features/feature03.png) |
 | | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature did not respond to A, B, or C. | I did Z to the code because something was missing | ![screenshot](documentation/features/feature04.png) |
-| Gallery | | | | | |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/features/feature05.png) |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature did not respond to A, B, or C. | I did Z to the code because something was missing | ![screenshot](documentation/features/feature06.png) |
+| Admin | | | | | |
+| | User who are not setup a s superuser cannot logon onto the admin page  | Tested the feature by logging out  | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/features/feature05.png) |
+| | users who are not logged in cannot access the admin page or brute force to it | Tested the feature by logging out and then entering the admin URL manaually in the browser | Behaved as expected, I was taken to the logon page and barred access unless I entered credentials | Test concluded and passed| ![screenshot](documentation/img/testing/admin_acc1.jpg) |
 | Contact | | | | | |
 | | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/features/feature07.png) |
 | | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature did not respond to A, B, or C. | I did Z to the code because something was missing | ![screenshot](documentation/features/feature08.png) |
@@ -359,10 +309,9 @@ As part of my testing of pages I created some automated tests in Django for the 
 
 
 
-## Bugs
-**PRO TIP**: screenshots of bugs are extremely helpful, and go a long way!
+# Bugs
 
-### Bootstrap errors not targetting navbar elements correctly  
+## Bootstrap Errors Not Targeting Navbar Elements Correctly   
 
 When i first setup Boot strap navbar using version 5.3, the drop down menus did not function correctly, as when you clickd on the 
 the menu it did not drop down. After some very extensive research and collaboration, this was found to be a problem with changes
@@ -375,7 +324,7 @@ data-bs-target
 Once corrected with data-bs-target in main.nav to define as a target this all worked  
 This change was made in 5.3 to allow mutiple styling frameworks to be used. 
 
-### Receiving errors when i push my Code to gitHub
+## Receiving Errors When I Push My Code To Github
     After Renaming my project in gitpod - to conform with naming guidance I started receiving the following error when I pushed code. 
     ```shell
             remote: Resolving deltas: 100% (1/1), completed with 1 local object.
@@ -385,7 +334,7 @@ This change was made in 5.3 to allow mutiple styling frameworks to be used.
     ```
     The error is quite self explanatory, once I had correctly renamed the github site the errors were removed and and push worked without errors 
 
-### Couldnt deploy App in heroku with Auto Deploy     
+## Couldn’t Deploy App In Heroku With Auto Deploy     
     Received the following error in the Heroku log when trying to build app in heroku   
 
     	```shell
@@ -418,35 +367,12 @@ This change was made in 5.3 to allow mutiple styling frameworks to be used.
     this was installed using the following command  pip3 install django-allauth==0.54.0
     
 
-### When loading alternate imnage in Bag view would get a Django error saying image not found 
-
-    On investigation there was not any checking for the image existeance in the bag page, and as this did not need to be linked to nay other 
-    I added some tempalte logic testing to make sure this worked corectly 
-
-    To fix this i added the following code 
-```html
-<!-- Original code -->
-    <td class="p-3 w-25">
-        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
-    </td>
-
-<!-- Revised fix     -->
-    <td class="p-3 w-25">
-    {% if item.product.image %} 
-        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
-    {% else %}
-        <img class="card-img-top img-fluid" src="{% static 'img/noimage.jpg' %}">
-    {% endif %}
-    </td>
-
-```
-
-
-### The Update button in the Bag page does update the values
+## The Update Button In The Bag Page Does Not Update The Values
 
 the Update function in the bag does not work and behaves like there is no link. This wwas found to be a problem with the location of the tags in Bag.html,
-which intiate the JS script to implement this function, the following code snippets how the before and after for bag.html 
-    To fix this i added the following code was changed 
+which intiate the JS script to implement this function. Moved the a calls elelemts containing the JS scipt listeners outside the form element. 
+the following code snippets show the before and after for bag.html 
+
 ```html
 <!-- Original code -->
             <button class="increment-qty btn btn-sm btn-black rounded-0"
@@ -469,15 +395,15 @@ which intiate the JS script to implement this function, the following code snipp
             </div>
         </div>
         </form>
-        <!-- Do not put links inside the form as this break the update funcxtion it should remain outside the form tag -->
+        <!-- Do not put links inside the form as this break the update function it should remain outside the form tag -->
         <a class="update-link text-dark float-left"><small>Update</small></a>
         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
 ```
 
-### Toast messages in the Appl;ication did not apply corectly  
+## Toast messages in the Application did not apply corectly  
 
     Following the course guidance on implementing toasts in the project walk through, the explanation omitted details 
-    on the implementation of toast messages. In particualr it was not expalined that the implemetation 
+    on the implementation of toast messages. In particualr it was not explained that the implemetation 
     described would produce a toast message only on the first addition of an item to the bag. It was not clear 
     if was an oversite or by design. In my implementation I wanted the toast message to appear 
     everytime an item was added to the bag.    
@@ -528,6 +454,128 @@ def add_to_bag(request, item_id):
 
 ```
 
+## The Sorting Functionality from The Main Navigation Did Not Work
+
+When selecting the sort function code would run but return no values were returned in the list. 
+This was found to be a problem I had inadvertently introduced when correcting an earlier problem with getting viewing items by category to work and using specific variables to make the code easier to understand. In doing I had precluded myself from making the code compatible with sorting. 
+So the image below show the original commented out code (in greeen)  followed by the amendments made to correct it directly following each commented out line 
+So, in essence this recreates a new value called all_trips_rec instead of redefining all_trips  
+
+![screenshot](documentation/img/errors/code-1.jpg)
+
+
+## Web log returning error 404 for site URL for webhooks 
+
+``` log
+[26/Oct/2024 12:54:20] "GET /trips/ HTTP/1.1" 200 32726
+[26/Oct/2024 12:54:24] "GET /trips/4 HTTP/1.1" 200 17764
+[26/Oct/2024 12:54:25] "POST /bag/add/4/ HTTP/1.1" 302 0
+[26/Oct/2024 12:54:26] "GET /trips/4 HTTP/1.1" 200 20326
+[26/Oct/2024 12:54:29] "GET /checkout/ HTTP/1.1" 200 21063
+[26/Oct/2024 12:54:29] "GET /static/js/stripe_elements.js HTTP/1.1" 304 0
+Not Found: /wh
+[26/Oct/2024 12:54:29] "POST /wh HTTP/1.1" 404 2743
+[26/Oct/2024 12:55:00] "POST /checkout/cache_checkout_data/ HTTP/1.1" 200 0
+Not Found: /wh
+[26/Oct/2024 12:55:01] "POST /wh HTTP/1.1" 404 2743
+Not Found: /wh
+[26/Oct/2024 12:55:01] "POST /wh HTTP/1.1" 404 2743
+[26/Oct/2024 12:55:02] "POST /checkout/ HTTP/1.1" 302 0
+[26/Oct/2024 12:55:03] "GET /checkout/checkout_success/B6221586515F45EFA645B4D92F3C1DBB/ HTTP/1.1" 200 16424
+Not Found: /wh
+[26/Oct/2024 12:55:03] "POST /wh HTTP/1.1" 404 2743
+
+```
+On closer inspection this was found to be a configuration error made in Stripe, where the endpoint webhook created stripe 
+need to be amended
+
+```log
+- https://8000-coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net/wh  
+  to 
+- https://8000-coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net/checkout/wh
+```
+
+
+## Missing alternate image caused site to crash 
+
+While I was regression testing checkout app,  I added an item to the bag with with a missing image file, this caused the site to crash.
+I received the following error message  
+```log
+ValueError at / The 'image' attribute has no file associated with it. 
+Request Method: GET Request URL: http://8000-coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net/ 
+Django Version: 3.2 Exception Type: ValueError Exception Value: The 'image' attribute has no file associated with it.
+
+``` 
+Refering to a line in the checkout template  
+
+Th error was caused by a missing image file and no logic to handle this situation. 
+This was corrected by adding an if statement around {{ item.product.image.url }}, with an latertive to the noimage image of {% static 'img/noimage.jpg' %}
+To correct this I added the following code below checkout template, and then also had to add the load "static" statement on the toasts success page as this was 
+also using a product image. 
+
+```html
+            <p class="logo-font bg-toast py-1">Your Bag ({{ product_count }})</p>
+            <div class="bag-notification-wrapper">
+                {% for item in bag_items %}
+                    <div class="row">
+                         <div class="col-3 my-1">
+                        <!-- the below line was replaced by the following code -->
+                        <!-- <img class="w-100" src="{{ item.product.image.url }}"> -->
+                            <!-- replaced code start -->
+                            {% if item.product.image %}
+                                <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.venue }}">
+                            {% else %}
+                                <img class="w-100" src="{% static 'img/noimage.jpg' %}" alt="Default image">
+                            {% endif %}
+                            <!-- replaced code end -->
+                        </div>
+                        <div class="col-9">
+                            <p class="my-0"><strong>{{ item.product.venue }}</strong></p>
+                            <p class="my-0 ">Qty: {{ item.quantity }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+``` 
+## Site producing duplicate orders when submitting from checkout  
+
+Site was producing duplicate orders when purchasing with Stripe, 2 orders were created in the orders database but one payment was produced in Stripe. 
+After some investigation into this, the reason for this was in the implementation of the webhooks I had used, 
+I had used only one set of details for the customer, e.g. as I was not shipping any products to people as they were buying a service. 
+For this reason I had implemented just the billing Information only to validate the webhook's order against. This caused an issue when the 
+test data being used, As I was using a different postcode for credit card and the billing address (e.g. the validation field for stripe credit card) 
+which caused duplicate orders when in the database as the postcodes did not match. 
+To avoid this error I changed the code in webhooks_handler.py to not evaluate the using postcode 
+but continued to use all the other fields to validate the order, this would still allow strong validation of the user and payment but successfully resolved the issue.
+
+
+the below code is shown from Webhook_handler.py shows the line thats was removed (commented out). 
+``` python
+        order_exists = False
+        attempt = 1
+        while attempt <= 5:
+            try:
+                order = Order.objects.get(
+                    full_name__iexact=billing_details.name,
+                    email__iexact=billing_details.email,
+                    phone_number__iexact=billing_details.phone,
+                    street_address1__iexact=billing_details.address.line1,
+                    street_address2__iexact=billing_details.address.line2,
+                    town_or_city__iexact=billing_details.address.city,
+                    # the following commented out line was removed 
+                    # postcode__iexact=billing_details.address.postal_code
+                    county__iexact=billing_details.address.state,
+                    country__iexact=billing_details.address.country,
+                    grand_total=grand_total,
+                    original_bag=bag,
+                    stripe_pid=pid,
+                )
+                order_exists = True
+                break
+
+```
+
 
     ![screenshot](documentation/bugs/bug02.png)
 
@@ -550,6 +598,16 @@ def add_to_bag(request, item_id):
     ![screenshot](documentation/bugs/bug04.png)
 
     - To fix this, I _____________________.
+
+
+
+
+
+
+
+
+
+
 
 ## Unfixed Bugs
 
