@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import trips, categories
-from .forms import ProductForm #defined in forms.py
+from .forms import ProductForm #defined in forms.py not trips
 
 # Create your views here.
 def all_trips(request):
