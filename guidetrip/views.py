@@ -92,7 +92,7 @@ def add_product(request):
             product.rec_owner = request.user  
             form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('add_product'))
+            return redirect(reverse('det_trips_view', args=[product.id]))   
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
@@ -145,7 +145,7 @@ def delete_product(request, product_id):
         return redirect(reverse('home'))
     
 
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(trips, pk=product_id)
     product.delete()
     messages.success(request, 'Product deleted!')
-    return redirect(reverse('products'))
+    return redirect(reverse('alltrips'))

@@ -38,11 +38,18 @@
                 <p class="mb-1 text-det-para">Number of People : {{ det_trips_view.spaces }}</p>
                 <!-- rating Fields  -->
                 {% if det_trips_view.rating %}
-                <small><i class="mb-1 fas fa-star mr-1"></i>{{ det_trips_view.rating }} / 5</small>
+                    <small><i class="mb-1 fas fa-star mr-1"></i>{{ det_trips_view.rating }} / 5</small>
                 {% else %}
-                <small>No Rating</small>
+                    <small>No Rating</small>
                 {% endif %}
-                <!-- Cost fields  -->
+                <!-- Edit and remove links on page -->
+                {% if request.user.is_superuser %}
+                    <p><small class="ml-3">
+                        <a href="{% url 'edit_product' det_trips_view.id %}">Edit</a> | 
+                        <a class="text-danger" href="{% url 'delete_product' det_trips_view.id %}">Delete</a>
+                    </small></p>
+                {% endif %}
+               <!-- Cost fields  -->
                 <p class="lead mb-0 text-left font-weight-bold">£{{ det_trips_view.cost }}</p>
                 <hr>
                 <!-- Start of form for quantiy and add to shopping bag -->

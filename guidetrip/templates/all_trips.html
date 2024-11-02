@@ -44,12 +44,20 @@
                                         </a>
                                     </p>
                                     {% endif %}
-
+                                    <!-- ratings on page -->    
                                     {% if element.rating %}
                                     <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ element.rating }} /
                                         5</small>
                                     {% else %}
                                     <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                    <!-- Edit and remove links on page -->
+                                    {% if request.user.is_superuser %}
+                                    <p><small class="ml-3">
+                                        <a href="{% url 'edit_product' element.id %}">Edit</a> | 
+                                        <a class="text-danger" href="{% url 'delete_product' element.id %}">Delete</a>
+                                    </small>
+                                    </p>
                                     {% endif %}
 
                                 </div>
