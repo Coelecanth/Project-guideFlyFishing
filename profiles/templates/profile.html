@@ -3,48 +3,46 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
 {% endblock %}
 
 
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">My Profile</h2>
-                <hr>
-            </div>
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">My Profile</h2>
+            <hr>
         </div>
-        <div class="row">
-            <div class="col-12 col-lg-6 ">
-                <p class="text-det-para">Default Delivery Information</p>
-                <form class="text-end mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                    <div class="mt-3 ">
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-6 ">
+            <p class="text-det-prom">Default Customer Information</p>
+            <form class="text-end mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                <div class="mt-3 ">
                     {% csrf_token %}
                     {% for field in form %}
                     <div class="mb-2 ">
                         {{ field|as_crispy_field }}
                     </div>
                     {% endfor %}
-                    
-                    
-                    
-                    <button class="shop-now-button-small btn btn-outline-light rounded-1 text-uppercase mt-3">Update Information</button>
-                    </div>
-                    
-                </form>
-            </div>
-            <div class="col-12 col-lg-6">
-                <p class="text-det-para">Order History</p>
-                {{ orders }}
-            </div>
-        </div>
-{% endblock %}
+                    <button class="shop-now-button-small btn btn-outline-light rounded-1 text-uppercase mt-3">Update
+                        Information</button>
+                </div>
 
-{% block postloadjs %}
+            </form>
+        </div>
+        <div class="col-12 col-lg-6">
+            <p class="text-det-prom">Order History</p>
+            {{ orders }}
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
-{% endblock %}
+    <script type="text/javascript" src="{% static 'js/countryfield.js' %}"></script>
+    {% endblock %}

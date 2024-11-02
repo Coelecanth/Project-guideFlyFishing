@@ -3,8 +3,9 @@
   box-sizing: border-box;
   height: 40px;
   padding: 10px 12px;
-  border: 1px solid transparent;
-  border-radius: 0px;
+  border-color: #0094c6;
+  border-width: 3px;
+  border-radius: 2px;
   background-color: white;
   box-shadow: 0 1px 3px 0 #e6ebf1;
   -webkit-transition: box-shadow 150ms ease;
@@ -14,7 +15,7 @@
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
-  box-shadow: 1px 1px 1px 1px #ed793f;
+    box-shadow:  0 4px 8px 0 #0094c6;  
 }
 
 .StripeElement--webkit-autofill {
@@ -30,6 +31,7 @@
     right: .5rem;
 }
 
+/* controls active type in CC the box  */
 #payment-form .form-control,
 #card-element {
     color: #000;

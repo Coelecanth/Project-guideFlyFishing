@@ -34,19 +34,27 @@ body {
     background: white;
     color: black;
     min-width: 260px;
+    border-color: #0094c6;
+    border-width: 3px;
 }
 .shop-chk-button {
-    background: #ffffffbc;
+    background: white;
     color: black;
     min-width: 150px;
+    border-color: #0094c6;
+    border-width: 3px;
 }
 
 .shop-now-button-small {
     background: white;
     color: black;
     min-width: 100px;
+    border-color: #0094c6;
+    border-width: 3px;
 }
 
+.shop-chk-button:hover,
+.shop-chk-button:active,
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button-small:active,
@@ -58,10 +66,6 @@ body {
     color: white;
 }
 
-.btn-black {
-    background: black;
-    color: white;
-}
 
 .btt-link,
 .update-link,
@@ -172,7 +176,7 @@ body {
     right: 15px;
     z-index: 99999999999;
 }
-/* revised from original setting of visible */
+
 .custom-toast {
     overflow: auto;
 }
@@ -193,5 +197,25 @@ body {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+/* Allauth form formatting */
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #6c757d; /* text-secondary */
+}
+
+.allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 1;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
 }
 
