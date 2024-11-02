@@ -14,13 +14,23 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">My Profile</h2>
+            <div class="profile-header">
+                
+                   <h2> My Profile 
+                    {% if user.is_authenticated %}
+                     - Welcome, {{ user.get_full_name|default:user.username }}!
+                    {% else %}
+                     - Guest, not Logged on 
+                    {% endif %}
+                </h2>
+                
+            </div>
             <hr>
         </div>
     </div>
     <div class="row">
         <div class="col-12 col-lg-6 ">
-            <p class="text-det-prom">Default Customer Information</p>
+            <p class="text-det-para">Default Customer Information</p>
             <form class="text-end mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 <div class="mt-3 ">
                     {% csrf_token %}
@@ -36,7 +46,7 @@
             </form>
         </div>
         <div class="col-12 col-lg-6">
-            <p class="text-det-prom">Order History</p>
+            <p class="text-det-para">Order History</p>
             <div class="order-history table-responsive rounded-1">
                 <table class="table table-sm table-borderless titillium text-det-para">
                     <thead>
@@ -49,25 +59,24 @@
                     </thead>
                     <tbody>
                         {% for order in orders %}
-                            <tr>
-                                <td>
-                                    <a href="{% url 'order_history' order.order_number %}"
-                                    title="{{ order.order_number }}">
-                                        {{ order.order_number|truncatechars:6 }}
-                                    </a>
-                                </td>
-                                <td>{{ order.date }}</td>
-                                <td>
-                                    <ul class="list-unstyled">
-                                        {% for item in order.lineitems.all %}
-                                            <li class="small">
-                                               {{ item.product.name }} x{{ item.quantity }}
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                </td>
-                                <td>£{{ order.grand_total }}</td>
-                            </tr>
+                        <tr>
+                            <td>
+                                <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
+                                    {{ order.order_number|truncatechars:6 }}
+                                </a>
+                            </td>
+                            <td>{{ order.date }}</td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    {% for item in order.lineitems.all %}
+                                    <li class="small">
+                                        {{ item.product.name }} x{{ item.quantity }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <td>£{{ order.grand_total }}</td>
+                        </tr>
                         {% endfor %}
                     </tbody>
                 </table>

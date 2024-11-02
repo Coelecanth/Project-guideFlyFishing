@@ -219,3 +219,16 @@ body {
     color: #aab7c4;
 }
 
+/* profile page header formatting formating  */
+.profile-header {
+    display: flex;
+    align-items: flex-end; /* Aligns both elements to the bottom */
+    gap: 10px; /* Add space between elements */
+}
+
+.profile-header h2,
+.profile-header .text-det-prom {
+    display: inline-block;
+    margin: 0; /* Remove default margins to ensure they stay on the same line */
+    padding: 0;
+}
