@@ -466,7 +466,7 @@ So, in essence this recreates a new value called all_trips_rec instead of redefi
 
 ## Web log returning error 404 for site URL for webhooks 
 
-``` log
+```log
 [26/Oct/2024 12:54:20] "GET /trips/ HTTP/1.1" 200 32726
 [26/Oct/2024 12:54:24] "GET /trips/4 HTTP/1.1" 200 17764
 [26/Oct/2024 12:54:25] "POST /bag/add/4/ HTTP/1.1" 302 0
@@ -551,30 +551,67 @@ but continued to use all the other fields to validate the order, this would stil
 
 
 the below code is shown from Webhook_handler.py shows the line thats was removed (commented out). 
-``` python
-        order_exists = False
-        attempt = 1
-        while attempt <= 5:
-            try:
-                order = Order.objects.get(
-                    full_name__iexact=billing_details.name,
-                    email__iexact=billing_details.email,
-                    phone_number__iexact=billing_details.phone,
-                    street_address1__iexact=billing_details.address.line1,
-                    street_address2__iexact=billing_details.address.line2,
-                    town_or_city__iexact=billing_details.address.city,
-                    # the following commented out line was removed 
-                    # postcode__iexact=billing_details.address.postal_code
-                    county__iexact=billing_details.address.state,
-                    country__iexact=billing_details.address.country,
-                    grand_total=grand_total,
-                    original_bag=bag,
-                    stripe_pid=pid,
-                )
-                order_exists = True
-                break
+```python
+order_exists = False
+attempt = 1
+while attempt <= 5:
+    try:
+        order = Order.objects.get(
+            full_name__iexact=billing_details.name,
+            email__iexact=billing_details.email,
+            phone_number__iexact=billing_details.phone,
+            street_address1__iexact=billing_details.address.line1,
+            street_address2__iexact=billing_details.address.line2,
+            town_or_city__iexact=billing_details.address.city,
+            # the following commented out line was removed 
+            # postcode__iexact=billing_details.address.postal_code
+            county__iexact=billing_details.address.state,
+            country__iexact=billing_details.address.country,
+            grand_total=grand_total,
+            original_bag=bag,
+            stripe_pid=pid,
+        )
+        order_exists = True
+        break
 
 ```
+
+
+## Web Server Errror 500 and no reverse route found for Page 
+
+When creating edit capability for the products page, I received the following message where the reverse was route failing, detailing it had received no product.Id 
+After making sure that views.py was receiving and passing the product.id to the template 
+
+![screenshot](documentation/img/errors/reverse_err.jpg)
+
+
+The problem was eventually traced to the template edit_procuct,html and where the product id in the django field was incorectly specified with "_" instead of ".". 
+This was fixed with the following changes showing the before an after in the code.   
+
+
+
+```html
+    <!-- the following line was changed form the below to uncommneted out line to corect the issue -->
+<!-- <form method="POST" action="{% url 'edit_product'  product_id %}" class="form mb-2" enctype="multipart/form-data"> -->
+     <form method="POST" action="{% url 'edit_product'  product.id %}" class="form mb-2" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <div class="text-end my-2">
+            <a href="{% url 'alltrips' %}"
+                class="shop-now-button-small btn btn-outline-black rounded-1 btn-lg text-uppercase"">
+                    <span class=" icon"><i class="fas fa-chevron-left"></i></span>
+                <span>Cancel</span>
+            </a>
+            <button class="shop-now-button-small btn btn-outline-black rounded-1 btn-lg text-uppercase"
+                type="submit">Update Product</button>
+        </div>
+
+    </form>
+
+```
+
+
+
 
 
     ![screenshot](documentation/bugs/bug02.png)

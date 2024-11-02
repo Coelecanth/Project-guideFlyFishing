@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
@@ -74,9 +75,15 @@ def det_trips_view(request, trips_id):
 
     return render(request, 'detail_trips.html', context ) 
 
-
+@login_required
 def add_product(request):
     """ Add a product to the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only guides or store owners can do that.')
+        return redirect(reverse('home'))
+    
+    
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -98,18 +105,23 @@ def add_product(request):
 
     return render(request, template, context)
 
-
+@login_required
 def edit_product(request, product_id):
     """ Edit a product in the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only guides or store owners can do that.')
+        return redirect(reverse('home'))
+   
     product = get_object_or_404(trips, pk=product_id)
-    print(f'Editing product with ID: {product.id}')
+   
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated product!')
-            return redirect(reverse('product_detail', args=[product.id]))
+            return redirect(reverse('det_trips_view', args=[product.id]))
         else:
             messages.error(request, 'Failed to update product. Please ensure the form is valid.')
     else:
@@ -123,3 +135,17 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+@login_required
+def delete_product(request, product_id):
+    """ Delete a product from the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only guides or store owners can do that.')
+        return redirect(reverse('home'))
+    
+
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product deleted!')
+    return redirect(reverse('products'))
