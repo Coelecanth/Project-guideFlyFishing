@@ -11,6 +11,7 @@ class ProductForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         categories_all = categories.objects.all()
+        self.fields['rec_owner'].widget = forms.HiddenInput()  # Hide the rec_owner field
         friendly_names = [(c.id, c.get_friendly_name()) for c in categories_all]
 
         self.fields['categories'].choices = friendly_names
