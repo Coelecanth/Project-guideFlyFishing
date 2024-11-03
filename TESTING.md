@@ -637,55 +637,15 @@ This was fixed with the following changes showing the before an after in the cod
     - To fix this, I _____________________.
 
 
+# Unfixed Bugs
 
+## Django Custom Clearabel File Input Widget
 
+I implemented the Django Custom Clearable File Input widget as was shown in the walkthroughs and was not able to get this to display in
+the pages for edit or add. Having reviewed the code for walkthrough it looks like there is some sort of compatability issue between crispy 
+forms and custom widget. The later code splits the rendering of these with an if statement and even after implemeting this
+I could not get the the widget to display in the page. 
+I then spoke to student support who after some researcch were coming to same conclusion; but we couldnt find a solution in the time i had avaiable to be tutored.
+For this reason, this bug was not fixed. As bug does not affect fucntionality but is really about presentation and styling of this function. so iwas not pssosoble tomfix this withing the time constraints of the project. 
 
-
-
-
-
-
-
-## Unfixed Bugs
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-You will need to mention unfixed bugs and why they were not fixed.
-This section should include shortcomings of the frameworks or technologies used.
-Although time can be a big variable to consider, paucity of time and difficulty understanding
-implementation is not a valid reason to leave bugs unfixed.
-
-If you've identified any unfixed bugs, no matter how small, be sure to list them here.
-It's better to be honest and list them, because if it's not documented and an assessor finds the issue,
-they need to know whether or not you're aware of them as well, and why you've not corrected/fixed them.
-
-Some examples:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-- On devices smaller than 375px, the page starts to have `overflow-x` scrolling.
-
-    ![screenshot](documentation/bugs/unfixed-bug01.png)
-
-    - Attempted fix: I tried to add additional media queries to handle this, but things started becoming too small to read.
-
-- For PP3, when using a helper `clear()` function, any text above the height of the terminal does not clear, and remains when you scroll up.
-
-    ![screenshot](documentation/bugs/unfixed-bug02.png)
-
-    - Attempted fix: I tried to adjust the terminal size, but it only resizes the actual terminal, not the allowable area for text.
-
-- When validating HTML with a semantic `section` element, the validator warns about lacking a header `h2-h6`. This is acceptable.
-
-    ![screenshot](documentation/bugs/unfixed-bug03.png)
-
-    - Attempted fix: this is a known warning and acceptable, and my section doesn't require a header since it's dynamically added via JS.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-If you legitimately cannot find any unfixed bugs or warnings, then use the following sentence:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-> [!NOTE]  
-> There are no remaining bugs that I am aware of.
+The template and also the widget.py have been left in the project as details thatt thios was completed but not included.

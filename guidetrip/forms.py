@@ -10,7 +10,6 @@ class ProductForm(forms.ModelForm):
         fields = '__all__'
 
         
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         categories_all = categories.objects.all()

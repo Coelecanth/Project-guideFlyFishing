@@ -24,17 +24,18 @@
 
     <div class="row">
         <div class="col-12 col-md-6">
-            <form method="POST" action="{% url 'edit_product'  product.id %}" class="form mb-2"
+            <form method="POST" action="{% url 'edit_product'  product.id %}" class="form mb-3"
                 enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ field.label_tag }}
-        {{ field }}
-        {% if field.help_text %}
-            <small class="form-text text-muted">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-            <div class="text-danger">{{ error }}</div>
-        {% endfor %}
+                {% for field in form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                        <div class="my-3">
+                            {{ field }}
+                        </div>    
+                       {% endif %}
+                    {% endfor %}
                 
                 <div class="text-end my-2">
                     <a href="{% url 'alltrips' %}"
