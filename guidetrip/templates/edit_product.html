@@ -24,9 +24,18 @@
 
     <div class="row">
         <div class="col-12 col-md-6">
-            <form method="POST" action="{% url 'edit_product'  product.id %}" class="form mb-2" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'edit_product'  product.id %}" class="form mb-2"
+                enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form | crispy }}
+                {{ field.label_tag }}
+        {{ field }}
+        {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+                
                 <div class="text-end my-2">
                     <a href="{% url 'alltrips' %}"
                         class="shop-now-button-small btn btn-outline-black rounded-1 btn-lg text-uppercase"">

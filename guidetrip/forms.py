@@ -9,12 +9,13 @@ class ProductForm(forms.ModelForm):
         model = trips
         fields = '__all__'
 
-        image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+        
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         categories_all = categories.objects.all()
-        self.fields['rec_owner'].widget = forms.HiddenInput()  # Hide the rec_owner field, required for individaul use.
+        # Hide the rec_owner field, required for individaul update use.
+        self.fields['rec_owner'].widget = forms.HiddenInput()  
         friendly_names = [(c.id, c.get_friendly_name()) for c in categories_all]
 
         self.fields['categories'].choices = friendly_names
