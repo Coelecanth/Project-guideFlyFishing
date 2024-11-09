@@ -112,8 +112,8 @@ body {
 }
 
 .field-size {
-    max-width: 100px;
-    min-width: 100px; 
+    max-width: 120px;
+    min-width: 120px; 
 }
 
 .field-size-logon {
@@ -235,8 +235,20 @@ body {
     }
 } 
 
-/* pad the top a bit when navbar is collapsed on mobile */
+/* applies format changes to small screens on mobile */
 @media (max-width: 991px) {
+    .banner-panel {
+        top: 20%;
+        position: relative;
+        width: 95%;
+        background-color: #00537c;
+        position: realtive;
+        left: 2.5%;
+        border-radius: 1em;
+        padding: 0.5em 0;
+    }
+    
+    
     .header-container {
         padding-top: 116px;
     }
@@ -246,7 +258,8 @@ body {
     }
 
     .increment-qty, .decrement-qty {
-        padding: .25rem .5rem !important;
+        /* alter sizes of button relative to field */
+        padding: .3rem .3rem !important;  
     }
     .text-bag-para,
     .text-chk-para   {
