@@ -209,8 +209,6 @@ body {
 }
 
 
-
-
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -238,7 +236,7 @@ body {
 /* applies format changes to small screens on mobile */
 @media (max-width: 991px) {
     .banner-panel {
-        top: 20%;
+        
         position: relative;
         width: 95%;
         background-color: #00537c;
