@@ -8,7 +8,7 @@ html {
 body {
     background: url('/static/img/river.avif ') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: calc(100vh - 164px); 
     color: #FFFFFF;
     font-family: 'Titillium Web';
 }
@@ -112,55 +112,13 @@ body {
 }
 
 .field-size {
-    max-width: 100px
+    max-width: 100px;
+    min-width: 100px; 
 }
 
 .field-size-logon {
-    max-width: 325px
+    max-width: 325px;
 }
-
-
-
-
-/* -------------------------------- Media Queries */
-
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 90%;
-  }
-}
-
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-
-    .header-container {
-        padding-top: 50px;
-    }
-} 
-
-/* pad the top a bit when navbar is collapsed on mobile */
-@media (max-width: 991px) {
-    .header-container {
-        padding-top: 116px;
-    }
-
-    body {
-        height: calc(100vh - 116px);
-    }
-
-    .increment-qty, .decrement-qty {
-        padding: .25rem .5rem !important;
-    }
-
-}    
 
 
 /* used to format back ground colour containers in banner.html for displaying text  */
@@ -249,3 +207,50 @@ body {
     margin: 0; /* Remove default margins to ensure they stay on the same line */
     padding: 0;
 }
+
+
+
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 50px;
+    }
+} 
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
+
+    .increment-qty, .decrement-qty {
+        padding: .25rem .5rem !important;
+    }
+    .text-bag-para,
+    .text-chk-para   {
+        font-size: 0.9rem;
+    }
+}    
+
