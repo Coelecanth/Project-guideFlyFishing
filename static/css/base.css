@@ -146,6 +146,23 @@ body {
     }
 } 
 
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
+
+    .increment-qty, .decrement-qty {
+        padding: .25rem .5rem !important;
+    }
+
+}    
+
+
 /* used to format back ground colour containers in banner.html for displaying text  */
 .banner-panel {
     top: 20%;
