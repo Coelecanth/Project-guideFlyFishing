@@ -17,8 +17,9 @@
     <div class="row">
         <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
             <div class="image-container my-5">
-                {{ det_trips_view.image.url }}
+               
                 {% if det_trips_view.image %}
+                {{ det_trips_view.image.url }}
                 <a href="{{ det_trips_view.image.url }}" target="_blank">
                     <img class="card-img-top img-fluid" src="{{ det_trips_view.image.url }}"
                         alt="{{ det_trips_view.name }}">
