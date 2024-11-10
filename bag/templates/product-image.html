@@ -1,0 +1,6 @@
+{% load static %}
+{% if item.product.image %}
+    <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+{% else %}
+    <img class="card-img-top img-fluid" src="{% static 'img/noimage.jpg' %}">
+{% endif %}

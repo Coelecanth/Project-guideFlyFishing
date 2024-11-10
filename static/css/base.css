@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
-
 html {
     height: 100%;
 }
@@ -37,6 +36,7 @@ body {
     border-color: #0094c6;
     border-width: 3px;
 }
+/* button formatting for checkout black/dark over white  */
 .shop-chk-button {
     background: white;
     color: black;
@@ -97,6 +97,12 @@ body {
 .text-black {
     color: #000 !important;
 }
+
+.text-blue-ncs {
+    color: #0094c6;
+}
+
+
 
 .border-black {
     border: 1px solid black !important;

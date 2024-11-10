@@ -11,12 +11,54 @@
             <hr>
         </div>
     </div>
-
+<!-- mobile page display set a s grid - starts here  -->
     <div class="row">
         <div class="col">
             {% if bag_items %}
+            <div class="d-block d-md-none">
+                <div class="row">
+                    <div class="col">
+                        {% include "bag-total.html" %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {% include "checkout-buttons.html" %}
+                        <p class="text-muted mb-5">A summary of your bag contents is below</p>
+                    </div>
+                </div>
+                {% for item in bag_items %}
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mb-2">
+                            {% include "product-image.html" %}
+                        </div>
+                        <div class="col-12 col-sm-6 mb-2">
+                            {% include "product-info.html" %}
+                        </div>
+                        <div class="col-12 col-sm-6 order-sm-last">
+                            <p class="my-0">Price Each: £{{ item.product.cost }}</p>
+                            <!-- quantity for items  -->
+                            <p>Quantity: {{ item.quantity }}  </p>
+                            <!-- calculated cost for items  -->
+                            <p class="my-0">Total price: £{{ item.product.cost | calc_subtotal:item.quantity }}</p>
+                        </div>
+                        <!-- forms qauntity fileds to a djust quantities  -->
+                        <div class="col-12 col-sm-6">
+                            {% include "quantity-form.html" %}
+                        </div>
+                    </div>
+                    <div class="row"><div class="col"><hr></div></div>
+                {% endfor %}
+                <div class="text-center">
+                    <button class="shop-now-button-small btn btn-outline-black rounded-1 text-uppercase" onclick="refreshPage()"> <i class="fas fa-chevron-up"></i>Return to Top</button>
+                </div>
+                    
+                                    
+            </div>
+<!-- mobile page display set a s grid - ends here  -->
 
-            <div class="table-responsive rounded-1">
+<!-- Page diaplay for all other size of pages  -->
+            <div class="table-responsive rounded-1 d-none d-md-block">
                 <table class="table table-sm table-borderless ">
                     <thead class="text-black text-center">
                         <tr>
@@ -160,6 +202,12 @@
                     location.reload();
                 });
         })
+
+        function refreshPage() {
+        window.scrollTo(0, 0); // Scrolls to the top of the page
+        location.reload(); // Refreshes the page
+        }
+       
     </script>
 
     {% endblock %}

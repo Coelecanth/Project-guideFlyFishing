@@ -1,0 +1,45 @@
+
+
+<form class="d-flex justify-content-center form update-form" method="POST"
+    action="{% url 'adjust_bag' item.item_id %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <!-- decrement button -->
+                <button
+                    class="decrement-qty btn btn-light border-secondary btn-sm rounded-0"
+                    data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                    <span>
+                        <i class="fas fa-minus fa-sm"></i>
+                    </span>
+                </button>
+            </div>
+            <!-- input field for quantity  -->
+            <input class="form-control form-control-sm qty_input" type="number"
+                name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+            <div class="input-group-append">
+                <!-- increment button -->
+                <button
+                    class="increment-qty btn btn-light border-secondary btn-sm rounded-0"
+                    data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                    <span>
+                        <i class="fas fa-plus fa-sm"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</form>
+<!-- Update and remove links  -->
+<!-- Do not put links inside the form as this break the update funcxtion it should remain outside the form tag -->
+<div class="text-center">
+    <a class="update-link text-white px-3">
+        <small>Update</small>
+    </a>
+    <a class="remove-item text-white px-3" id="remove_{{ item.item_id }}">
+        <small>Remove</small>
+    </a>
+</div>
