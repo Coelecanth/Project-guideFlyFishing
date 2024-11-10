@@ -51,17 +51,17 @@
                         <!-- calculated cost for items  -->
                         <p class="my-0">Total price: £{{ item.product.cost | calc_subtotal:item.quantity }}</p>
                     </div>
-                    <!-- forms qauntity fields to adjust quantities  -->
+                    <!-- forms qauntity fields to adjust quantities small page -->
                     <div class="col-12 col-sm-6">
 
                         <form class="justify-content-center form update-form" method="POST"
                             action="{% url 'adjust_bag' item.item_id %}">
-                            <p>{% url 'adjust_bag' item.item_id %}"</p>
+                            
                             {% csrf_token %}
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <!-- decrement button -->
+                                        <!-- decrement button small page -->
                                         <button class="decrement-qty btn btn-light border-secondary btn-sm rounded-0"
                                             data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                             <span>
@@ -69,12 +69,12 @@
                                             </span>
                                         </button>
                                     </div>
-                                    <!-- input field for quantity  -->
-                                    <input class="form-control form-control-sm qty_input" type="number" name="quantity"
-                                        value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
-                                        id="id_qty_{{ item.item_id }}">
+                                        <!-- input field for quantity small page -->
+                                        <input class="form-control form-control-sm field-size qty_input" type="number" name="quantity"
+                                            value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
+                                            id="id_qty_{{ item.item_id }}">
                                     <div class="input-group-append">
-                                        <!-- increment button -->
+                                        <!-- increment button small page -->
                                         <button class="increment-qty btn btn-light border-secondary btn-sm rounded-0"
                                             data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                             <span>
@@ -150,7 +150,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <!-- decrement button -->
+                                        <!-- decrement button -->
                                             <button
                                                 class="decrement-qty btn btn-sm btn-black border-secondary rounded-0"
                                                 data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
@@ -164,7 +164,7 @@
                                             name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                         <div class="input-group-append">
-                                            <!-- increment button -->
+                                        <!-- increment button -->
                                             <button
                                                 class="increment-qty btn btn-sm btn-black border-secondary rounded-0"
                                                 data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">

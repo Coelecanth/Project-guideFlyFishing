@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, reverse, HttpResponse, get_object
 from django.contrib import messages
 from guidetrip.models import trips
 
-# Create your views here.
 def view_bag(request):
     """ A view to renders the bag contents  """
 
@@ -32,8 +31,6 @@ def adjust_bag(request, item_id):
     product = get_object_or_404(trips, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
-
-    print(f"Quantity for item {item_id}: {quantity}") 
 
     if quantity > 0:
         bag[item_id] = quantity
