@@ -33,6 +33,8 @@ def adjust_bag(request, item_id):
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
 
+    print(f"Quantity for item {item_id}: {quantity}") 
+
     if quantity > 0:
         bag[item_id] = quantity
         messages.success(request, f'Updated {product.venue} quantity to {bag[item_id]}')
