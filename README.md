@@ -4,46 +4,18 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/Coelecanth/Project-guideFlyFishing)](https://github.com/Coelecanth/Project-guideFlyFishing/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/Coelecanth/Project-guideFlyFishing)](https://github.com/Coelecanth/Project-guideFlyFishing)
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
-
-So for my commercial Website project Guide Fly Fishing, I took the idea that I had used in my previous projects and developed this into further development of the scenario of a fly fishing business. In the the previous iterations I had a site advertising a fly fishing destination in Alaska and a flyfishing blog. I took this idea and thought about how this would be further developed, I came up with the idea of having a commercial site where could visit and purchase guided fly fishing days, as an end user. The site is primarily targetted at UK based customers To allow them to purchase guided fly fishing (it does however cater for outisde the Uk guided fly fishing as well). 
+So for my commercial Website project (called "Guide Fly Fishing"), I took the idea that I had used in my previous projects and developed this into further extension of the idea and business of a fly fishing business which would complement my previous. In the the previous iterations I had a site advertising a fly fishing destination in Alaska and a flyfishing blog. I took this idea and thought about how this would be further developed, I came up with the idea of having a commercial site where you could visit and purchase guided fly fishing days, as an end user. The site is primarily targetted at UK based customers, to allow them to purchase guided fly fishing (it does however cater for people and business outisde the Uk guided fly fishing as well). 
 
 ### Who is this aimed at?
-The site is primarily aimed at fly fisher looking for expert knowledge at a venue or trip they would like to fish at. There are sites out there currently offering something similar, but they are not able to aggreagte a wholw hoat of trips from different vendors into a singel place with e conveinice to purchase difrectly.
+The site is primarily aimed at fly fisher looking for expert knowledge at a venue or trip they would like make and then fish at. There are sites out there currently offering something similar, but they are not able to aggreagte a wholw host of trips from different vendors/individuals into a singel place with conveiniece to purchase difrectly.
 The thypical vendor who would use this is intended to be small business to single inviduals offering there services to fly fishing audience.
 
 ### How would it work 
 The site works on the principal that guides or even lodges could potentially offer there service and then customer can purchase directly guided trips from the site. 
 So the guide or venue, can crete a "trip" that advertises a particualr place/venue, spacess avaiable,  with dates ,and number of days duration and cost.
-The purchae mechansim works very much like the big commercial websites (amazon, ebay as an example) where the money is paid to the host organaisation and then supplier of the service is paid. The payment of service supplier is beyond the scope of this.      
+The purchase mechansim works very much like the big commercial websites (amazon, ebay as an example) where the money is paid to the host organaisation and then supplier of the service is paid. The payment of service supplier is beyond the scope of this.      
 
-
-Consider adding a mockup image using the "Am I Responsive" website.
-Here's your deployed site as an example:
-https://ui.dev/amiresponsive?url=https://p4guideflyfishing-879a54f37efc.herokuapp.com
-
-⚠️ NOTE: Issues generating site mockups (Django projects)
-This is likely due to security policies with your deployed site.
-If you open up your dev tools, there may be an error referencing `X-Frame-Options`.
-For Chrome users, head over to http://bit.ly/3iRPn4u and install the extension within your browser.
-Once installed, navigate back to the site above.
-You should find your site rendering in the various devices.
-Alternatively, open your project in Gitpod and run the server.
-Once the site is running, click the `Ports` tab at the bottom of your Gitpod workspace (Ports: 2205, 05432, 8000... ).
-Click the padlock on port `8000`.
-This will make your local page public temporarily.
-Now copy the URL of your live-preview page into the responsive tool above.
-You should find your site rendering in the various devices.
-
-Screenshots for the README and testing should not be inside of `assets/` or `static/` image folders.
-(reminder: `assets/` and `static/` are for files used on the live site, not documentation)
-Consider adding a new folder called `documentation`, and add the amiresponsive screenshot inside of that folder.
-To add the image into your README, use this format:
-(assuming you have a new folder called `documentation` with an image called "mockup.png")
-
-![screenshot](documentation/mockup.png)
-
-
+![screenshot](documentation/img/gen/screen-mockup.jpg)
 
 GitHub now supports CALLOUTS in Markdown files.
 There are some callouts already embedded in this application for you.
@@ -67,21 +39,20 @@ You'll have to commit/push the changes to GitHub to see it in action.
 > [!CAUTION]  
 > RED: Negative potential consequences of an action.
 
-Source: https://github.com/orgs/community/discussions/16925
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-![screenshot](documentation/mockup.png)
-
-source: [amiresponsive](https://ui.dev/amiresponsive?url=https://p4guideflyfishing-879a54f37efc.herokuapp.com)
-
 ## UX
+The overall design of the site I wanted to depart from previous ideas of reflecting the natural world and so went for a more water based colour theme, but still keeping the site as user freindly as possobel by standardising on elelemnts such as making the buttons in the site consitent and prominet across pages.  
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
+### Naviagtion bar 
+I based the design of my site on some of the elements of the teaching material in the course, I particularly liked the navigation bar that was used, as it used Bootstrap which I had found to be a highly configurable and stable solution to the give CSS and styling I wanted. I has used materialize in previosu projects and found this to be troubelsome in some areas.  
 
-In this section, you will briefly explain your design processes.
+### Creating user Focus 
+I chose to represent content using a container (banner) which was placed over the scenic river image, this gave me many benefits  
+ - It allowed me to create the strong sense of theme i wanted for the site, with colours and image visibility.
+ - The contianer could easily be adjusted to accomdate placement based on changing size of the navabr and its height, and screen size
+ - The banner conmcept fitted readily into Django idea of includes and could be made to be part of framwework to seperate its formatting and therefor styling easily.  
+ - The width and height of the content could be easily adjusted with this banner approach to help with smaller screens, in making ti wider or longer or both.  
+ - The banner provided a high contrast background for the content of the site, so the user of the site attention was focused on to make the site more pleasing and easy to use. 
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ### Colour Scheme
 
@@ -99,7 +70,7 @@ I used [coolors.co](https://coolors.co/e84610-009fe3-4a4a4f-445261-d63649-e6ecf0
 
 ### Typography
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
+
 
 Explain any fonts and icon libraries used, like Google Fonts and/or Font Awesome.
 
@@ -113,7 +84,9 @@ Example:
 
 - [Lato](https://fonts.google.com/specimen/Lato) was used for all other secondary text.
 
-- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
+- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the  icons for chevrons or padlocks.
+
+
 
 ## User Stories
 
@@ -330,83 +303,39 @@ Consider adding any helpful links or notes to help remind you in the future, if 
 - [![WhiteNoise](https://img.shields.io/badge/WhiteNoise-grey?logo=python&logoColor=FFFFFF)](https://whitenoise.readthedocs.io) used for serving static files with Heroku.
 - [![Stripe](https://img.shields.io/badge/Stripe-grey?logo=stripe&logoColor=008CDD)](https://stripe.com) used for online secure payments of ecommerce products/services.
 - [![Gmail API](https://img.shields.io/badge/Gmail_API-grey?logo=gmail&logoColor=EA4335)](https://mail.google.com) used for sending emails in my application.
-- [![MailChimp](https://img.shields.io/badge/MailChimp-grey?logo=mailchimp&logoColor=FFE01B)](https://mailchimp.com) used for sending newsletter subscriptions.
+
 - [![AWS S3](https://img.shields.io/badge/AWS_S3-grey?logo=amazons3&logoColor=569A31)](https://aws.amazon.com/s3) used for online static file storage.
 - [![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) used for creating wireframes.
 - [![Canva](https://img.shields.io/badge/Canva-grey?logo=canva&logoColor=00C4CC)](https://www.canva.com/p/canvawireframes) used for creating wireframes.
 - [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
 - [![Microsoft Visio](documentation/img/gen/visio.png)](https://www.microsoft.com/en-gb/microsoft-365/visio/flowchart-software) Microsoft Visio for creating wireframes and any other diagrams.
+- Pygraphviz - the Django App extension to generte ERDc diagram for the project.
+- Squoosh Squooosh was used to perform the following functions convert the images from jpg to Avif, Also to resize (reduce pixel count) the images to a more manageable size to improve download speed.
+- Google Fonts Google fonts was used to source the fonts that were selected from Fontjoy.
+[![ChatGPT] https://temp-mail.org/en/
+- FontJoy Font joy was used in the design process to create a palette of fonts, to be empathic with the site topic, and provide contrast between various type styling.
+	- Quote from https://fontjoy.com/
+	The goal of font pairing is to select fonts that share an overarching theme yet have a pleasing contrast. Which fonts work together is largely a matter of intuition, but we approach this problem with a neural net.
 
 
 ## Database Design
 
 ### Database models  
-                  
-| User Db Model  | Guide DB Model  |  Categories Model | Trip Model |
-------------- | ------------- | ------------- | ------------- | 
-|![User DB Model](documentation/img/erd/customer.jpg) | ![Guide DB Model](documentation/img/erd/guide.jpg) | ![Categroy Db Model ](documentation/img/erd/category.jpg)|  ![trip DB Category](documentation/img/erd/trip.jpg)| 
 
-Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models.
-Understanding the relationships between different tables can save time later in the project.
+The following diagram depicts the main databases are envisioned a the design stage of project for Guide fly fishing site 
+This further developed in the ERD diagram shown below for the project as genereted by `pygraphviz`                    
+![User DB Model](documentation/img/erd/erd-1.png) 
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-Using your defined models (one example below), create an ERD with the relationships identified.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-```python
-
-class trips(models.Model):
-    class Meta:
-        verbose_name_plural = 'Trips'
-
-    rec_owner = models.CharField(max_length=100, null=True, blank=True)
-    categories = models.ForeignKey('categories', null=True, blank=True, on_delete=models.SET_NULL)
-    venue = models.CharField(max_length=254)
-    description = models.TextField()
-    day = models.DecimalField(max_digits=2, decimal_places=0, null=True, blank=True)
-    spaces = models.DecimalField(max_digits=2, decimal_places=0, null=True, blank=True)
-    Cost = models.DecimalField(max_digits=6, decimal_places=2)
-    dates = models.DateField(verbose_name="Date of Event", blank=True) 
-    location = models.CharField(max_length=254)
-    locale = models.CharField(max_length=254)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
-
-    
-    def get_rec_owner(self):
-        return self.rec_owner
-
-    def __str__(self):
-        return self.venue
-
-
-```
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-A couple recommendations for building free ERDs:
-- [Draw.io](https://draw.io)
-- [Lucidchart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning)
-
-A more comprehensive ERD can be auto-generated once you're
-at the end of your development stages, just before you submit.
-Follow the steps below to obtain a thorough ERD that you can include.
-Feel free to leave the steps in the README for future use to yourself.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
+The below diagram is the ERD for the complelted project
 I have used `pygraphviz` and `django-extensions` to auto-generate an ERD.
 
 The steps taken were as follows:
 - In the terminal: `sudo apt update`
-- then: `sudo apt-get install python3-dev graphviz libgraphviz-dev pkg-config`
-- then type `Y` to proceed
-- then: `pip3 install django-extensions pygraphviz`
-- in my `settings.py` file, I added the following to my `INSTALLED_APPS`:
+	- then: `sudo apt-get install python3-dev graphviz libgraphviz-dev pkg-config`
+	- then type `Y` to proceed
+	- then: `pip3 install django-extensions pygraphviz`
+	- in my `settings.py` file, I added the following to my `INSTALLED_APPS`:
 ```python
 INSTALLED_APPS = [
     ...
@@ -414,31 +343,19 @@ INSTALLED_APPS = [
     ...
 ]
 ```
-- back in the terminal: `python3 manage.py graph_models -a -o erd.png`
-- dragged the new `erd.png` file into my `documentation/` folder
-- removed `'django_extensions',` from my `INSTALLED_APPS`
+- Back in the terminal: `python3 manage.py graph_models -a -o erd.png`
+- Drag the new `erd.png` file into my `documentation/` folder
+- Remove the `'django_extensions',` from my `INSTALLED_APPS` in settings.py
 - finally, in the terminal: `pip3 uninstall django-extensions pygraphviz -y`
 
-![erd](documentation/erd.png)
+![erd](documentation/img/erd/erd.png)
 source: [medium.com](https://medium.com/@yathomasi1/1-using-django-extensions-to-visualize-the-database-diagram-in-django-application-c5fa7e710e16)
 
 
 ## Testing
-
-> [!NOTE]  
 > For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
 ## Deployment
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-**IMPORTANT:**
-
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 The live deployed application can be found deployed on [Heroku](https://p4guideflyfishing-879a54f37efc.herokuapp.com).
 
@@ -772,11 +689,6 @@ You can fork this repository by using the following steps:
 
 ### Local VS Deployment
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to discuss any differences between the local version you've developed, and the live deployment site on Heroku.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ## Credits
 
@@ -789,76 +701,38 @@ however, it is important to be very specific about these sources to avoid plagia
 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ### Content
+- Tim Nelson - [Mardown Builder](https://tim.2bn.dev/markdown-builder/)
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to provide attribution links to any borrowed code snippets, elements, or resources.
-A few examples have been provided below to give you some ideas.
-
-Ideally, you should provide an actual link to every resource used, not just a generic link to the main site!
-
-⚠️⚠️ EXAMPLE LINKS - REPLACE WITH YOUR OWN ⚠️⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-| Source | Location | Notes |
-| --- | --- | --- |
 | [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
 | [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
 | [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
 | [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
-| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
-| [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
-| [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
-| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores |
-| [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) | PP3 terminal | tutorial for adding color to the Python terminal |
-| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
 | [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
 
 ### Media
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+All of the images in this site that were used in the adverts were provided by myself and I own all copyright of these images 
 
-Use this space to provide attribution links to any images, videos, or audio files borrowed from online.
-A few examples have been provided below to give you some ideas.
+The only exception to this is the background image used in the site which was sounrced from 
 
-If you're the owner (or a close acquaintance) of all media files, then make sure to specify this.
-Let the assessors know that you have explicit rights to use the media files within your project.
+### Media
 
-Ideally, you should provide an actual link to every media file used, not just a generic link to the main site!
-The list below is by no means exhaustive. Within the Code Institute Slack community, you can find more "free media" links
-by sending yourself the following command: `!freemedia`.
+ - [Icons for edit/add pages from font awesome](https://fontawesome.com/search?q=fish&o=r&m=free)
+ - [Fish Favicons from font awesome](https://fontawesome.com/icons/fish-fins?f=classic&s=solid)
+ - [Pexels image river image - free](https://www.pexels.com/photo/body-of-water-and-green-field-under-blue-sky-photo-1179225/)
 
-⚠️⚠️ EXAMPLE LINKS - REPLACE WITH YOUR OWN ⚠️⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
 | [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
+| [Squoosh](hhttps://squoosh.app/) | entire site | image | resizing and image format chnaging |
 | [Lorem Picsum](https://picsum.photos) | home page | image | hero image background |
-| [Unsplash](https://unsplash.com) | product page | image | sample of fake products |
-| [Pixabay](https://pixabay.com) | gallery page | image | group of photos for gallery |
-| [Wallhere](https://wallhere.com) | footer | image | background wallpaper image in the footer |
-| [This Person Does Not Exist](https://thispersondoesnotexist.com) | testimonials | image | headshots of fake testimonial images |
-| [Audio Micro](https://www.audiomicro.com/free-sound-effects) | game page | audio | free audio files to generate the game sounds |
-| [Videvo](https://www.videvo.net/) | home page | video | background video on the hero section |
-| [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
 
 ### Acknowledgements
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to provide attribution to any supports that helped, encouraged, or supported you throughout the development stages of this project.
-A few examples have been provided below to give you some ideas.
-
-⚠️⚠️ EXAMPLES ONLY - REPLACE WITH YOUR OWN ⚠️⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 - I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
-- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
-- I would like to thank my partner (John/Jane), for believing in me, and allowing me to make this transition into software development.
-- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
+in particualr I would like to thank Sarah from the tutor team,  for her invaluable contribution to my understandingand better diagnosis of code errors and this project. 
+- I would like to thank my tutor Ben Smith at Bristol college for his help and advice. 
+- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for showing "I'm not the only one", and persisting. 
+- Thanks to my family for putting up with "Mr. Grumpy" and the many hours I spent working on this and other projects 
