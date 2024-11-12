@@ -6,6 +6,7 @@ from django.db.models.functions import Lower
 
 from .models import trips, categories
 from .forms import ProductForm #defined in forms.py not trips
+from guideflyfishing.decorators import validate_guide
 
 # Create your views here.
 def all_trips(request):
@@ -76,6 +77,7 @@ def det_trips_view(request, trips_id):
     return render(request, 'detail_trips.html', context ) 
 
 @login_required
+# @validate_guide
 def add_product(request):
     """ Add a product to the store """
 
@@ -106,6 +108,7 @@ def add_product(request):
     return render(request, template, context)
 
 @login_required
+# @validate_guide
 def edit_product(request, product_id):
     """ Edit a product in the store """
 
@@ -137,6 +140,7 @@ def edit_product(request, product_id):
     return render(request, template, context)
 
 @login_required
+# @validate_guide
 def delete_product(request, product_id):
     """ Delete a product from the store """
 

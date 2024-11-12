@@ -143,12 +143,12 @@ WSGI_APPLICATION = 'guideflyfishing.wsgi.application'
 #     }
 
 if 'DATABASE_URL' in os.environ:
-    print("Working on Live POStgres Db")
+    print("Working on Live PostgresSQL Db")
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
-    print("Wokring on local SQLite")
+    print("Working on local SQLite")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',

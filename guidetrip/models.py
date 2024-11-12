@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class categories(models.Model):
     class Meta:
@@ -14,8 +15,8 @@ class categories(models.Model):
         return self.friendly_name
 
 class trips(models.Model):
-    class Meta:
-        verbose_name_plural = 'Trips'
+    class Meta:3
+    verbose_name_plural = 'Trips'
 
     rec_owner = models.CharField(max_length=100, null=True, blank=True)
     categories = models.ForeignKey('categories', null=True, blank=True, on_delete=models.SET_NULL)

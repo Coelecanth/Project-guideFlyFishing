@@ -40,18 +40,22 @@ You'll have to commit/push the changes to GitHub to see it in action.
 > RED: Negative potential consequences of an action.
 
 ## UX
-The overall design of the site I wanted to depart from previous ideas of reflecting the natural world and so went for a more water based colour theme, but still keeping the site as user freindly as possobel by standardising on elelemnts such as making the buttons in the site consitent and prominet across pages.  
+I started creating the site to try and make a site that was pleasing to the user, but also easy to use without any need for instruction, and the site to be as informative as possible as users interacted with it, such as add items to the bag, etc.
+The overall design of the site I wanted to depart from previous ideas of reflecting the natural world and so went for a more water-based colour theme, but still keeping the site as user friendly as possible by standardising on elements such as making the buttons have good contrast where ever they are used. 
 
-### Naviagtion bar 
-I based the design of my site on some of the elements of the teaching material in the course, I particularly liked the navigation bar that was used, as it used Bootstrap which I had found to be a highly configurable and stable solution to the give CSS and styling I wanted. I has used materialize in previosu projects and found this to be troubelsome in some areas.  
+### Navigation bar
+I based the design of my site on some of the elements of the teaching material in the course, I particularly liked the navigation bar that was used, for several reasons 
+ - First it has good responsiveness across screens 
+ - Provides all the information for user navigation and interaction in one place  
+ - Used Bootstrap which I had found to be a highly configurable and stable solution to the give CSS and styling I wanted. I have used materialize in previous projects and found this to be troublesome in some areas.
 
-### Creating user Focus 
-I chose to represent content using a container (banner) which was placed over the scenic river image, this gave me many benefits  
+### Creating user Focus
+I chose to represent content using a container (banner) which was placed over the scenic river image, this gave me many benefits
  - It allowed me to create the strong sense of theme i wanted for the site, with colours and image visibility.
- - The contianer could easily be adjusted to accomdate placement based on changing size of the navabr and its height, and screen size
- - The banner conmcept fitted readily into Django idea of includes and could be made to be part of framwework to seperate its formatting and therefor styling easily.  
- - The width and height of the content could be easily adjusted with this banner approach to help with smaller screens, in making ti wider or longer or both.  
- - The banner provided a high contrast background for the content of the site, so the user of the site attention was focused on to make the site more pleasing and easy to use. 
+ - The container could easily be adjusted to accommodate placement based on changing size of the navbar and its height, and screen size
+ - The banner concept fitted readily into Django idea of includes and could be made to be part of framework to seperate its formatting and therefor styling easily.
+ - The width and height of the content could be easily adjusted with this banner approach to help with smaller screens, in making it wider or longer or both.
+ - The banner provided a high contrast background for the content of the site, so the user of the site attention was focused on to make the site more pleasing and easier to use.
 
 
 ### Colour Scheme
@@ -280,8 +284,8 @@ Consider adding any helpful links or notes to help remind you in the future, if 
 - [![GitHub](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) used for secure online code storage.
 
 - [![Gitpod](https://img.shields.io/badge/Gitpod-grey?logo=gitpod&logoColor=FFAE33)](https://gitpod.io) used as a cloud-based IDE for development.
-- I used VSCode to work offline when I was preparing README.md and TESTING.md
-- [![VSCode](https://img.shields.io/badge/VSCode-grey?logo=visualstudiocode&logoColor=007ACC)](https://code.visualstudio.com) used as my local IDE for development.
+
+- [![VSCode](https://img.shields.io/badge/VSCode-grey?logo=visualstudiocode&logoColor=007ACC)](https://code.visualstudio.com) used as my local IDE for development. using VSCode to work offline when I was preparing README.md and TESTING.md as a for instance. 
 
 - [![HTML](https://img.shields.io/badge/HTML-grey?logo=html5&logoColor=E34F26)](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [![CSS](https://img.shields.io/badge/CSS-grey?logo=css3&logoColor=1572B6)](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
@@ -293,9 +297,6 @@ Consider adding any helpful links or notes to help remind you in the future, if 
 - [![Heroku](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) used for hosting the deployed back-end site.
 
 - [![Bootstrap](https://img.shields.io/badge/Bootstrap-grey?logo=bootstrap&logoColor=7952B3)](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-
-
-
 - [![Jest](https://img.shields.io/badge/Jest-grey?logo=jest&logoColor=c21325)](https://jestjs.io) used for automated JavaScript testing.
 - [![Django](https://img.shields.io/badge/Django-grey?logo=django&logoColor=092E20)](https://www.djangoproject.com) used as the Python framework for the site.
 - [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-grey?logo=postgresql&logoColor=4169E1)](https://www.postgresql.org) used as the relational database management.
@@ -303,21 +304,23 @@ Consider adding any helpful links or notes to help remind you in the future, if 
 - [![WhiteNoise](https://img.shields.io/badge/WhiteNoise-grey?logo=python&logoColor=FFFFFF)](https://whitenoise.readthedocs.io) used for serving static files with Heroku.
 - [![Stripe](https://img.shields.io/badge/Stripe-grey?logo=stripe&logoColor=008CDD)](https://stripe.com) used for online secure payments of ecommerce products/services.
 - [![Gmail API](https://img.shields.io/badge/Gmail_API-grey?logo=gmail&logoColor=EA4335)](https://mail.google.com) used for sending emails in my application.
-
 - [![AWS S3](https://img.shields.io/badge/AWS_S3-grey?logo=amazons3&logoColor=569A31)](https://aws.amazon.com/s3) used for online static file storage.
 - [![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) used for creating wireframes.
 - [![Canva](https://img.shields.io/badge/Canva-grey?logo=canva&logoColor=00C4CC)](https://www.canva.com/p/canvawireframes) used for creating wireframes.
 - [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
-- [![Microsoft Visio](documentation/img/gen/visio.png)](https://www.microsoft.com/en-gb/microsoft-365/visio/flowchart-software) Microsoft Visio for creating wireframes and any other diagrams.
-- Pygraphviz - the Django App extension to generte ERDc diagram for the project.
-- Squoosh Squooosh was used to perform the following functions convert the images from jpg to Avif, Also to resize (reduce pixel count) the images to a more manageable size to improve download speed.
-- Google Fonts Google fonts was used to source the fonts that were selected from Fontjoy.
-[![ChatGPT] https://temp-mail.org/en/
-- FontJoy Font joy was used in the design process to create a palette of fonts, to be empathic with the site topic, and provide contrast between various type styling.
+- [![Microsoft Visio](https://img.shields.io/badge/Microsoft_Visio-blue)](https://www.microsoft.com/en-gb/microsoft-365/visio/flowchart-software) Microsoft Visio for creating wireframes and any other diagrams.
+- [![Pygraphviz](https://img.shields.io/badge/Pygraphviz-grey)](https://django-extensions.readthedocs.io/en/latest/graph_models.html)
+Django App extension to generte ERD diagram for cuurent the project.
+- [![Squoosh](https://img.shields.io/badge/Squoosh-grey)](https://squoosh.app/) Squooosh was used to convert the images from jpg to Avif, Also to resize (reduce pixel count) the images to a more manageable size to improve download speed.
+- [![GoogleFonts](https://img.shields.io/badge/GoogleFonts-grey?logo=googlefonts&logoColor=EA4335)](https://squoosh.app/) Google Fonts Google fonts was used to source the fonts that were selected from Fontjoy.
+ - [![FontJoy](https://img.shields.io/badge/FontJoy-grey)](https://fontjoy.com/)
+FontJoy Font joy was used in the design process to create a palette of fonts, to be empathic with the site topic, and provide contrast between various type styling.
 	- Quote from https://fontjoy.com/
 	The goal of font pairing is to select fonts that share an overarching theme yet have a pleasing contrast. Which fonts work together is largely a matter of intuition, but we approach this problem with a neural net.
 
+ - [![Temp-mail](https://img.shields.io/badge/Temp-mail-grey)](https://temp-mail.org/en/) Temp mail was used for testing of the registration and authentication process for users for the site 
+ - [![Temp-mail](https://img.shields.io/badge/coolors.co-grey) ](https://coolors.co/) Used as a colour palette selection tool 
 
 ## Database Design
 
@@ -692,14 +695,6 @@ You can fork this repository by using the following steps:
 
 ## Credits
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-In this section you need to reference where you got your content, media, and extra help from.
-It is common practice to use code from other repositories and tutorials,
-however, it is important to be very specific about these sources to avoid plagiarism.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 ### Content
 - Tim Nelson - [Mardown Builder](https://tim.2bn.dev/markdown-builder/)
 
@@ -712,27 +707,23 @@ however, it is important to be very specific about these sources to avoid plagia
 ### Media
 
 All of the images in this site that were used in the adverts were provided by myself and I own all copyright of these images 
+The only exception to this is the background image used in the site which was sourced from Pexels.com, is a commercial image and is accredited to Mathew Montone on Pexels  
 
-The only exception to this is the background image used in the site which was sounrced from 
 
 ### Media
 
- - [Icons for edit/add pages from font awesome](https://fontawesome.com/search?q=fish&o=r&m=free)
- - [Fish Favicons from font awesome](https://fontawesome.com/icons/fish-fins?f=classic&s=solid)
- - [Pexels image river image - free](https://www.pexels.com/photo/body-of-water-and-green-field-under-blue-sky-photo-1179225/)
-
-
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
-| [Squoosh](hhttps://squoosh.app/) | entire site | image | resizing and image format chnaging |
-| [Lorem Picsum](https://picsum.photos) | home page | image | hero image background |
+| [Font Awesome](https://www.pexels.com) | Icons in buttons etc across entire site | image | Alo favicon on all pages |
+| [Pexels.com](https://www.pexels.com/photo/body-of-water-and-green-field-under-blue-sky-photo-1179225/)  | background for entire site  | image | River image for the site |
+| [Mathew Montron](https://www.pexels.com/photo/body-of-water-and-green-field-under-blue-sky-photo-1179225/)  | background for entire  | image | Mathew Montron author of the above image |
+| [Lorem Picsum](https://picsum.photos) | trips pages | text |  Used for initial testing in trips for text content  |
 
 ### Acknowledgements
 
 - I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
-in particualr I would like to thank Sarah from the tutor team,  for her invaluable contribution to my understandingand better diagnosis of code errors and this project. 
+	In particualr I would like to thank Sarah from the tutor team,  for her invaluable contribution to my understandingand better diagnosis of code errors and this project. 
 - I would like to thank my tutor Ben Smith at Bristol college for his help and advice. 
 - I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for showing "I'm not the only one", and persisting. 
 - Thanks to my family for putting up with "Mr. Grumpy" and the many hours I spent working on this and other projects 
