@@ -6,6 +6,8 @@
 
 So for my commercial Website project (called "Guide Fly Fishing"), I took the idea that I had used in my previous projects and developed this into further extension of the idea and business of a fly fishing business which would complement my previous. In the the previous iterations I had a site advertising a fly fishing destination in Alaska and a flyfishing blog. I took this idea and thought about how this would be further developed, I came up with the idea of having a commercial site where you could visit and purchase guided fly fishing days, as an end user. The site is primarily targetted at UK based customers, to allow them to purchase guided fly fishing (it does however cater for people and business outisde the Uk guided fly fishing as well). 
 
+![screenshot](documentation/img/gen/screen-mockup.jpg)
+
 ### Who is this aimed at?
 The site is primarily aimed at fly fisher looking for expert knowledge at a venue or trip they would like make and then fish at. There are sites out there currently offering something similar, but they are not able to aggreagte a wholw host of trips from different vendors/individuals into a singel place with conveiniece to purchase difrectly.
 The thypical vendor who would use this is intended to be small business to single inviduals offering there services to fly fishing audience.
@@ -14,30 +16,6 @@ The thypical vendor who would use this is intended to be small business to singl
 The site works on the principal that guides or even lodges could potentially offer there service and then customer can purchase directly guided trips from the site. 
 So the guide or venue, can crete a "trip" that advertises a particualr place/venue, spacess avaiable,  with dates ,and number of days duration and cost.
 The purchase mechansim works very much like the big commercial websites (amazon, ebay as an example) where the money is paid to the host organaisation and then supplier of the service is paid. The payment of service supplier is beyond the scope of this.      
-
-![screenshot](documentation/img/gen/screen-mockup.jpg)
-
-GitHub now supports CALLOUTS in Markdown files.
-There are some callouts already embedded in this application for you.
-However, if you feel that you want to add more, there are certain ones you can use.
-
-NOTE: the preview for callouts isn't yet supported in Gitpod/Codeanywhere/VSCode/etc.
-You'll have to commit/push the changes to GitHub to see it in action.
-
-> [!NOTE]  
-> BLUE: Highlights information that users should take into account, even when skimming.
-
-> [!TIP]  
-> GREEN: Optional information to help a user be more successful.
-
-> [!IMPORTANT]  
-> PURPLE: Crucial information necessary for users to succeed.
-
-> [!WARNING]  
-> YELLOW: Critical content demanding immediate user attention due to potential risks.
-
-> [!CAUTION]  
-> RED: Negative potential consequences of an action.
 
 ## UX
 I started creating the site to try and make a site that was pleasing to the user, but also easy to use without any need for instruction, and the site to be as informative as possible as users interacted with it, such as add items to the bag, etc.
@@ -50,17 +28,25 @@ I based the design of my site on some of the elements of the teaching material i
  - Used Bootstrap which I had found to be a highly configurable and stable solution to the give CSS and styling I wanted. I have used materialize in previous projects and found this to be troublesome in some areas.
 
 ### Creating user Focus
-I chose to represent content using a container (banner) which was placed over the scenic river image, this gave me many benefits
+I chose to represent content using a container (banner) which was placed over the scenic river image, this visaul approach is highlighted in the image below showing how the content can be contained in this and so drawing the users focus to this.  
+
+| Description | Image | 
+| --- | --- | 
+| Image protraying the visual approach used with the blue container overlaid on the image so focusing the users attention |![screenshot](documentation/img/gen/ind-contianer.jpg)|  
+|  |  |
+
+This provided many benefits other then just focus element some of these are listed below:
  - It allowed me to create the strong sense of theme i wanted for the site, with colours and image visibility.
- - The container could easily be adjusted to accommodate placement based on changing size of the navbar and its height, and screen size
+ - The container could easily be adjusted to accommodate placement based on changing size of the navbar and its height, and screen size.
  - The banner concept fitted readily into Django idea of includes and could be made to be part of framework to seperate its formatting and therefor styling easily.
  - The width and height of the content could be easily adjusted with this banner approach to help with smaller screens, in making it wider or longer or both.
- - The banner provided a high contrast background for the content of the site, so the user of the site attention was focused on to make the site more pleasing and easier to use.
+ - The banner provided a high contrast background for the content of the site, stopping any problesm to overlay text on the image and having to make this visible on ana individual basis. 
+ - The construcion of the banner allows it to resize with the content being displayed. 
 
 
 ### Colour Scheme
 
-So i chose quite a dark colour scheme so i could create a good contrast on the pages between text and background  
+So I chose quite a dark colour scheme 9reflecting water, one of the key themes for a fishing site, so I could create a good contrast on the pages between text and background.  
 
 - `#000000` used for primary text on alternate backgrounds 
 - `#FFFFFF` used alternate backgrounds 
@@ -74,20 +60,12 @@ I used [coolors.co](https://coolors.co/e84610-009fe3-4a4a4f-445261-d63649-e6ecf0
 
 ### Typography
 
+I used the fontjoy website to create a palete of fonts for selection but after experimenting with these and font effects. 
+I decided to use just one fornt and created differentation by using text effect like all captials or strong which i found gave me the variety and imapct i needed just using a single font 
+In the end I used the just the following font. 
 
-
-Explain any fonts and icon libraries used, like Google Fonts and/or Font Awesome.
-
-Consider adding a link to each font used, and the Font Awesome site if used (or similar icon library).
-
-Example:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-- [Montserrat](https://fonts.google.com/specimen/Montserrat) was used for the primary headers and titles.
-
-- [Lato](https://fonts.google.com/specimen/Lato) was used for all other secondary text.
-
+- [Titillium Web](https://fonts.google.com/specimen/Titillium+Web) was used throughout site
+with variations using,  all capitals, bold effect, heavier font.
 - [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the  icons for chevrons or padlocks.
 
 
@@ -232,52 +210,57 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
 
 ### Existing Features
 
-- **YOUR-TITLE-FOR-FEATURE-#1**
+- **Sorting and filtering of avaiable trips**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    The site provides a functionality from the navbar menu to refine the trips shown by filtering them by category, or sorting them highest to lowest 
+	for both rating and price.
 
-![screenshot](documentation/features/feature01.png)
+| Description | Image | 
+| --- | --- | 
+| The following image shows the find categories function of the site and categries you can seach by |![screenshot](documentation/img/gen/find-by-cats.jpg)| 
+| The following image shows the sort by capability to either sort by rating or price |![screenshot](documentation/img/gen/sort-by.jpg)|
 
-- **YOUR-TITLE-FOR-FEATURE-#2**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+- **Full trip Search**
 
-![screenshot](documentation/features/feature02.png)
+    The site provides a functionality from the navbar menu to search all trips recorded and searches the description and venue fields for words in the search criteria.  
 
-- **YOUR-TITLE-FOR-FEATURE-#3**
+| Description | Image | 
+| --- | --- | 
+| The following image shows the find categories function of the site and categries you can seach by |![screenshot](documentation/img/gen/search-gray.jpg)| 	
+
+
+
+- **Site Contianer**
 
     - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
 
 ![screenshot](documentation/features/feature03.png)
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
+- **User profiles**
 
-Repeat as necessary for as many features as your site contains.
+    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
 
-Hint: the more, the merrier!
+![screenshot](documentation/features/feature03.png)
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+- **Guide user status**
+	 - This feature was provided to vendors (guides) the ability to to perfrom CRUD functions without the need to be a superuser, so hence could not logon to the admin portal but could perfrom the CRUD functions through the pages on there own trips they had created. 
+	The feature was envisaged to work in the following where you would have to register for the site and then be placed in the Django group called guide, then on access to features such as product management, you would be checked for membership of this group using a decorator type function and template logic. Then access to Edit and Delete records would be granted using a similar mechanism (eg logged as au ser, and membership of the guide group), and filtering on the user_id for individual records is recorded in trip record on creation.     
 
 ### Future Features
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
+- **Add File widget for more appealling Use** 
+    - I could not get the Django Custom Clearable File Input, to work which when working with tutor support was beleived to be an issue with versions on the project, ultimately this widget is rathwr clunky nad has also intoduced other issues see testing, and it would to revise this and get it working with something moire befitting the site.  
+- **User management for Guides** 
+    - One of the features which was not completed fully was the ability to almost have a seconfd level of super user in the site where guides would be able to perfrom CRUD functions without the need to be a superuser, so hence could not logon to the admin portal but could perfrom the CRUD functions through the pages on there own trips they had created. This feature was mostly completed but and is in a partially comapleted state in the project. The remaing pieces to do are:
+	- blah 
+	The feature was envisaged to work in the following where you would have to register for the site and then be placed in the Django group called guide, then on access to features such as product management, you would be checked for membership of this group using a decorator type function and template logic. Then access to Edit and Delete records would be granted using a similar mechanism (eg logged as au ser, and membership of the guide group), and filtering on the user_id for individual records is recorded in trip record on creation.     
 
-Do you have additional ideas that you'd like to include on your project in the future?
-Fantastic! List them here!
-It's always great to have plans for future improvements!
-Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#1
-    - Any additional notes about this feature.
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#2
-    - Any additional notes about this feature.
 - YOUR-TITLE-FOR-FUTURE-FEATURE-#3
     - Any additional notes about this feature.
 
 ## Tools & Technologies Used
-
 
 - [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
 - [![Git](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
