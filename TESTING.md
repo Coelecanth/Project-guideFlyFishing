@@ -185,25 +185,6 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Defensive Programming
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Defensive programming (defensive design) is extremely important!
-
-When building projects that accept user inputs or forms, you should always test the level of security for each.
-Examples of this could include (not limited to):
-
-Forms:
-- Users cannot submit an empty form
-- Users must enter valid email addresses
-
-PP3 (Python-only):
-- Users must enter a valid letter/word/string when prompted
-- Users must choose from a specific list only
-
-Use the table below as a basic start, and expand on it using the logic above.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 Defensive programming was manually tested with the below user acceptance testing:
 
 | Page | Expectation | Test | Result | Fix | Screenshot |
@@ -610,42 +591,23 @@ This was fixed with the following changes showing the before an after in the cod
 
 ```
 
-
-
-
-
-    ![screenshot](documentation/bugs/bug02.png)
-
-    - To fix this, I _____________________.
-
-- Python `'ModuleNotFoundError'` when trying to import module from imported package
-
-    ![screenshot](documentation/bugs/bug03.png)
-
-    - To fix this, I _____________________.
-
-- Django `TemplateDoesNotExist` at /appname/path appname/template_name.html
-
-    ![screenshot](documentation/bugs/bug04.png)
-
-    - To fix this, I _____________________.
-
-- Python `E501 line too long` (93 > 79 characters)
-
-    ![screenshot](documentation/bugs/bug04.png)
-
-    - To fix this, I _____________________.
-
-
 # Unfixed Bugs
 
 ## Django Custom Clearabel File Input Widget
 
-I implemented the Django Custom Clearable File Input widget as was shown in the walkthroughs and was not able to get this to display in
-the pages for edit or add. Having reviewed the code for walkthrough it looks like there is some sort of compatability issue between crispy 
-forms and custom widget. The later code splits the rendering of these with an if statement and even after implemeting this
-I could not get the the widget to display in the page. 
-I then spoke to student support who after some researcch were coming to same conclusion; but we couldnt find a solution in the time i had avaiable to be tutored.
-For this reason, this bug was not fixed. As bug does not affect fucntionality but is really about presentation and styling of this function. so iwas not pssosoble tomfix this withing the time constraints of the project. 
+I implemented the Django Custom Clearable File Input widget as was shown in the walkthroughs and was not able to get this to display in the add/edit pages for trips
+Having reviewed the code for walkthrough it looks like there is some sort of compatibility issue between crispy forms and the custom widget. The later code in the walkthroughs splits the rendering of these with an if statement and even after implementing this, I could not get the widget to display in the page. 
+I then spoke to student support who after some research came to the same conclusion; but we couldn’t find a solution in the time i had available to be tutored.
+As the bug does not affect functionality but is really about presentation and styling of this function. For this reason, this bug was not fixed.
+The template and the widget.py have been left in the project as to demonstrate this was completed but not included.
 
-The template and also the widget.py have been left in the project as details thatt thios was completed but not included.
+
+## Django File Handler 
+When I started to design the role I had in mind to create a guide role. Which provided the ability to vendors (guides) to perform CRUD functions without the need to be a superuser, and hence could not logon to the admin portal but could perform the CRUD functions through the pages on their own trips they had created, I ran into an issue with the file handler widget for editing of trips when deployed to Heroku 
+If you were creating a trip as a guide, you could add an image using the change file button which allows you to add the file to the site. Eg the file I uploads to S3 and is correctly displayed.  
+
+![screenshot](documentation/img/errors/image_update.jpg)
+
+
+However, when a trip had been already added and I wanted to edit such as replace change the image file. The edit function would not allow you to add a URL pointing to the AWS S3 storage (say if you decided to change the image and it was present in S3). How ever you could upload another from local. Which was not good behaviour as the storage would increase over time and the hosts would have to clean this up.
+The project walkthrough from this only allows you to add files by directly uploading to S3 although the renewing (new image upload) of this would suffice but is not ideal, after spending a significant amount of time with tutor support without a fix in site. I decided to document this as a minor issue, but should be resolved. 

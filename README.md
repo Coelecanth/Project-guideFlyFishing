@@ -68,197 +68,185 @@ In the end I used the just the following font.
 with variations using,  all capitals, bold effect, heavier font.
 - [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the  icons for chevrons or padlocks.
 
-
-
 ## User Stories
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-In this section, list all of your user stories for the project.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ### New Site Users
 
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
+- As a new site user, I would like to be able register for an account, so that I can my save my order details and order history.
+- As a new site user, I would like to be able to view all trips, so that I can purchase.
+- As a new site user, I would like to be able to search for trips, so that I can review them and purchase.
+- As a new site user, I would like to be able to sort trips by category, rating, price, so that I can review them and purchase.
+- As a new site user, I would like to purchase through the site.
+- As a new site user, I would like to receive notification by email of registration and purchase.
 
 ### Returning Site Users
 
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
+- As a returning site user, I would like to be able register for an account, so that I can my save my order details and order history.
+- As a returning site user, I would like to be able to view all trips, so that I can purchase.
+- As a returning site user, I would like to be able to search for trips, so that I can review them and purchase.
+- As a returning site user, I would like to be able to sort trips by category, rating, price, so that I can review them and purchase.
+- As a returning site user, I would like to purchase securely through the site.
+- As a returning site user, I would like to receive notification by email of registration and purchase.
+
+### New Guide Users
+
+- As a new guide user, I would like to be able register for an account, so that I can my save my details.
+- As a new guide user, I would like to be able to view all trips.
+- As a new guide user, I would like to be able to search for trips.
+- As a new guide user, I would like to be able to sort trips by category, rating, price, so that I can review.
+
+### Returning Guide Users 
+
+- As a returning guide user, I would like to be able to view all trips.
+- As a returning guide user, I would like to be able to search for trips.
+- As a returning guide user, I would like to be able to sort trips by category, rating, price, so that I can review.
 
 ### Site Admin
 
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
+- As a site administrator, I should be able to administer using Django admin site.
+- As a site administrator, I should be able to review all trips and amend.
+- As a site administrator, I should be able to amend categories.
+- As a site administrator, I should be able to manage images for trips.
+- As a site administrator, I would like to be able to sort trips by category, rating, price, so that I can review them and purchase.
+- As a site administrator, I would like to purchase securely through the site.
+- As a site administrator, I would like to receive notification by email of registration and purchase.
 
 ## Wireframes
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
 
-In this section, display your wireframe screenshots using a Markdown `table`.
-Instructions on how to do Markdown `tables` start on line #213 on this site: https://pandao.github.io/editor.md/en.html
-
-Alternatively, dropdowns are a way to condense several wireframes into a collapsible menu to save space.
-Dropdowns in Markdown are considered some of the only acceptable HTML components that are allowed for assessment purposes.
-
-⚠️ **IMPORTANT**! ⚠️ **IMPORTANT**! ⚠️ **IMPORTANT**! ⚠️
-The example below uses the `details` and `summary` code elements.
-However, for these scripts to work, I've had to add spaces within the `< >` elements.
-
-You MUST remove these spaces for it to work properly on your own README/TESTING files.
-Remove the spaces within the `< >` brackets for the `details` and `summary` code elements,
-for the Mobile, Tablet, and Desktop wireframes.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
-I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+I've used [Microsoft Visio](https://img.shields.io/badge/Microsoft_Visio-blue) to design my site wireframes.
 
 ### Mobile Wireframes
 
-< details >
-< summary > Click here to see the Mobile Wireframes < / summary >
+<details >
+<summary> Click here to see the Mobile Wireframes </summary>
 
-Home
-  - ![screenshot](documentation/wireframes/mobile-home.png)
+**All trips** 
+  - ![screenshot](documentation/img/wireframes/mob-trips.jpg)
 
-About
-  - ![screenshot](documentation/wireframes/mobile-about.png)
+**Login** 
+  - ![screenshot](documentation/img/wireframes/mob-logon.jpg)
 
-Contact
-  - ![screenshot](documentation/wireframes/mobile-contact.png)
+**Register** 
+  - ![screenshot](documentation/img/wireframes/mob-reg.jpg)
 
-Gallery
-  - ![screenshot](documentation/wireframes/mobile-gallery.png)
+**Bag**
+  - ![screenshot](documentation/img/wireframes/mob-bag.jpg)
 
-etc.
-  - repeat for any remaining mobile wireframes
-
-< / details >
+</details>
 
 ### Tablet Wireframes
 
-< details >
-< summary > Click here to see the Tablet Wireframes < / summary >
+<details>
 
-Home
-  - ![screenshot](documentation/wireframes/tablet-home.png)
+<summary> Click here to see the Desktop Wireframes </summary>
 
-About
-  - ![screenshot](documentation/wireframes/tablet-about.png)
+**All trips** 
+ - ![screenshot](documentation/img/wireframes/tab-trips.jpg)
 
-Contact
-  - ![screenshot](documentation/wireframes/tablet-contact.png)
+**Bag**
+ - ![screenshot](documentation/img/wireframes/tab-bag.jpg) 
 
-Gallery
-  - ![screenshot](documentation/wireframes/tablet-gallery.png)
+**Login** 
+ - ![screenshot](documentation/img/wireframes/tab-logon.jpg)
 
-etc.
-  - repeat for any remaining tablet wireframes
+**Register** 
+ - ![screenshot](documentation/img/wireframes/tab-reg.jpg)
 
-< / details >
+</details>
 
 ### Desktop Wireframes
 
-< details >
-< summary > Click here to see the Desktop Wireframes < / summary >
+<details>
 
-Home
-  - ![screenshot](documentation/wireframes/desktop-home.png)
+<summary> Click here to see the Desktop Wireframes </summary>
 
-About
-  - ![screenshot](documentation/wireframes/desktop-about.png)
+**All trips** 
+ - ![screenshot](documentation/img/wireframes/dsk-trips.jpg)
 
-Contact
-  - ![screenshot](documentation/wireframes/desktop-contact.png)
+**Bag**
+ - ![screenshot](documentation/img/wireframes/dsk-bag.jpg) 
 
-Gallery
-  - ![screenshot](documentation/wireframes/desktop-gallery.png)
+**Login** 
+ - ![screenshot](documentation/img/wireframes/dsk-logon.jpg)
 
-etc.
-  - repeat for any remaining desktop wireframes
+**Register** 
+ - ![screenshot](documentation/img/wireframes/dsk-reg.jpg)
 
-< / details >
+</details>
+
+
+
 
 ## Features
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-In this section, you should go over the different parts of your project,
-and describe each in a sentence or so.
-
-You will need to explain what value each of the features provides for the user,
-focusing on who this website is for, what it is that they want to achieve,
-and how your project is the best way to help them achieve these things.
-
-For some/all of your features, you may choose to reference the specific project files that implement them.
-
-IMPORTANT: Remember to always include a screenshot of each individual feature!
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 ### Existing Features
 
-- **Sorting and filtering of avaiable trips**
+**SORTING AND FILTERING OF AVAIABLE TRIPS**
 
-    The site provides a functionality from the navbar menu to refine the trips shown by filtering them by category, or sorting them highest to lowest 
-	for both rating and price.
+The site provides a functionality from the navbar menu to refine the trips shown by filtering them by category, or sorting them highest to lowest 
+for both rating and price.
 
 | Description | Image | 
 | --- | --- | 
 | The following image shows the find categories function of the site and categries you can seach by |![screenshot](documentation/img/gen/find-by-cats.jpg)| 
-| The following image shows the sort by capability to either sort by rating or price |![screenshot](documentation/img/gen/sort-by.jpg)|
+| The following image shows the find categories function show as a link on the item itself (eg Rivers selecting this would show all rivers trips  |![screenshot](documentation/img/gen/search-gray.jpg)| 
+| The following image shows the sort capability to either sort by rating or price as driven by the dropdown from the navabar|![screenshot](documentation/img/gen/sort-by.jpg)|
 
 
-- **Full trip Search**
+**FULL TRIP SEARCH**
 
-    The site provides a functionality from the navbar menu to search all trips recorded and searches the description and venue fields for words in the search criteria.  
+The site provides a functionality from the navbar menu to search all trips recorded and searches the description and venue fields for words in the search criteria.  
 
 | Description | Image | 
 | --- | --- | 
-| The following image shows the find categories function of the site and categries you can seach by |![screenshot](documentation/img/gen/search-gray.jpg)| 	
+| The following image shows the full text search for the veneu and description works, as in this example we search for the word grayling |![screenshot](documentation/img/gen/search-gray.jpg)| 	
+
+**SITE CONTIANER**
+The site container was discussed at length in the UX degin section explaing the many benefits it brings to the presertantion and user expereince 
+and how it helps in various ways. 
+
+| Description | Image | 
+| --- | --- | 
+| The following image shows the continaer sized for a large screen and as can bee seen the cotainer is sized to consume 75% of screen width|![screenshot](documentation/img/gen/cont1.jpg)|
+| The following image shows the continaer sized for a small screen and as can bee seen the cotainer is sized to consume 95% of screen width|![screenshot](documentation/img/gen/cont2.jpg)|
+
+**USER PROFILES**
+
+The profiles page contains all teh information for the logged on user and allows them to edit there personal details, (we dotn store credit card number for the user) and also provides a complete order history for the user.
+
+| Description | Image | 
+| --- | --- | 
+| The following image shows profile complete with user detaild and order history |![screenshot](documentation/img/gen/profile.jpg)|	
 
 
+**USER MANAGEMENT FOR “GUIDES”** 
 
-- **Site Contianer**
+This feature was provided to vendors (guides) the ability to to perfrom CRUD functions without the need to be a superuser, so hence could not logon to the admin portal but could perfrom the CRUD functions through the pages on there own trips they had created. 
+The feature was envisaged to work in the following where you would have to register for the site and then be placed in the Django group called guide, then on access to features such as product management, you would be checked for membership of this group using a decorator type function and template logic. Then access to Edit and Delete records would be granted using a similar mechanism (eg logged as au ser, and membership of the guide group), and filtering on the user_id for individual records is recorded in trip record on creation.  
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+**INTERACTIVE ACKNOWLEDGEMENTS**
 
-![screenshot](documentation/features/feature03.png)
+The site provides a functionality when the user is makes an action it provides an acknowldegemnt of this such as
+- success or failure on purchase 
+- Alert you are editing trips
 
-- **User profiles**
-
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
-
-![screenshot](documentation/features/feature03.png)
-
-- **Guide user status**
-	 - This feature was provided to vendors (guides) the ability to to perfrom CRUD functions without the need to be a superuser, so hence could not logon to the admin portal but could perfrom the CRUD functions through the pages on there own trips they had created. 
-	The feature was envisaged to work in the following where you would have to register for the site and then be placed in the Django group called guide, then on access to features such as product management, you would be checked for membership of this group using a decorator type function and template logic. Then access to Edit and Delete records would be granted using a similar mechanism (eg logged as au ser, and membership of the guide group), and filtering on the user_id for individual records is recorded in trip record on creation.     
+| Description | Image | 
+| --- | --- | 
+| The following image shows the find categories function of the site and categries you can seach by |![screenshot](documentation/img/gen/find-by-cats.jpg)| 
+| The following image shows the find categories function show as a link on the item itself (eg Rivers selecting this would show all rivers trips  |![screenshot](documentation/img/gen/search-gray.jpg)| 
+| The following image shows the sort capability to either sort by rating or price as driven by the dropdown from the navabar|![screenshot](documentation/img/gen/sort-by.jpg)|
 
 ### Future Features
 
-- **Add File widget for more appealling Use** 
-    - I could not get the Django Custom Clearable File Input, to work which when working with tutor support was beleived to be an issue with versions on the project, ultimately this widget is rathwr clunky nad has also intoduced other issues see testing, and it would to revise this and get it working with something moire befitting the site.  
-- **User management for Guides** 
-    - One of the features which was not completed fully was the ability to almost have a seconfd level of super user in the site where guides would be able to perfrom CRUD functions without the need to be a superuser, so hence could not logon to the admin portal but could perfrom the CRUD functions through the pages on there own trips they had created. This feature was mostly completed but and is in a partially comapleted state in the project. The remaing pieces to do are:
-	- blah 
-	The feature was envisaged to work in the following where you would have to register for the site and then be placed in the Django group called guide, then on access to features such as product management, you would be checked for membership of this group using a decorator type function and template logic. Then access to Edit and Delete records would be granted using a similar mechanism (eg logged as au ser, and membership of the guide group), and filtering on the user_id for individual records is recorded in trip record on creation.     
+**ADD FILE WIDGET FOR MORE APPEALING USE** 
+I could not get the Django Custom Clearable File Input, even after after working with tutor support. It was beleived to be an issue with versions on the project. for this reason the cuurent widget was not replced. The current widget is rather clunky nad has also intoduced other issues (see testing, section on unresolved bugs), and given the necessary time I would revise this and get it working with something more befitting the site.  
 
+**USER MANAGEMENT FOR “GUIDES”** 
 
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#3
-    - Any additional notes about this feature.
+One of the features which was not completed fully was the ability to almost have a second level of super user in the site where guides would be able to perfrom CRUD functions without the need to be a superuser, so hence could not logon to the admin portal but could perfrom the CRUD functions through the pages on there own trips they had created. This feature was mostly completed but and is in a partially comapleted state in the project. 
+The feature was envisaged to work in the following where you would have to register for the site and then be placed in the Django group called guide, then on access to features such as product management, you would be checked for membership of this group using a decorator type function and template logic. Then access to Edit and Delete records would be granted using a similar mechanism (eg logged as au ser, and membership of the guide group), and filtering on the user_id for individual records is recorded in trip record on creation.     
+
 
 ## Tools & Technologies Used
 
@@ -297,7 +285,7 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
 Django App extension to generte ERD diagram for cuurent the project.
 - [![Squoosh](https://img.shields.io/badge/Squoosh-grey)](https://squoosh.app/) Squooosh was used to convert the images from jpg to Avif, Also to resize (reduce pixel count) the images to a more manageable size to improve download speed.
 - [![GoogleFonts](https://img.shields.io/badge/GoogleFonts-grey?logo=googlefonts&logoColor=EA4335)](https://squoosh.app/) Google Fonts Google fonts was used to source the fonts that were selected from Fontjoy.
- - [![FontJoy](https://img.shields.io/badge/FontJoy-grey)](https://fontjoy.com/)
+- [![FontJoy](https://img.shields.io/badge/FontJoy-grey)](https://fontjoy.com/)
 FontJoy Font joy was used in the design process to create a palette of fonts, to be empathic with the site topic, and provide contrast between various type styling.
 	- Quote from https://fontjoy.com/
 	The goal of font pairing is to select fonts that share an overarching theme yet have a pleasing contrast. Which fonts work together is largely a matter of intuition, but we approach this problem with a neural net.
@@ -700,13 +688,14 @@ The only exception to this is the background image used in the site which was so
 | [Font Awesome](https://www.pexels.com) | Icons in buttons etc across entire site | image | Alo favicon on all pages |
 | [Pexels.com](https://www.pexels.com/photo/body-of-water-and-green-field-under-blue-sky-photo-1179225/)  | background for entire site  | image | River image for the site |
 | [Mathew Montron](https://www.pexels.com/photo/body-of-water-and-green-field-under-blue-sky-photo-1179225/)  | background for entire  | image | Mathew Montron author of the above image |
-| [Lorem Picsum](https://picsum.photos) | trips pages | text |  Used for initial testing in trips for text content  |
+| [Lorem Picsum](https://picsum.photos) | trips pages | images |  Used for initial testing in trips for image content  |
+| [Lorem Ipsum](https://loremipsum.io/) | trips pages | text | Used for initial testing in trips for text content |
 
 ### Acknowledgements
 
 - I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
-- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
-	In particualr I would like to thank Sarah from the tutor team,  for her invaluable contribution to my understandingand better diagnosis of code errors and this project. 
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging project issues.
+	In particualr I would like to thank Sarah from the tutor team,  for her invaluable contribution to my understanding and better diagnosis of code errors and this project. 
 - I would like to thank my tutor Ben Smith at Bristol college for his help and advice. 
 - I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for showing "I'm not the only one", and persisting. 
 - Thanks to my family for putting up with "Mr. Grumpy" and the many hours I spent working on this and other projects 

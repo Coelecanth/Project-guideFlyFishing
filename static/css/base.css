@@ -133,7 +133,7 @@ body {
     position: relative;
     width: 75%;
     background-color: #00537c;
-    position: realtive;
+    position: relative;
     left: 12.5%;
     border-radius: 1em;
     padding: 0.5em 0;
@@ -189,7 +189,7 @@ body {
 
 .allauth-form-inner-content input {
     border-color: #000;
-    border-radius: 1;
+    border-radius: 1px;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -246,7 +246,7 @@ body {
         position: relative;
         width: 95%;
         background-color: #00537c;
-        position: realtive;
+        position: relative;
         left: 2.5%;
         border-radius: 1em;
         padding: 0.5em 0;
