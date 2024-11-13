@@ -227,16 +227,17 @@ The feature was envisaged to work in the following where you would have to regis
 
 **INTERACTIVE ACKNOWLEDGEMENTS**
 
-The site provides a functionality when the user is makes an action it provides an acknowldegemnt of this such as
+The site provides a functionality when the user makes an action it provides an acknowldegemnt of this such as
 - success or failure on purchase 
 - Alert you are editing trips
 
+This confirms or ascerts to the user the user action they have undertaen rather leaving actions unconfirmed. 
+
 | Description | Image | 
 | --- | --- | 
-| The following image shows the find categories function of the site and categries you can seach by |![screenshot](documentation/img/gen/find-by-cats.jpg)| 
-| The following image shows the find categories function show as a link on the item itself (eg Rivers selecting this would show all rivers trips  |![screenshot](documentation/img/gen/search-gray.jpg)| 
-| The following image shows the sort capability to either sort by rating or price as driven by the dropdown from the navabar|![screenshot](documentation/img/gen/sort-by.jpg)|
-
+| The following image shows the success message delivered by bootstrap toasts |![screenshot](documentation/img/gen/toast-s.jpg)| 
+| TThe following image shows the alert message delivered by bootstrap toasts |![screenshot](documentation/img/gen/toast-a.jpg)| 
+|
 ### Future Features
 
 **ADD FILE WIDGET FOR MORE APPEALING USE** 
