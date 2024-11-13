@@ -77,23 +77,45 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 | --- | --- | --- | --- |
 | static | base.css | ![screenshot](documentation/img/testing/tested-base.ccs.jpg) | |
 
-### Python
-
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
 | Directory | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
+| bag | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/bag/admin.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| bag | contexts.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/bag/contexts.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| bag | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/bag/models.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| bag | bag_tools.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/bag/templatetags/bag_tools.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| bag | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/bag/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| bag | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/bag/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| checkout | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/checkout/admin.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| checkout | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/checkout/forms.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| checkout | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/checkout/models.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| checkout | signals.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/checkout/signals.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| checkout | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/checkout/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| checkout | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/checkout/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| checkout | webhook_handler.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/checkout/webhook_handler.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| checkout | webhooks.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/checkout/webhooks.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+|  | custom_storages.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/custom_storages.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| guideflyfishing | decorators.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guideflyfishing/decorators.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | guideflyfishing | settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guideflyfishing/settings.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| guideflyfishing | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guideflyfishing/urls.py) | ![screenshot](documentation/img/python/gff-urls.jpg) | |
+| guideflyfishing | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guideflyfishing/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | guidetrip | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guidetrip/admin.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| guidetrip | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guidetrip/forms.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | guidetrip | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guidetrip/models.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | guidetrip | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guidetrip/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | guidetrip | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guidetrip/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| home | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/home/admin.py) | ![screenshot](documentation/img/python/hom-adm.jpg) | |
-| home | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/home/models.py) | ![screenshot](documentation/img/python/hom-mod.jpg) | |
+| guidetrip | widgets.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guidetrip/widgets.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| home | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/home/admin.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| home | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/home/models.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| home | custom_filters.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/home/templates/templatetags/custom_filters.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | home | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/home/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | home | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/home/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 |  | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/manage.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| profiles | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/profiles/admin.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| profiles | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/profiles/forms.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| profiles | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/profiles/models.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| profiles | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/profiles/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| profiles | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/profiles/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 
 ## Browser Compatibility
 

@@ -18,7 +18,6 @@ if os.path.exists("env.py"):
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net'
-    
 ]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -32,12 +31,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", False) 
+DEBUG = os.environ.get("DEBUG", False)
 
-ALLOWED_HOSTS = ['8000-coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net',
-                'p4guideflyfishing-879a54f37efc.herokuapp.com',
-                'locahost'
-]
+ALLOWED_HOSTS = ['8000-coelecanth-projectguide-5jtcemqmdr7'
+                    '.ws.codeinstitute-ide.net',
+                    'p4guideflyfishing-879a54f37efc.herokuapp.com',
+                    'locahost'
+                ]
 
 
 # Application definition
@@ -59,10 +59,10 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
 
-    # Add Ons 
+    # Add Ons
     'crispy_forms',
     'storages',
-    
+
 ]
 
 MIDDLEWARE = [
@@ -87,7 +87,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-             os.path.join(BASE_DIR, 'templates', 'allauth'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -98,7 +98,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'bag.contexts.bag_contents',
             ],
-             'builtins': [
+                'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field',
             ]
@@ -161,16 +161,20 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': ('django.contrib.auth.password_validation.'
+        'UserAttributeSimilarityValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': ('django.contrib.auth.password_validation.'
+        'MinimumLengthValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': ('django.contrib.auth.password_validation.'
+        'CommonPasswordValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': ('django.contrib.auth.password_validation.'
+        'NumericPasswordValidator'),
     },
 ]
 
@@ -197,10 +201,10 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# AWS config files section 
+# AWS config files section
 
 if 'USE_AWS' in os.environ:
-    # Cache control -only for static contentcrak on 
+    # Cache control -only for static content 
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
@@ -211,7 +215,9 @@ if 'USE_AWS' in os.environ:
     AWS_S3_REGION_NAME = 'eu-north-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.eu-north-1.amazonaws.com'
+    AWS_S3_CUSTOM_DOMAIN = (
+        f'{AWS_STORAGE_BUCKET_NAME}.s3.eu-north-1.amazonaws.com'
+        )
 
     # Static and media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
@@ -249,5 +255,3 @@ else:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-

@@ -20,4 +20,5 @@ def validate_guide(redirect_url="home", redirect_kwargs={}):
 
         return wrapped_view
 
-    return decorator 
+    return decorator
+    
