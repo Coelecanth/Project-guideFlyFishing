@@ -15,10 +15,10 @@ class ProductForm(forms.ModelForm):
         # Hide the rec_owner field, required for individaul update use.
         self.fields['rec_owner'].widget = forms.HiddenInput()
         friendly_names = [
-            (c.id, c.get_friendly_name()) 
+            (c.id, c.get_friendly_name())
             for c in categories_all
         ]
-        
+
         self.fields['categories'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-1'

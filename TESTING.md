@@ -65,9 +65,32 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
+| bag | bag-total.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| bag | bag.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| bag | checkout-buttons.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| bag | product-image.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| bag | product-info.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| bag | quantity-form.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| checkout | checkout.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| checkout | checkout_success.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| guidetrip | add_product.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | guidetrip | all_trips.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| guidetrip | custom_clearable_file_input.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| guidetrip | detail_trips.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| guidetrip | edit_product.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | home | index.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| profiles | profile.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | templates | banner.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+
+### CSS
+
+I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+
+| Directory | File | Screenshot | Notes |
+| --- | --- | --- | --- |
+| checkout | checkout.css | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| profiles | profile.css | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| static | base.css | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 
 ### CSS
 
