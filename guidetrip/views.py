@@ -55,7 +55,8 @@ def all_trips(request):
 
     current_sorting = f'{sort}_{direction}'
 
-    # alltrips is the defintion called in the html file to show the data eg {% url 'alltrips' %}
+    # alltrips is the defintion called in the html
+    # file to show the data eg {% url 'alltrips' %}
     context = {
         'alltrips': all_trips_rec,
         'search_term': query,
@@ -63,19 +64,20 @@ def all_trips(request):
         'current_sorting': current_sorting,
     }
 
-    return render(request, 'all_trips.html', context )
+    return render(request, 'all_trips.html', context)
+
 
 def det_trips_view(request, trips_id):
     """ A view to return detail of the product"""
 
     trip_details = get_object_or_404(trips, pk=trips_id)
-    
+
     # Det_trips Is the variable called in the html file to show the data
     context = {
         'det_trips_view': trip_details,
     }
 
-    return render(request, 'detail_trips.html', context )
+    return render(request, 'detail_trips.html', context)
 
 
 @login_required
@@ -92,12 +94,12 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save(commit=False)
-            # Set rec_owner to the logged-in user, 
+            # Set rec_owner to the logged-in user,
             # for evaluation to edit update/add product
             product.rec_owner = request.user
             form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('det_trips_view', args=[product.id]))   
+            return redirect(reverse('det_trips_view', args=[product.id]))
         else:
             messages.error(request, 'Failed to add product. '
                                     'Please ensure the form is valid.')
@@ -119,7 +121,7 @@ def edit_product(request, product_id):
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only guides '
-                                 'or store owners can do that.')
+                                'or store owners can do that.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(trips, pk=product_id)

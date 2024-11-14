@@ -48,7 +48,8 @@ class Order(models.Model):
         accounting for delivery costs.
         """
         self.order_total = (self.lineitems.aggregate
-                            (Sum('lineitem_total'))['lineitem_total__sum'] or 0)
+                            (Sum('lineitem_total'))
+                            ['lineitem_total__sum'] or 0)
         self.grand_total = self.order_total
         self.save()
 
@@ -76,6 +77,7 @@ class OrderLineItem(models.Model):
     lineitem_total = models.DecimalField(max_digits=6,
                                          decimal_places=2, null=False,
                                          blank=False, editable=False)
+
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the lineitem total
