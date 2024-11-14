@@ -54,10 +54,10 @@ class StripeWH_Handler:
 
         # Get the Charge object
         stripe_charge = stripe.Charge.retrieve(
-        intent.latest_charge)
+                                               intent.latest_charge)
 
-        billing_details = stripe_charge.billing_details  #updated
-        grand_total = round(stripe_charge.amount / 100, 2)  #updated
+        billing_details = stripe_charge.billing_details
+        grand_total = round(stripe_charge.amount / 100, 2)
 
         # Clean data in the Billing details
         for field, value in billing_details.address.items():
@@ -105,7 +105,7 @@ class StripeWH_Handler:
             self._send_confirmation_email(order)
             return HttpResponse(
                 content=(f'Webhook received: {event["type"]} | SUCCESS: '
-                    'Verified order already in database'),
+                         'Verified order already in database'),
                 status=200)
         else:
             order = None

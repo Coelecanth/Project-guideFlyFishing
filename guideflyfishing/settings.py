@@ -34,10 +34,10 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG", False)
 
 ALLOWED_HOSTS = ['8000-coelecanth-projectguide-5jtcemqmdr7'
-                '.ws.codeinstitute-ide.net',
-                'p4guideflyfishing-879a54f37efc.herokuapp.com',
-                'locahost'
-]
+                 '.ws.codeinstitute-ide.net',
+                 'p4guideflyfishing-879a54f37efc.herokuapp.com',
+                 'locahost'
+                 ]
 
 # Application definition
 
@@ -161,19 +161,19 @@ else:
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': ('django.contrib.auth.password_validation.'
-                'UserAttributeSimilarityValidator'),
+                 'UserAttributeSimilarityValidator'),
     },
     {
         'NAME': ('django.contrib.auth.password_validation.'
-                'MinimumLengthValidator'),
+                 'MinimumLengthValidator'),
     },
     {
         'NAME': ('django.contrib.auth.password_validation.'
-                'CommonPasswordValidator'),
+                 'CommonPasswordValidator'),
     },
     {
         'NAME': ('django.contrib.auth.password_validation.'
-                'NumericPasswordValidator'),
+                 'NumericPasswordValidator'),
     },
 ]
 
