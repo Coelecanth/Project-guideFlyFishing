@@ -244,14 +244,14 @@
         $('.update-link').click(function (e) {
             var form = $(this).prev('.update-form');
 
-            var output = form.submit
-            var output2 = form
+            var output = form.submit;
+            var output2 = form;
             console.log("Form jQuery object:", output);
             console.log("Form:", output2);
 
             form.submit();
 
-        })
+        });
 
         // Remove item and reload on click
         $('.remove-item').click(function (e) {
@@ -267,7 +267,7 @@
                 .done(function () {
                     location.reload();
                 });
-        })
+        });
 
         function refreshPage() {
             window.scrollTo(0, 0); // Scrolls to the top of the page

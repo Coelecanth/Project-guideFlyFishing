@@ -48,16 +48,13 @@ If applicable, mention how user feedback has been taken into account and impleme
 
 ## Code Validation
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+I have validated the following code types within this project 
+- Pyhton
+- HTML 
+- Javascript 
+- CSS
 
-Use the space to discuss code validation for any of your own code files (where applicable).
-You are not required to validate external libraries/frameworks, such as imported Bootstrap, Materialize, Font Awesome, etc.
-
-**IMPORTANT**: You must provide a screenshot for each file you validate.
-
-**PRO TIP**: Always validate the live site pages, not your local code. There could be subtle/hidden differences.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+The code vailidation is detailed below with which tools were used to validate 
 
 ### HTML
 
@@ -88,17 +85,23 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| checkout | checkout.css | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| profiles | profile.css | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| static | base.css | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| checkout | checkout.css | ![screenshot](documentation/img/testing/tested-checkout.ccs.jpg) | |
+| profiles | profile.css | ![screenshot](documentation/img/testing/tested-profile.ccs.jpg) | |
+| static | base.css | ![screenshot](documentation/img/testing/tested-base.ccs.jpg) | |
 
-### CSS
+### JavaScript
 
-I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| static | base.css | ![screenshot](documentation/img/testing/tested-base.ccs.jpg) | |
+| checkout | stripe_elements.js | ![screenshot](documentation/img/testing/stripe_js.jpg) | |
+| profiles | countryfield.js | ![screenshot](documentation/img/testing/country-sel.jpg) | |
+| Bag | embedded in bag.html | ![screenshot](documentation/img/testing/bag-JS-scipt.jpg) | |
+| Bag | embedded in qnty_inp.html | ![screenshot](documentation/img/testing/emb-Qnty_input.htm.jpg) | |
+
+
+### Python
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
@@ -280,28 +283,29 @@ The aforementioned tests are just an example of a few different project scenario
 
 ## User Story Testing
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Testing user stories is actually quite simple, once you've already got the stories defined on your README.
-
-Most of your project's **features** should already align with the **user stories**,
-so this should as simple as creating a table with the user story, matching with the re-used screenshot
-from the respective feature.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+The following user stroy test sceanrios wre derived from the the users stories fro users talked about in README.md
 
 | User Story | Screenshot |
 | --- | --- |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature01.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature02.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature03.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature04.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature05.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature06.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature07.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature08.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature09.png) |
-| repeat for all remaining user stories | x |
+| As a new/registed site user/guide, I would like to see interactive responses confirming success. | ![screenshot](documentation/img/gen/toast-s.jpg) |
+| As a new/registed site user/guide, I would like to see interactive respsonses confirming Alert. | ![screenshot](documentation/img/gen/toast-a.jpg)|
+| As a new/registed site user/guide, I would like to see interactive responses confirming Error. | ![screenshot](documentation/img/gen/toast-er.jpg) |
+| As a new/registed site user/guide , I would like to search for trips. | ![screenshot](documentation/img/gen/search-gray.jpg) |
+| As a new/registed site user/guide, I would like to to sort trips by category. |![screenshot](documentation/img/gen/find-by-cats.jpg) |
+| As a new/registed site user/guide, I would like to to sort trips by rating, price. | ![screenshot](documentation/img/gen/sort-by.jpg) | 
+| As a new/registed site user/guide, I would like to to purchase through the site. | ![screenshot](documentation/features/feature04.png) |
+| As a new/registed site user/guide, I would like to receive notification by email of registration and/or purchase. | ![screenshot](documentation/img/gen/email-conf.jpg) |
+| As a site superuser, I would like to see interactive responses confirming success. | ![screenshot](documentation/img/gen/toast-s.jpg) |
+| As a site superuser, I would like to see interactive respsonses confirming Alert. | ![screenshot](documentation/img/gen/toast-a.jpg)|
+| As a site superuser, I would like to see interactive responses confirming Error. | ![screenshot](documentation/img/gen/toast-er.jpg) |
+| As a site superuser, I would like to search for trips.| ![screenshot](documentation/img/gen/search-gray.jpg) |
+| As a site superuser, I would like to to sort trips by category. |![screenshot](documentation/img/gen/find-by-cats.jpg) |
+| As a site superuser, I would like to to sort trips by rating, price. | ![screenshot](documentation/img/gen/sort-by.jpg) |
+| As a site superuser, I would like to to purchase through the site. | ![screenshot](documentation/features/feature04.png) |
+| As a site superuser, I would like to receive notification by email of registration and/or purchase. | ![screenshot](documentation/img/gen/email-conf.jpg) |
+
+
+
 
 ## Automated testing 
 As part of my testing of pages I created some automated tests in Django for the purpose of testing urls and views were working Eg i could load the page, the following points explain there purpsoe in more detail.
