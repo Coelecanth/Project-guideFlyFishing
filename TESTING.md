@@ -619,6 +619,37 @@ This was fixed with the following changes showing the before an after in the cod
 
 ```
 
+
+## Pyhton Linting breaks code 
+
+While I was perfroming regression testing after making changes to the pyton code, it was found that the changes made to 
+profiles.forms.py to make it confirm to Pyhton best practice, caused the code to fail. (See image below) 
+the changes made were based on suggested method given in the Pep8ci document, on splitting line (eg the lie exceeded 79 caharaTERS) 
+i changed the code (see FAILED code below) and used [ ] to encapsultate the HTML string. 
+On loading the the profiles page i received
+
+![screenshot](documentation/img/errors/err-lint.jpg)
+
+
+After some extensive investigation going through all the commits and the changes I made when linting the code and 
+having narrowed it down to only chnages made on python files in profiles I eventually traced the error back to the below.
+I tried placing the string on a single line ecapsauled with [ ], but this also failed, it was only after some experimenatation with 
+with removing brackets and then adding ( ) atha solution was found, this was also subsequently tested with Pepc8i 
+to make sure it conformed, which it does. 
+
+
+```python
+# profiles.forms.py Failed code 
+33           self.fields[field].widget.attrs['class'] = ['rounded-1'  
+34                                                       ' profile-form-input']
+        
+```
+
+```python
+# profiles.forms.py Corrected code 
+33           self.fields[field].widget.attrs['class'] = ('rounded-1'
+34                                                       ' profile-form-input')
+```
 # Unfixed Bugs
 
 ## Django Custom Clearabel File Input Widget
