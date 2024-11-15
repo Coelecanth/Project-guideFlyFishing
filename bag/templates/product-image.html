@@ -1,6 +1,6 @@
 {% load static %}
 {% if item.product.image %}
-    <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+    <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="Venue image for trip">
 {% else %}
-    <img class="card-img-top img-fluid" src="{% static 'img/noimage.jpg' %}">
+    <img class="card-img-top img-fluid" src="{% static 'img/noimage.jpg' %}" alt="No image for Venue for trip">
 {% endif %}

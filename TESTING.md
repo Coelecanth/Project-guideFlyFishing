@@ -53,28 +53,44 @@ I have validated the following code types within this project
 The code vailidation is detailed below with which tools were used to validate 
 
 ### HTML
+the folowing views from the website have been validated 
+
+ - home 
+ - all trips 
+ - detaile trsip 
+ - edit product 
+ - add product 
+ - profile 
+ - bag 
+ - checkout
+ - checkout succes 
+ - check out order history 
+
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
-| Directory | File | Screenshot | Notes |
-| --- | --- | --- | --- |
-| bag | base.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| bag | bag-total.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| bag | bag.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| bag | checkout-buttons.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| bag | product-image.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| bag | product-info.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| bag | quantity-form.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| checkout | checkout.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| checkout | checkout_success.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| guidetrip | add_product.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| guidetrip | all_trips.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| guidetrip | custom_clearable_file_input.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| guidetrip | detail_trips.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| guidetrip | edit_product.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| home | index.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| profiles | profile.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | banner.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| Directory/app | URL | Screenshot | Notes |
+| --- | --- | ---- | ---- |
+| Main | [Home](https://coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net/) | ![screenshot](documentation/img/html/home-URL.jpg) | |
+| Main | Includes the following templates - base.html, banner.html, and the following includes main-nav.html, mobile-head.html  | |
+| Bag | [Bag](https://p4guideflyfishing-879a54f37efc.herokuapp.com/bag/) | ![screenshot](documentation/img/html/bag.jpg) | |
+| Bag | Includes the following templates - Main (see above) Bag.html, and the following includes checkout-buttons.html, product-image.html, bag-total.html, product-info.html, quantity-form.html  | |
+| Checkout |  [Checkout](hhttps://p4guideflyfishing-879a54f37efc.herokuapp.com/checkout/) | ![screenshot](documentation/img/html/checkou.jpg) | |
+| Checkout | Includes the following templates - Main (see above) , checkout.html  | |
+| Checkout success | [Checkout success](https://p4guideflyfishing-879a54f37efc.herokuapp.com/checkout/checkout_success/4ADBC2D740A541DDA554346A769D8E9A/) | ![screenshot](documentation/img/html/checkout_success.jpg) | |
+| Checkout success | Main (see above) checkout_success.html | | |
+| checkout-order history | [Checkout order history](https://p4guideflyfishing-879a54f37efc.herokuapp.com/profile/order_history/299C332D602443E3A2859144027C2C48) | ![screenshot](documentation/img/html/order-history.jpg) | |
+| checkout-order history  | Main (see above) checkout_success.html | | |
+| trips  | [All trips](https://p4guideflyfishing-879a54f37efc.herokuapp.com/trips/) |![screenshot](documentation/img/html/trips.jpg) | |
+| trips  | Main (see above) all_trips.html | | |
+| trips | [Trip details]( https://p4guideflyfishing-879a54f37efc.herokuapp.com/trips/6/) | ![screenshot](documentation/img/html/details.jpg) | |
+| trips | Main (see above) detail_trips.html | | |
+| trips | [Add product](https://p4guideflyfishing-879a54f37efc.herokuapp.com/trips/add/) | ![screenshot](documentation/img/html/add-prod.jpg) | |
+| trips  | Main (see above) add_poduct.html | | |
+| trips | [Edit product](https://p4guideflyfishing-879a54f37efc.herokuapp.com/trips/edit/6/) | ![screenshot](documentation/img/html/edit-prod.jpg) | |
+| trips  | Main (see above) edit_poduct.html | | |
+| profile | [profile](https://p4guideflyfishing-879a54f37efc.herokuapp.com/profile/) | ![screenshot](documentation/img/html/profile.jpg) | |
+| profile | Main (see above) profile.html | | |
 
 ### CSS
 

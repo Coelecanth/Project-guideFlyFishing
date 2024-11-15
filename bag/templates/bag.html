@@ -20,7 +20,7 @@
             <hr>
         </div>
     </div>
-    <!-- mobile page display set a s grid - STARTS HERE  -->
+    <!-- mobile page display set as grid - STARTS HERE  -->
     <div class="row">
         <div class="col">
             {% if bag_items %}
@@ -56,7 +56,7 @@
 
                         <form class="justify-content-center form update-form" method="POST"
                             action="{% url 'adjust_bag' item.item_id %}">
-                            
+
                             {% csrf_token %}
                             <div class="form-group">
                                 <div class="input-group">
@@ -69,10 +69,10 @@
                                             </span>
                                         </button>
                                     </div>
-                                        <!-- input field for quantity small page -->
-                                        <input class="form-control form-control-sm field-size qty_input" type="number" name="quantity"
-                                            value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
-                                            id="id_qty_{{ item.item_id }}">
+                                    <!-- input field for quantity small page -->
+                                    <input class="form-control form-control-sm field-size qty_input" type="number"
+                                        name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                        data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                     <div class="input-group-append">
                                         <!-- increment button small page -->
                                         <button class="increment-qty btn btn-light border-secondary btn-sm rounded-0"
@@ -88,13 +88,13 @@
                         </form>
                         <!-- Update and remove links  -->
                         <!-- Do not put links inside the form as this break the update funcxtion it should remain outside the form tag -->
-                            <a class="update-link text-white px-3">
-                                <small>Update</small>
-                            </a>
-                            <a class="remove-item text-white px-3" id="remove_{{ item.item_id }}">
-                                <small>Remove</small>
-                            </a>
-                    </div>    
+                        <a class="update-link text-white px-3">
+                            <small>Update</small>
+                        </a>
+                        <a class="remove-item text-white px-3" id="remove_{{ item.item_id }}">
+                            <small>Remove</small>
+                        </a>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -128,9 +128,11 @@
                     <tr class="text-center">
                         <td class="p-3 w-25">
                             {% if item.product.image %}
-                            <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                            <img class="img-fluid rounded" src="{{ item.product.image.url }}"
+                                alt="Venue image for trip">
                             {% else %}
-                            <img class="card-img-top img-fluid" src="{% static 'img/noimage.jpg' %}">
+                            <img class="card-img-top img-fluid" src="{% static 'img/noimage.jpg' %}"
+                                alt="No image for Venue for trip">
                             {% endif %}
                         </td>
                         <td class="py-3 text-bag-para">
@@ -150,7 +152,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                        <!-- decrement button -->
+                                            <!-- decrement button -->
                                             <button
                                                 class="decrement-qty btn btn-sm btn-black border-secondary rounded-0"
                                                 data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
@@ -164,7 +166,7 @@
                                             name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                         <div class="input-group-append">
-                                        <!-- increment button -->
+                                            <!-- increment button -->
                                             <button
                                                 class="increment-qty btn btn-sm btn-black border-secondary rounded-0"
                                                 data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
@@ -232,47 +234,47 @@
             </div>
         </div>
     </div>
+</div>
+{% endblock %}
 
-    {% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+{% include 'includes/qnty_inp.html' %}
 
-    {% block postloadjs %}
-    {{ block.super }}
-    {% include 'includes/qnty_inp.html' %}
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function (e) {
+        var form = $(this).prev('.update-form');
 
-    <script type="text/javascript">
-        // Update quantity on click
-        $('.update-link').click(function (e) {
-            var form = $(this).prev('.update-form');
+        var output = form.submit;
+        var output2 = form;
+        console.log("Form jQuery object:", output);
+        console.log("Form:", output2);
 
-            var output = form.submit;
-            var output2 = form;
-            console.log("Form jQuery object:", output);
-            console.log("Form:", output2);
+        form.submit();
 
-            form.submit();
+    });
 
-        });
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
 
-        // Remove item and reload on click
-        $('.remove-item').click(function (e) {
-            var csrfToken = "{{ csrf_token }}";
-            var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+        };
 
-            var url = `/bag/remove/${itemId}/`;
-            var data = {
-                'csrfmiddlewaretoken': csrfToken,
-            };
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    });
 
-            $.post(url, data)
-                .done(function () {
-                    location.reload();
-                });
-        });
+    function refreshPage() {
+        window.scrollTo(0, 0); // Scrolls to the top of the page
+        location.reload(); // Refreshes the page
+    }
+</script>
 
-        function refreshPage() {
-            window.scrollTo(0, 0); // Scrolls to the top of the page
-            location.reload(); // Refreshes the page
-        }
-    </script>
-
-    {% endblock %}
+{% endblock %}
