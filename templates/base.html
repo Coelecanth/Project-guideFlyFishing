@@ -20,18 +20,23 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
-    
+
     <!-- favourite icon -->
     <link rel="icon" href="{% static 'img/fish-fins-solid.svg' %}" type="image/svg+xml">
-    
+
     {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
-  
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
     {% endblock %}
@@ -44,7 +49,7 @@
 
 <header class="container-fluid fixed-top">
     <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-       
+
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <!-- Heading In Navbar  -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -53,9 +58,9 @@
                 </a>
             </div>
             <!-- Search bar in its own column  -->
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0" >
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'alltrips' %}">
-                    <div class="input-group w-100" >
+                    <div class="input-group w-100">
                         <input class="form-control border border-black rounded-0" type="text" name="q"
                             placeholder="Search our site">
                         <div class="input-group-append">
@@ -70,27 +75,26 @@
             </div>
             <!-- dropdown menu for my account  -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
                     <ul class="navbar-nav border-0 list-inline list-unstyled text-center text-lg-right my-0">
                         <!-- My account dropdown defintion  -->
                         <li class="nav-item dropdown">
-                            <a class="text-black nav-link dropdown-toggle" href="#" id="navbarMyAccount"
-                                role="button" data-toggle="dropdown" aria-expanded="false">
+                            <a class="text-black nav-link dropdown-toggle" href="#" id="navbarMyAccount" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0">My Account</p>
                             </a>
                             <!-- dropdown for my account -->
                             <ul class="dropdown-menu border-0" aria-labelledby="navbarDropdownMenuLink" id="navbarList">
                                 {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %} 
-                                        <li><a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
-                                  
-                                    {% endif %}
+                                {% if request.user.is_superuser %}
+                                <li><a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
+
+                                {% endif %}
                                 <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
                                 <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
                                 {% else %}
@@ -117,7 +121,7 @@
                                 </div>
                             </a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
@@ -127,35 +131,36 @@
     <!-- submenu in Navbar  -->
     <div class="row bg-white">
         <nav class="navbar navbar-expand-lg navbar-light w-100">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+                aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             {% include 'includes/mobile-head.html' %}
             {% include 'includes/main-nav.html' %}
         </nav>
-    
+
     </div>
 </header>
 
 <body>
-    
+
 
     {% if messages %}
-        <div class="message-container">
-            {% for message in messages %}
-                {% with message.level as level %}
-                    {% if level == 40 %}
-                        {% include 'includes/toasts/toast_error.html' %}
-                    {% elif level == 30 %}
-                        {% include 'includes/toasts/toast_warning.html' %}
-                    {% elif level == 25 %}
-                        {% include 'includes/toasts/toast_success.html' %}
-                    {% else %}
-                        {% include 'includes/toasts/toast_info.html' %}
-                    {% endif %}
-                {% endwith %}
-            {% endfor %}
-        </div>
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
     {% endif %}
 
     {% block page_header %}
@@ -164,7 +169,7 @@
     {% block base-content %}
     {% endblock %}
 
-    
+
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
@@ -172,6 +177,6 @@
     {% endblock %}
 
 
-    </body>
+</body>
 
 </html>
