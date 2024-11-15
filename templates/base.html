@@ -47,6 +47,7 @@
     <title>Guide Fly Fishing {% block extra_title %}{% endblock %}</title>
 </head>
 
+<body>
 <header class="container-fluid fixed-top">
     <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
 
@@ -89,7 +90,7 @@
                                 <p class="my-0">My Account</p>
                             </a>
                             <!-- dropdown for my account -->
-                            <ul class="dropdown-menu border-0" aria-labelledby="navbarDropdownMenuLink" id="navbarList">
+                            <ul class="dropdown-menu border-0" aria-labelledby="navbarMyAccount" id="navbarList">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <li><a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
@@ -142,7 +143,7 @@
     </div>
 </header>
 
-<body>
+
 
 
     {% if messages %}
