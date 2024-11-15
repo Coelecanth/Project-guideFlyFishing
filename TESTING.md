@@ -3,48 +3,44 @@
 > [!NOTE]  
 > Return back to the [README.md](README.md) file.
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
 
-In this section, you need to convince the assessors that you have conducted enough testing to legitimately believe that the site works well.
-Essentially, in this part, you should go over all of your project's features, and ensure that they all work as intended,
-with the project providing an easy and straightforward way for the users to achieve their goals.
+In this document i provide the testing explanation and results for guideflyfishing the testing is broken down in the following sections 
 
-Feature-by-Feature Testing:
+### Code Validation 
 
-Go through each feature of your portfolio site and detail the testing process for each.
+In this section we validate the various code section with industry standards tools, the code follows corect formatting and is complete.  
 
-Explain the functionality and demonstrate how it aligns with the intended purpose. This could include:
+This would include 
+ - HTML validaion
+ - CSS validation 
+ - Java script validation  
+ - Python validation 
 
-- Navigation: Ensuring smooth transitions between pages, links directing to the correct destinations.
-- Responsive Design: Checking for compatibility across various devices and screen sizes.
-- Portfolio Display: Verifying that projects are properly showcased with accurate descriptions, images, and links.
-- Contact Form: Testing the form submission process, ensuring the user receives a confirmation, and you receive the message.
+### Browser Compatability and Performance
 
-User Experience Testing:
+- Browser Compatibility: Tested on different browsers (Chrome, Firefox, Edge) to ensure consistent performance.
+- Device Compatibility: Ensuring functionality across various devices (desktops/laptops, tablets, and mobile phones).
 
-- Usability Testing: Have users (or simulated users) interact with the site and provide feedback. Document any issues encountered and the resolutions implemented.
-- Accessibility Testing: Confirm compliance with accessibility standards (e.g., screen reader compatibility, proper alt text for images, keyboard navigation).
+### Site Responsiveness 
 
-Compatibility Testing:
+ - Testing has been provided using the in built chrome tool Lighthouse 
 
-- Browser Compatibility: Testing on different browsers (Chrome, Firefox, Safari, Edge, etc.) to ensure consistent performance.
-- Device Compatibility: Ensuring functionality across various devices (desktops, laptops, tablets, and mobile phones).
-- Performance Testing (optional):
-	- Speed and Load Testing: Tools like PageSpeed Insights or GTmetrix to check page load times and optimize where necessary.
-	- Scalability Testing: Assess how the site handles increased traffic or usage.
+### Regression Testing
 
-Regression Testing:
+ - Regression testing was carried out as part of the change process for the project, so as new features or changes were made regression testing was done
+Such as after linting of code, addtion of a major feature.
 
-After implementing fixes or updates, ensure that previous features and functionalities still work as intended. This prevents new changes from breaking existing features.
+### User Experience Testing:
 
-Documentation and Logs:
+- Uset testing in the project is centred upon demonstrating the features from the user stories and proving they are deliverd and work. 
 
-Maintain records of testing procedures, results, and any bugs encountered along with their resolutions. This helps demonstrate a systematic approach to testing and problem-solving.
-User Feedback Incorporation:
+### Defensive Progeramming Testing:
 
-If applicable, mention how user feedback has been taken into account and implemented to enhance the user experience.
+- This section details the testing involved to confirm the secuirty and expected behaviour of the site. 
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+### Bugs and Remediatation 
+
+ - Bugs section details all the major bugs I had encountered when building this site, and explains the problem, the context, and the impact and also how fixed.
 
 ## Code Validation
 
@@ -193,7 +189,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Detail trips  | ![screenshot](documentation/img/lh/mob-det.jpg) | ![screenshot](documentation/img/lh/dsk-det.jpg) |  Some minor warnings  |
 | Bag  | ![screenshot](documentation/img/lh/mob-bag.jpg) | ![screenshot](documentation/img/lh/dsk-bag.jpg) |  Some minor warnings  |
 
-## Defensive Programming
+## Defensive Programming Testing
 
 Defensive programming was manually tested with the below user acceptance testing:
 
