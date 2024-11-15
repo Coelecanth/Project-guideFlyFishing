@@ -188,12 +188,10 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 | Page | Mobile | Desktop | Notes |
 | --- | --- | --- | --- |
-| Home | ![screenshot](documentation/lighthouse/lighthouse-home-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-home-desktop.png) | Some minor warnings |
-| All Trips | ![screenshot](documentation/lighthouse/lighthouse-about-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-about-desktop.png) | Some minor warnings |
-| Detail trips  | ![screenshot](documentation/lighthouse/lighthouse-gallery-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-gallery-desktop.png) | Slow response time due to large images |
-| Bag  | ![screenshot](documentation/lighthouse/lighthouse-gallery-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-gallery-desktop.png) | Slow response time due to large images |
-| checkout  | ![screenshot](documentation/lighthouse/lighthouse-gallery-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-gallery-desktop.png) | Slow response time due to large images |
-| x | x | x | repeat for any other tested pages/sizes |
+| Home | ![screenshot](documentation/img/lh/mob-home.jpg) | ![screenshot](documentation/img/lh/dsk-home.jpg) | Some minor warnings |
+| All Trips | ![screenshot](documentation/img/lh/mob-alltrips.jpg) | ![screenshot](documentation/img/lh/dsk-alltrips.jpg) | Slow response time due to mutiple images |
+| Detail trips  | ![screenshot](documentation/img/lh/mob-det.jpg) | ![screenshot](documentation/img/lh/dsk-det.jpg) |  Some minor warnings  |
+| Bag  | ![screenshot](documentation/img/lh/mob-bag.jpg) | ![screenshot](documentation/img/lh/dsk-bag.jpg) |  Some minor warnings  |
 
 ## Defensive Programming
 
