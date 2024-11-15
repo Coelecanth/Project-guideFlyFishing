@@ -62,6 +62,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
+| bag | base.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | bag | bag-total.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | bag | bag.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | bag | checkout-buttons.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
@@ -164,38 +165,22 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 ## Responsiveness
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to discuss testing the live/deployed site on various device sizes.
 
 The minimum requirement is for the following 3 tests:
 - Mobile
 - Tablet
 - Desktop
 
-**IMPORTANT**: You must provide screenshots of the tested responsiveness, to "prove" that you've actually tested them.
+I've tested my deployed project on following devices to check for responsiveness issues.
 
-Using the "amiresponsive" mockup image (or similar) does not suffice the requirements.
-Consider using some of the built-in device sizes in the Developer Tools.
+ - Desktop 
+ - Samsung mobile phone 
 
-If you have tested the project on your actual mobile phone or tablet, consider also including screenshots of these as well.
-It showcases a higher level of manual tests, and can be seen as a positive inclusion!
-
-Sample responsiveness testing documentation:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-I've tested my deployed project on multiple devices to check for responsiveness issues.
-
-| Device | Home | About | Contact | etc | Notes |
+| Device | Home | all trips | trip detail | Bag   | Notes |
 | --- | --- | --- | --- | --- | --- |
-| Mobile (DevTools) | ![screenshot](documentation/responsiveness/responsive-mobile-home.png) | ![screenshot](documentation/responsiveness/responsive-mobile-about.png) | ![screenshot](documentation/responsiveness/responsive-mobile-contact.png) | ![screenshot](documentation/responsiveness/responsive-mobile-etc.png) | Works as expected |
-| Tablet (DevTools) | ![screenshot](documentation/responsiveness/responsive-tablet-home.png) | ![screenshot](documentation/responsiveness/responsive-tablet-about.png) | ![screenshot](documentation/responsiveness/responsive-tablet-contact.png) | ![screenshot](documentation/responsiveness/responsive-tablet-etc.png) | Works as expected |
-| Desktop | ![screenshot](documentation/responsiveness/responsive-desktop-home.png) | ![screenshot](documentation/responsiveness/responsive-desktop-about.png) | ![screenshot](documentation/responsiveness/responsive-desktop-contact.png) | ![screenshot](documentation/responsiveness/responsive-desktop-etc.png) | Works as expected |
-| XL Monitor | ![screenshot](documentation/responsiveness/responsive-xl-home.png) | ![screenshot](documentation/responsiveness/responsive-xl-about.png) | ![screenshot](documentation/responsiveness/responsive-xl-contact.png) | ![screenshot](documentation/responsiveness/responsive-xl-etc.png) | Scaling starts to have minor issues |
-| Google Pixel 7 Pro | ![screenshot](documentation/responsiveness/responsive-pixel-home.png) | ![screenshot](documentation/responsiveness/responsive-pixel-about.png) | ![screenshot](documentation/responsiveness/responsive-pixel-contact.png) | ![screenshot](documentation/responsiveness/responsive-pixel-etc.png) | Works as expected |
-
-| repeat for any other tested devices | x | x | x | x | x |
+| Mobile (DevTools) | ![screenshot](documentation/img/resp/mob-hom.jpg) | ![screenshot](documentation/img/resp/mob-alltrip.jpg) | ![screenshot](documentation/img/resp/mob-det.jpg) | ![screenshot](documentation/img/resp/mob-bag.jpg) | Works as expected |
+| Tablet (DevTools) | ![screenshot](documentation/img/resp/tab-home.jpg) | ![screenshot](documentation/img/resp/tab-alltrip.jpg) | ![screenshot](documentation/img/resp/tab-det.jpg) | ![screenshot](documentation/img/resp/tab-bag.jpg) | Works as expected |
+| Desktop | ![screenshot](documentation/img/resp/dsk-hom.jpg) | ![screenshot](documentation/img/resp/dsk-alltrip.jpg) | ![screenshot](documentation/img/resp/dsk-det.jpg) | ![screenshot](documentation/img/resp/dsk-bag.jpg) | Works as expected |
 
 ## Lighthouse Audit
 
@@ -220,66 +205,17 @@ Defensive programming was manually tested with the below user acceptance testing
 | | All customer fields on this page are mandatory with the exception of "street addres 2", and county and postcode | Tested by entering data in ome dtaa field at a time and then trying to submit the form | The feature behaved as expected, was prompted to complete fields | Test concluded and passed | ![screenshot](documentation/img/testing/checkout1.jpg) |
 | | Credit card field and CC data fileds are mandatory | Tested by completing address fields and then trying to submit the form without CC details| The feature behaved as expected, was prompted to complete fields | test concluded and passed | ![screenshot](documentation/img/testing/checkout2.jpg) |
 | profile  | | | | | |
-| | You should only be able to see your own order history in profile | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/features/feature03.png) |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature did not respond to A, B, or C. | I did Z to the code because something was missing | ![screenshot](documentation/features/feature04.png) |
-| Admin | | | | | |
-| | User who are not setup a s superuser cannot logon onto the admin page  | Tested the feature by logging out  | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/features/feature05.png) |
+| | You should only be able to see your own order history in profile | Tested the feature by opeing profile and reviewing visible orders. | The feature behaved as expected, and shows only orders peculiar to that user | Test concluded and passed | ![screenshot](documentation/img/gen/profile.jpg) |
+| | user should be able to see only there data and update there personal information in there profile  | Tested the feature by updating some of the fields in the profile for that user  | The feature worked as expected | Test concluded and passed | ![screenshot](documentation/img/gen/profile.jpg) |
+| | You should be able to open previous orders for the details from the profile page only for that user, and other users detail roder are not visisble. | Tested the feature by opening the profile and opening the detail of orders, and should show the alert showing this is a past order | The feature behaved as expected, and shows order details peculiar to that user, and the alert message | Test concluded and passed | ![screenshot](documentation/img/gen/ord-dets.jpg) |
+| Admin/Superuser | | | | | |
+| | User who are not setup a s superuser cannot acces the admin page  | Tested the feature by logging in as a normal user and see if the admin function is avaialble to the user  | The feature behaved as expected, and it didnot show superuser access features | Test concluded and passed | ![screenshot](documentation/img/gen/log-nrm-user.jpg) |
 | | users who are not logged in cannot access the admin page or brute force to it | Tested the feature by logging out and then entering the admin URL manaually in the browser | Behaved as expected, I was taken to the logon page and barred access unless I entered credentials | Test concluded and passed| ![screenshot](documentation/img/testing/admin_acc1.jpg) |
-| Contact | | | | | |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/features/feature07.png) |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature did not respond to A, B, or C. | I did Z to the code because something was missing | ![screenshot](documentation/features/feature08.png) |
-| repeat for all remaining pages | x | x | x | x | x |
+| User/Not Registered User | | | | | |
+| | User who are not setup as cannot acces the admin page  | Tested the feature by logging in as a normal user and see if the admin function is avaialble to the user  | The feature behaved as expected, and it did not show superuser access features | Test concluded and passed | ![screenshot](documentation/img/gen/log-nrm-user.jpg) |
+| | User who are not registred cannot access either user functions or superuser functions  | Tested the feature by opening the site as a non-registerd user and opening the my account pane | The feature behaved as expected, and it did not show user or superuser access features | Test concluded and passed | ![screenshot](documentation/img/gen/non-reg.jpg) |
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
 
-Another way of performing defensive testing is a simple Pass/Fail for each test.
-The assessors prefer the above method, with the full test explained, but this is also acceptable in most cases.
-
-When in doubt, use the above method instead, and delete the table below.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-| Page | User Action | Expected Result | Pass/Fail | Comments |
-| --- | --- | --- | --- | --- |
-| Home | | | | |
-| | Click on Logo | Redirection to Home page | Pass | |
-| | Click on Home link in navbar | Redirection to Home page | Pass | |
-| Gallery | | | | |
-| | Click on Gallery link in navbar | Redirection to Gallery page | Pass | |
-| | Load gallery images | All images load as expected | Pass | |
-| Contact | | | | |
-| | Click on Contact link in navbar | Redirection to Contact page | Pass | |
-| | Enter first/last name | Field will accept freeform text | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter message in textarea | Field will accept freeform text | Pass | |
-| | Click the Submit button | Redirects user to form-dump | Pass | User must click 'Back' button to return |
-| Sign Up | | | | |
-| | Click on Sign Up button | Redirection to Sign Up page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password (twice) | Field will only accept password format | Pass | |
-| | Click on Sign Up button | Asks user to confirm email page | Pass | Email sent to user |
-| | Confirm email | Redirects user to blank Sign In page | Pass | |
-| Log In | | | | |
-| | Click on the Login link | Redirection to Login page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password | Field will only accept password format | Pass | |
-| | Click Login button | Redirects user to home page | Pass | |
-| Log Out | | | | |
-| | Click Logout button | Redirects user to logout page | Pass | Confirms logout first |
-| | Click Confirm Logout button | Redirects user to home page | Pass | |
-| Profile | | | | |
-| | Click on Profile button | User will be redirected to the Profile page | Pass | |
-| | Click on the Edit button | User will be redirected to the edit profile page | Pass | |
-| | Click on the My Orders link | User will be redirected to the My Orders page | Pass | |
-| | Brute forcing the URL to get to another user's profile | User should be given an error | Pass | Redirects user back to own profile |
-| repeat for all remaining pages | x | x | x | x |
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Repeat for all other tests, as applicable to your own site.
-The aforementioned tests are just an example of a few different project scenarios.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ## User Story Testing
 
@@ -293,7 +229,7 @@ The following user stroy test sceanrios wre derived from the the users stories f
 | As a new/registed site user/guide , I would like to search for trips. | ![screenshot](documentation/img/gen/search-gray.jpg) |
 | As a new/registed site user/guide, I would like to to sort trips by category. |![screenshot](documentation/img/gen/find-by-cats.jpg) |
 | As a new/registed site user/guide, I would like to to sort trips by rating, price. | ![screenshot](documentation/img/gen/sort-by.jpg) | 
-| As a new/registed site user/guide, I would like to to purchase through the site. | ![screenshot](documentation/features/feature04.png) |
+| As a new/registed site user/guide, I would like to to purchase through the site. | ![screenshot](documentation/img/gen/order-compl.jpg) |
 | As a new/registed site user/guide, I would like to receive notification by email of registration and/or purchase. | ![screenshot](documentation/img/gen/email-conf.jpg) |
 | As a site superuser, I would like to see interactive responses confirming success. | ![screenshot](documentation/img/gen/toast-s.jpg) |
 | As a site superuser, I would like to see interactive respsonses confirming Alert. | ![screenshot](documentation/img/gen/toast-a.jpg)|
@@ -301,7 +237,7 @@ The following user stroy test sceanrios wre derived from the the users stories f
 | As a site superuser, I would like to search for trips.| ![screenshot](documentation/img/gen/search-gray.jpg) |
 | As a site superuser, I would like to to sort trips by category. |![screenshot](documentation/img/gen/find-by-cats.jpg) |
 | As a site superuser, I would like to to sort trips by rating, price. | ![screenshot](documentation/img/gen/sort-by.jpg) |
-| As a site superuser, I would like to to purchase through the site. | ![screenshot](documentation/features/feature04.png) |
+| As a site superuser, I would like to to purchase through the site. | ![screenshot](documentation/img/gen/order-compl.jpg) |
 | As a site superuser, I would like to receive notification by email of registration and/or purchase. | ![screenshot](documentation/img/gen/email-conf.jpg) |
 
 
@@ -622,20 +558,21 @@ This was fixed with the following changes showing the before an after in the cod
 
 ## Pyhton Linting breaks code 
 
-While I was perfroming regression testing after making changes to the pyton code, it was found that the changes made to 
-profiles.forms.py to make it confirm to Pyhton best practice, caused the code to fail. (See image below) 
-the changes made were based on suggested method given in the Pep8ci document, on splitting line (eg the lie exceeded 79 caharaTERS) 
-i changed the code (see FAILED code below) and used [ ] to encapsultate the HTML string. 
-On loading the the profiles page i received
+While I was perfroming regression testing after making changes to the pyton code for pyhton lint, it was found that the changes made to 
+profiles.forms.py to make it confirm to Python best practice, caused the code to fail. (See image below) 
+The changes made were based on suggested method given in the Pep8ci document, on splitting line (eg the line exceeded 79 characters) 
+I had changed the code from being on asingle to split across two (see FAILED code below) and used [ ] and quote marks to encapsultate the HTML string. 
+I used [ ] to differntiate from ( ) so it was more obvious to the code reviewer.   
+On loading the profiles page I received the following message.
 
 ![screenshot](documentation/img/errors/err-lint.jpg)
 
 
 After some extensive investigation going through all the commits and the changes I made when linting the code and 
-having narrowed it down to only chnages made on python files in profiles I eventually traced the error back to the below.
-I tried placing the string on a single line ecapsauled with [ ], but this also failed, it was only after some experimenatation with 
-with removing brackets and then adding ( ) atha solution was found, this was also subsequently tested with Pepc8i 
-to make sure it conformed, which it does. 
+having narrowed it down to only chnages made on python files in profiles I eventually traced the error back to the below
+lines, i tried placing lines 33 and 34 on a single line ecapsauled with [ ], but this also failed, even though documnentation says this should work. 
+It was only after some experimenatation with this; removing brackets quote marks, that adding ( ) 
+provided a solution, this was also subsequently tested with Pepc8i to make sure it conformed, which it does. 
 
 
 ```python
