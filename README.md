@@ -94,12 +94,16 @@ with variations using,  all capitals, bold effect, heavier font.
 - As a new guide user, I would like to be able to view all trips.
 - As a new guide user, I would like to be able to search for trips.
 - As a new guide user, I would like to be able to sort trips by category, rating, price, so that I can review.
+- As a new guide, I would like to purchase securely through the site.
+- As a new guide, I would like to receive notification by email of registration and purchase.
 
 ### Returning Guide Users 
 
 - As a returning guide user, I would like to be able to view all trips.
 - As a returning guide user, I would like to be able to search for trips.
 - As a returning guide user, I would like to be able to sort trips by category, rating, price, so that I can review.
+- As a returning guider, I would like to purchase securely through the site.
+- As a returning guide, I would like to receive notification by email of registration and purchase.
 
 ### Site Admin
 
@@ -190,7 +194,7 @@ for both rating and price.
 | Description | Image | 
 | --- | --- | 
 | The following image shows the find categories function of the site and categries you can seach by |![screenshot](documentation/img/gen/find-by-cats.jpg)| 
-| The following image shows the find categories function show as a link on the item itself (eg Rivers selecting this would show all rivers trips  |![screenshot](documentation/img/gen/search-gray.jpg)| 
+| The following image shows the find categories function show as a link on the item itself (eg Rivers - selecting this would show all rivers trips wit he category river)  |![screenshot](documentation/img/gen/search-gray.jpg)| 
 | The following image shows the sort capability to either sort by rating or price as driven by the dropdown from the navabar|![screenshot](documentation/img/gen/sort-by.jpg)|
 
 
@@ -203,8 +207,8 @@ The site provides a functionality from the navbar menu to search all trips recor
 | The following image shows the full text search for the veneu and description works, as in this example we search for the word grayling |![screenshot](documentation/img/gen/search-gray.jpg)| 	
 
 **SITE CONTIANER**
-The site container was discussed at length in the UX degin section explaing the many benefits it brings to the presertantion and user expereince 
-and how it helps in various ways. 
+The site container was discussed at length in the UX design section explaining the many benefits it brings to the presentation and user experience 
+and how it helps in various ways.
 
 | Description | Image | 
 | --- | --- | 
@@ -213,17 +217,23 @@ and how it helps in various ways.
 
 **USER PROFILES**
 
-The profiles page contains all teh information for the logged on user and allows them to edit there personal details, (we dotn store credit card number for the user) and also provides a complete order history for the user.
+The profiles page contains all the information for the logged on user and allows them to edit there personal details, (we dont store credit card number for the user) and also provides a complete order history for the user.
 
 | Description | Image | 
 | --- | --- | 
 | The following image shows profile complete with user detaild and order history |![screenshot](documentation/img/gen/profile.jpg)|	
 
+**MOBILE BAG VIEW**
 
-**USER MANAGEMENT FOR “GUIDES”** 
+The main bag view for the site is based on a HTML table and this does not work well as user experience for users on small/mobile screen, as they are constantly scrolling left and right. 
+So the view for this has been changed to present a much more pleasing user experience with the total price and Navigation buttons 
+placed at the top of the screen next to the total price.
+as you scroo, down you can review your order items and there is a button a the bottom of the page to jump to the top, this may seem some waht superflous but if the bag 
+3 or more items in it, then scrolling up and down becomes excessive so this button was placed to remove this need.
+the images for this can be seen in the testing document.
 
-This feature was provided to vendors (guides) the ability to to perfrom CRUD functions without the need to be a superuser, so hence could not logon to the admin portal but could perfrom the CRUD functions through the pages on there own trips they had created. 
-The feature was envisaged to work in the following where you would have to register for the site and then be placed in the Django group called guide, then on access to features such as product management, you would be checked for membership of this group using a decorator type function and template logic. Then access to Edit and Delete records would be granted using a similar mechanism (eg logged as au ser, and membership of the guide group), and filtering on the user_id for individual records is recorded in trip record on creation.  
+See [TESTING.md - Section Responsiveness ](TESTING.md) to see the view
+
 
 **INTERACTIVE ACKNOWLEDGEMENTS**
 
@@ -668,7 +678,6 @@ You can fork this repository by using the following steps:
 ## Credits
 
 ### Content
-- Tim Nelson - [Mardown Builder](https://tim.2bn.dev/markdown-builder/)
 
 | [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
 | [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
@@ -679,8 +688,7 @@ You can fork this repository by using the following steps:
 ### Media
 
 All of the images in this site that were used in the adverts were provided by myself and I own all copyright of these images 
-The only exception to this is the background image used in the site which was sourced from Pexels.com, is a commercial image and is accredited to Mathew Montone on Pexels  
-
+The only exception to this is the background image used in the site which was sourced from Pexels.com, is a commercial image and is accredited to Mathew Monton on Pexels  
 
 ### Media
 

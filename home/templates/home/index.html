@@ -1,6 +1,7 @@
 {% extends "banner.html" %}
 {% load static %}
 
+<!-- Home template starts here  -->
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -8,8 +9,6 @@
     </div>
 </div>
 {% endblock %}
-
-
 
 {% block content %}
 
@@ -20,9 +19,11 @@
     <div class="my-5 text-center">
         <h4>
 
-<a href="{% url 'alltrips' %}" class="shop-now-button-small btn btn-outline-light rounded-1 btn-lg text-uppercase py-3">Find a
+            <a href="{% url 'alltrips' %}"
+                class="shop-now-button-small btn btn-outline-light rounded-1 btn-lg text-uppercase py-3">Find a
                 Guided fly fishing Trip </a>
         </h4>
     </div>
 </div>
+<!-- Home template ends here  -->
 {% endblock %}

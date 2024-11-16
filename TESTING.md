@@ -4,11 +4,11 @@
 > Return back to the [README.md](README.md) file.
 
 
-In this document i provide the testing explanation and results for guideflyfishing the testing is broken down in the following sections 
+In this document i provide the testing explanation and results for guideflyfishing the testing is broken down into the following sections 
 
 ### Code Validation 
 
-In this section we validate the various code section with industry standards tools, the code follows corect formatting and is complete.  
+In this section we validate the various code section with industry standards tools, to prove that the code follows correct formatting and mrryd brst practices.  
 
 This would include 
  - HTML validaion
@@ -16,9 +16,9 @@ This would include
  - Java script validation  
  - Python validation 
 
-### Browser Compatability and Performance
+### Browser Compatability 
 
-- Browser Compatibility: Tested on different browsers (Chrome, Firefox, Edge) to ensure consistent performance.
+- Browser Compatibility: in this section we test on different browsers (Chrome, Firefox, Edge) to ensure consistent rendering and performance.
 - Device Compatibility: Ensuring functionality across various devices (desktops/laptops, tablets, and mobile phones).
 
 ### Site Responsiveness 
@@ -53,7 +53,11 @@ I have validated the following code types within this project
 The code vailidation is detailed below with which tools were used to validate 
 
 ### HTML
-the folowing views from the website have been validated 
+The following views from the website have been validated fro incorect tags and and order. 
+The approach to use views was taken to avoid the noise produced from the tool that validating individaul files suffers with the presence of the Jinja syntax. 
+In the testing details in the table the individual templates that are tested or included are documented for each view. 
+Due to the large and complicated html files that are produced when combining mutiple Django tempaltes the individual temaplates have 
+been commented to make resolution of HTML erros easier to find. ( e.g. starts here ... ends here)
 
  - home 
  - all trips 
@@ -158,35 +162,28 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 ## Browser Compatibility
 
-the following browser were used to tes the site and its functions 
+The following browser were used to test the site and its functions 
 
-Recommended browsers to consider:
 - [Chrome](https://www.google.com/chrome)
 - [Firefox (Developer Edition)](https://www.mozilla.org/firefox/developer)
 - [Edge](https://www.microsoft.com/edge)
 
-**IMPORTANT**: You must provide screenshots of the tested browsers, to "prove" that you've actually tested them.
+I've tested my deployed project on multiple browsers to check for compatibility issues, across the following pages.
+The bag view was chosen over others, as it has quite complicated formatting changes between large and small screens.
 
-I've tested my deployed project on multiple browsers to check for compatibility issues.
-
-| Browser | Home | trips | Bag  | Notes |
-| --- | --- | --- | --- | --- |
-| Chrome | ![screenshot](documentation/img/resp/home-chr.jpg) | ![screenshot](documentation/img/resp/trips-chr.jpg) | ![screenshot](documentation/img/resp/bag-chr.jpg) |  Works as expected |
-| Firefox | ![screenshot](documentation/img/resp/home-ff.jpg) | ![screenshot](documentation/img/resp/trips-ff.jpg) | ![screenshot](documentation/img/resp/bag-ff.jpg) | Works as expected, with minor differeces, Firefox provides more padding to the container |
-| Edge | ![screenshot](documentation/img/resp/home-edg.jpg) | ![screenshot](documentation/img/resp/trips-edg.jpg) | ![screenshot](documentation/img/resp/bag-edg.jpg) | Works as expected, with minor differeces, Edge provides more padding to the container |
+| Browser | Home | trips | Bag  | Bag Mobile | Notes |
+| --- | --- | --- | --- | --- |--- |
+| Chrome | ![screenshot](documentation/img/resp/home-chr.jpg) | ![screenshot](documentation/img/resp/trips-chr.jpg) | ![screenshot](documentation/img/resp/bag-chr.jpg) | ![screenshot](documentation/img/resp/bag-chr-mob.jpg)  | Works as expected |
+| Firefox | ![screenshot](documentation/img/resp/home-ff.jpg) | ![screenshot](documentation/img/resp/trips-ff.jpg) | ![screenshot](documentation/img/resp/bag-ff.jpg) | ![screenshot](documentation/img/resp/bag-ff-mob.jpg) | Works as expected, with minor differeces, Firefox provides more padding to the container |
+| Edge | ![screenshot](documentation/img/resp/home-edg.jpg) | ![screenshot](documentation/img/resp/trips-edg.jpg) | ![screenshot](documentation/img/resp/bag-edg.jpg) | ![screenshot](documentation/img/resp/bag-edg-mob.jpg) | Works as expected, with minor differeces, Edge provides more padding to the container |
 
 ## Responsiveness
 
-
-The minimum requirement is for the following 3 tests:
-- Mobile
-- Tablet
+I've tested my deployed project on following physical anmd emulated devices to check for responsiveness issues.
+- Mobile (dev tools) 
+- Tablet (dev tools)
 - Desktop
 
-I've tested my deployed project on following devices to check for responsiveness issues.
-
- - Desktop 
- - Samsung mobile phone 
 
 | Device | Home | all trips | trip detail | Bag   | Notes |
 | --- | --- | --- | --- | --- | --- |
@@ -601,11 +598,12 @@ provided a solution, this was also subsequently tested with Pepc8i to make sure 
 
 ## Django Custom Clearabel File Input Widget
 
-I implemented the Django Custom Clearable File Input widget as was shown in the walkthroughs and was not able to get this to display in the add/edit pages for trips
-Having reviewed the code for walkthrough it looks like there is some sort of compatibility issue between crispy forms and the custom widget. The later code in the walkthroughs splits the rendering of these with an if statement and even after implementing this, I could not get the widget to display in the page. 
+I implemented the Django Custom Clearable File Input widget as was shown in the walkthroughs and was not able to get this to display in the add/edit pages for trips.
+Having reviewed the code for walkthrough and the researched, it looks like there is a compatibility issue between crispy forms and the custom widget. 
+The later code in the walkthroughs splits the rendering of these with an if statement and even after implementing this, I could not get the widget to display in the page. 
 I then spoke to student support who after some research came to the same conclusion; but we couldn’t find a solution in the time i had available to be tutored.
-As the bug does not affect functionality but is really about presentation and styling of this function. For this reason, this bug was not fixed.
-The template and the widget.py have been left in the project as to demonstrate this was completed but not included.
+As the bug does not affect functionality but is really about presentation and styling of this function, this bug was not fixed.
+The template and the widget.py have been left in the project as to demonstrate this was completed but not included. 
 
 
 ## Django File Handler 
@@ -614,6 +612,6 @@ If you were creating a trip as a guide, you could add an image using the change 
 
 ![screenshot](documentation/img/errors/image_update.jpg)
 
-
-However, when a trip had been already added and I wanted to edit such as replace change the image file. The edit function would not allow you to add a URL pointing to the AWS S3 storage (say if you decided to change the image and it was present in S3). How ever you could upload another from local. Which was not good behaviour as the storage would increase over time and the hosts would have to clean this up.
-The project walkthrough from this only allows you to add files by directly uploading to S3 although the renewing (new image upload) of this would suffice but is not ideal, after spending a significant amount of time with tutor support without a fix in site. I decided to document this as a minor issue, but should be resolved. 
+However, when a trip had been already added and I wanted to edit; such as replace change the image file. The edit function would not allow you to add a URL pointing to the AWS S3 storage (say if you decided to change the image and it was present in S3). However you could upload another image from local storage. Which was not good behaviour as the storage would increases over time and the hosts would have to clean this up.
+The project walkthrough from this only allows superusers to add files by directly uploading to S3, although the previous workarounf to renewing (new image upload) of this would suffice but is not ideal, 
+after spending a significant amount of time with tutor support without a fix in site. I decided to document this as a minor issue, but should be resolved. 
