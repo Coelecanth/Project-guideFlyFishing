@@ -159,6 +159,8 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | profiles | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/profiles/models.py) | ![screenshot](documentation/img/python/prof-model.jpg) | |
 | profiles | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/profiles/urls.py) | ![screenshot](documentation/img/python/prof-url.jpg)  | |
 | profiles | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/profiles/views.py) | ![screenshot](documentation/img/python/prof-view.jpg) | |
+| guidetrip.tests | tests.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guidetrip/tests.py) | ![screenshot](documentation/img/python/tests.jpg) | |
+
 
 ## Browser Compatibility
 
@@ -277,47 +279,48 @@ Once corrected with data-bs-target in main.nav to define as a target this all wo
 This change was made in 5.3 to allow mutiple styling frameworks to be used. 
 
 ## Receiving Errors When I Push My Code To Github
-    After Renaming my project in gitpod - to conform with naming guidance I started receiving the following error when I pushed code. 
-    ```shell
-            remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-            remote: This repository moved. Please use the new location:
-            remote:   https://github.com/Coelecanth/Project4-guideflyfishing.git
-            To https://github.com/Coelecanth/Project-guideFlyFishing.git
-    ```
-    The error is quite self explanatory, once I had correctly renamed the github site the errors were removed and and push worked without errors 
+After Renaming my project in gitpod - to conform with naming guidance I started receiving the following error when I pushed code. 
+
+```shell
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/Coelecanth/Project4-guideflyfishing.git
+To https://github.com/Coelecanth/Project-guideFlyFishing.git
+```
+The error is quite self explanatory, once I had correctly renamed the github site the errors were removed and and push worked without errors 
 
 ## Couldn’t Deploy App In Heroku With Auto Deploy     
-    Received the following error in the Heroku log when trying to build app in heroku   
+Received the following error in the Heroku log when trying to build app in heroku   
 
-    	```shell
-		    Collecting django-allauth==0.41.0 (from -r requirements.txt (line 4))
-            Downloading django-allauth-0.41.0.tar.gz (545 kB)
-            Preparing metadata (setup.py): started
-            Preparing metadata (setup.py): finished with status 'error'
-            error: subprocess-exited-with-error
-    
-            × python setup.py egg_info did not run successfully.
-            exit code: 1
-            [6 lines of output]
-            Traceback (most recent call last):
-            File "<string>", line 2, in <module>
-            File "<pip-setuptools-caller>", line 34, in <module>
-            File "/tmp/pip-install-ilh6jue2/django-allauth_02d68af6a9de44a490287dfb398a4bbe/setup.py", line 8, in <module>
-            from setuptools import convert_path, find_packages, setup
-            ImportError: cannot import name 'convert_path' from 'setuptools' (/app/.heroku/python/lib/python3.12/site-packages/setuptools/__init__.py)
-            [end of output]
-    
-            note: This error originates from a subprocess, and is likely not a problem with pip.
-            error: metadata-generation-failed
-            
-            × Encountered error while generating package metadata.
-            See above for output.
-    	```
-    Heroku would not build and deploy python app, using Autodeploy in Heroku.  
-    The above log excerpt from heroku build shows there is an issue with Allauth app, this was corrected by 
-    moving from version 0041 as prescribed in the project walkthrough and moving to later version of 0054
-    this was installed using the following command  pip3 install django-allauth==0.54.0
-    
+```shell
+Collecting django-allauth==0.41.0 (from -r requirements.txt (line 4))
+Downloading django-allauth-0.41.0.tar.gz (545 kB)
+Preparing metadata (setup.py): started
+Preparing metadata (setup.py): finished with status 'error'
+error: subprocess-exited-with-error
+
+× python setup.py egg_info did not run successfully.
+exit code: 1
+[6 lines of output]
+Traceback (most recent call last):
+File "<string>", line 2, in <module>
+File "<pip-setuptools-caller>", line 34, in <module>
+File "/tmp/pip-install-ilh6jue2/django-allauth_02d68af6a9de44a490287dfb398a4bbe/setup.py", line 8, in <module>
+from setuptools import convert_path, find_packages, setup
+ImportError: cannot import name 'convert_path' from 'setuptools' (/app/.heroku/python/lib/python3.12/site-packages/setuptools/__init__.py)
+[end of output]
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+See above for output.
+```
+Heroku would not build and deploy python app, using Autodeploy in Heroku.  
+The above log excerpt from heroku build shows there is an issue with Allauth app, this was corrected by 
+moving from version 0041 as prescribed in the project walkthrough and moving to later version of 0054
+this was installed using the following command  pip3 install django-allauth==0.54.0
+
 
 ## The Update Button In The Bag Page Does Not Update The Values
 
@@ -352,15 +355,16 @@ the following code snippets show the before and after for bag.html
         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
 ```
 
-## Toast messages in the Application did not apply corectly  
+## Toast Messages In The Application Did Not Apply Correctly  
 
-    Following the course guidance on implementing toasts in the project walk through, the explanation omitted details 
-    on the implementation of toast messages. In particualr it was not explained that the implemetation 
-    described would produce a toast message only on the first addition of an item to the bag. It was not clear 
-    if was an oversite or by design. In my implementation I wanted the toast message to appear 
-    everytime an item was added to the bag.    
+Following the course guidance on implementing toasts in the project walk through, the explanation omitted details 
+on the implementation of toast messages. In particualr it was not explained that the implemetation 
+described would produce a toast message only on the first addition of an item to the bag. It was not clear 
+if was an oversite or by design. In my implementation I wanted the toast message to appear 
+everytime an item was added to the bag.    
 
-    To fix this i amended/added the following code to views.py in Bag app 
+To fix this i amended/added the following code to views.py in Bag app 
+
 ```python
 
 # Original code - where toast is only raised on the first 
@@ -416,7 +420,10 @@ So, in essence this recreates a new value called all_trips_rec instead of redefi
 ![screenshot](documentation/img/errors/code-1.jpg)
 
 
-## Web log returning error 404 for site URL for webhooks 
+## Web Log Returning Error 404 For Site URL For Webhooks  
+
+The following error was recorded in the web log of the site.
+e.g. "Not Found: /wh"
 
 ```log
 [26/Oct/2024 12:54:20] "GET /trips/ HTTP/1.1" 200 32726
@@ -438,6 +445,7 @@ Not Found: /wh
 [26/Oct/2024 12:55:03] "POST /wh HTTP/1.1" 404 2743
 
 ```
+
 On closer inspection this was found to be a configuration error made in Stripe, where the endpoint webhook created stripe 
 need to be amended
 
@@ -448,10 +456,11 @@ need to be amended
 ```
 
 
-## Missing alternate image caused site to crash 
+## Missing Alternate Image Caused Site To Crash  
 
 While I was regression testing checkout app,  I added an item to the bag with with a missing image file, this caused the site to crash.
 I received the following error message  
+
 ```log
 ValueError at / The 'image' attribute has no file associated with it. 
 Request Method: GET Request URL: http://8000-coelecanth-projectguide-5jtcemqmdr7.ws.codeinstitute-ide.net/ 
@@ -490,7 +499,7 @@ also using a product image.
             </div>
 
 ``` 
-## Site producing duplicate orders when submitting from checkout  
+## Site Producing Duplicate Orders When Submitting From Checkout   
 
 Site was producing duplicate orders when purchasing with Stripe, 2 orders were created in the orders database but one payment was produced in Stripe. 
 After some investigation into this, the reason for this was in the implementation of the webhooks I had used, 
@@ -529,7 +538,7 @@ while attempt <= 5:
 ```
 
 
-## Web Server Errror 500 and no reverse route found for Page 
+## Web Server Errror 500 And No Reverse Route Found For Page 
 
 When creating edit capability for the products page, I received the following message where the reverse was route failing, detailing it had received no product.Id 
 After making sure that views.py was receiving and passing the product.id to the template 
@@ -563,7 +572,7 @@ This was fixed with the following changes showing the before an after in the cod
 ```
 
 
-## Pyhton Linting breaks code 
+## Python Linting Breaks Code 
 
 While I was perfroming regression testing after making changes to the pyton code for pyhton lint, it was found that the changes made to 
 profiles.forms.py to make it confirm to Python best practice, caused the code to fail. (See image below) 
@@ -596,7 +605,7 @@ provided a solution, this was also subsequently tested with Pepc8i to make sure 
 ```
 # Unfixed Bugs
 
-## Django Custom Clearabel File Input Widget
+## Django Custom Clearable File Input Widget
 
 I implemented the Django Custom Clearable File Input widget as was shown in the walkthroughs and was not able to get this to display in the add/edit pages for trips.
 Having reviewed the code for walkthrough and the researched, it looks like there is a compatibility issue between crispy forms and the custom widget. 

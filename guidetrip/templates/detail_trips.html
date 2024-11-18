@@ -64,7 +64,7 @@
                                     <div class="input-group-prepend">
                                         <!-- decrement button -->
                                         <button class="decrement-qty btn btn-outline-light rounded-1"
-                                            data-item_id="{{ det_trips_view.id }}" id="id_qty_{{ det_trips_view.id }}">
+                                            data-item_id="{{ det_trips_view.id }}" id="decrement-qty_{{ det_trips_view.id }}">
                                             <span class="icon">
                                                 <i class="fas fa-minus"></i>
                                             </span>
@@ -72,11 +72,11 @@
                                     </div>
                                     <!-- Input field for Quantity -->
                                     <input class="form-control field-size qty_input" type="number" name="quantity" value="1"
-                                        min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                        min="1" max="99" data-item_id="{{ det_trips_view.id }}" id="id_qty_{{ det_trips_view.id }}">
                                     <div class="input-group-append">
-                                        <!-- increment button -->
+                                    <!-- increment button -->
                                         <button class="increment-qty btn btn-outline-light rounded-1"
-                                            data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                            data-item_id="{{ det_trips_view.id }}" id="increment-qty_{{ det_trips_view.id }}">
                                             <span class="icon">
                                                 <i class="fas fa-plus"></i>
                                             </span>

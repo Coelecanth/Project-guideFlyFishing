@@ -33,9 +33,9 @@ I chose to represent content using a container (banner) which was placed over th
 | Description | Image | 
 | --- | --- | 
 | Image protraying the visual approach used with the blue container overlaid on the image so focusing the users attention |![screenshot](documentation/img/gen/ind-contianer.jpg)|  
-|  |  |
 
-This provided many benefits other then just focus element some of these are listed below:
+
+This provided many benefits other than just focus element, some of these are listed below:
  - It allowed me to create the strong sense of theme i wanted for the site, with colours and image visibility.
  - The container could easily be adjusted to accommodate placement based on changing size of the navbar and its height, and screen size.
  - The banner concept fitted readily into Django idea of includes and could be made to be part of framework to seperate its formatting and therefor styling easily.
@@ -247,7 +247,7 @@ This confirms or ascerts to the user the user action they have undertaen rather 
 | --- | --- | 
 | The following image shows the success message delivered by bootstrap toasts |![screenshot](documentation/img/gen/toast-s.jpg)| 
 | TThe following image shows the alert message delivered by bootstrap toasts |![screenshot](documentation/img/gen/toast-a.jpg)| 
-|
+
 ### Future Features
 
 **ADD FILE WIDGET FOR MORE APPEALING USE** 
@@ -274,12 +274,8 @@ The feature was envisaged to work in the following where you would have to regis
 - [![JavaScript](https://img.shields.io/badge/JavaScript-grey?logo=javascript&logoColor=F7DF1E)](https://www.javascript.com) used for user interaction on the site.
 - [![jQuery](https://img.shields.io/badge/jQuery-grey?logo=jquery&logoColor=0769AD)](https://jquery.com) used for user interaction on the site.
 - [![Python](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) used as the back-end programming language.
-
-- [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-grey?logo=githubpages&logoColor=222222)](https://pages.github.com) used for hosting the deployed front-end site.
 - [![Heroku](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) used for hosting the deployed back-end site.
-
 - [![Bootstrap](https://img.shields.io/badge/Bootstrap-grey?logo=bootstrap&logoColor=7952B3)](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- [![Jest](https://img.shields.io/badge/Jest-grey?logo=jest&logoColor=c21325)](https://jestjs.io) used for automated JavaScript testing.
 - [![Django](https://img.shields.io/badge/Django-grey?logo=django&logoColor=092E20)](https://www.djangoproject.com) used as the Python framework for the site.
 - [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-grey?logo=postgresql&logoColor=4169E1)](https://www.postgresql.org) used as the relational database management.
 - [![PostgreSQL by Code Institute](https://img.shields.io/badge/PostgreSQL_by_Code_Institute-grey?logo=okta&logoColor=F05223)](https://dbs.ci-dbs.net) used as the Postgres database from Code Institute.
@@ -293,7 +289,7 @@ The feature was envisaged to work in the following where you would have to regis
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
 - [![Microsoft Visio](https://img.shields.io/badge/Microsoft_Visio-blue)](https://www.microsoft.com/en-gb/microsoft-365/visio/flowchart-software) Microsoft Visio for creating wireframes and any other diagrams.
 - [![Pygraphviz](https://img.shields.io/badge/Pygraphviz-grey)](https://django-extensions.readthedocs.io/en/latest/graph_models.html)
-Django App extension to generte ERD diagram for cuurent the project.
+Django App extension to generte ERD diagram for current the project.
 - [![Squoosh](https://img.shields.io/badge/Squoosh-grey)](https://squoosh.app/) Squooosh was used to convert the images from jpg to Avif, Also to resize (reduce pixel count) the images to a more manageable size to improve download speed.
 - [![GoogleFonts](https://img.shields.io/badge/GoogleFonts-grey?logo=googlefonts&logoColor=EA4335)](https://squoosh.app/) Google Fonts Google fonts was used to source the fonts that were selected from Fontjoy.
 - [![FontJoy](https://img.shields.io/badge/FontJoy-grey)](https://fontjoy.com/)
@@ -335,6 +331,79 @@ INSTALLED_APPS = [
 
 ![erd](documentation/img/erd/erd.png)
 source: [medium.com](https://medium.com/@yathomasi1/1-using-django-extensions-to-visualize-the-database-diagram-in-django-application-c5fa7e710e16)
+
+I have also used `Mermaid` to generate an interactive ERD of my project.
+
+```mermaid
+erDiagram
+	UserProfile {
+		int id
+		int user
+		string default_phone_number
+		string default_street_address1
+		string default_street_address2
+		string default_town_or_city
+		string default_county
+		string default_postcode
+		string default_country
+	}
+	UserProfile ||--o{ Order : has
+	Order {
+		int id
+		string order_number
+		int user_profile
+		string full_name
+		string email
+		string phone_number
+		string country
+		string postcode
+		string town_or_city
+		string street_address1
+		string street_address2
+		string county
+		datetime date
+		decimal delivery_cost
+		decimal order_total
+		decimal grand_total
+		text original_bag
+		string stripe_pid
+	}
+	Order ||--o{ OrderLineItem : contains
+	OrderLineItem {
+		int id
+		int order
+		int product
+		int quantity
+		decimal lineitem_total
+	}
+	OrderLineItem }o--|| trips : references
+	trips {
+		int id
+		string rec_owner
+		int categories
+		string venue
+		text description
+		decimal day
+		decimal spaces
+		decimal cost
+		date dates
+		string location
+		string locale
+		decimal rating
+		string image_url
+		string image
+	}
+	trips }o--|| categories : belongs_to
+	categories {
+		int id
+		string name
+		string friendly_name
+	}
+	User ||--|| UserProfile : owns
+```
+
+source: [Mermaid](https://mermaid.live/edit#pako:eNqNVU2PmzAQ_SvI52S1hITsct5LpUqtVPVSRUJeeyBWjU39sd004b93AqRrAiHlkMC8-XxvMEfCNAeSETAvgpaGVjsV4fXdgvlqdCEkRMfOdL6EcpHgw2ePrh8W64xQZcShoF66vN5rBbny1euMEz4CuJxybsDa-D_9Vjf9nP6tcm1yJtzhphPTXs3AtbbuTM18vOkTNGPWTqflUh-jL4aDibJoT23n0xlmOO3r6LPfiLkL4XndlRmFFV7KXNFqjEBFhRxZZwUazBgG3SJnlvl7Mt-T91oxTh04UUF7E5iBiYpK_JfiDcwBlbJuDHf8Ou2oHIP4Iih-DTp4dxgmSqGozF9pOTWBqCGvL3I2oeThQnwWCj45qHAxmFaOChVuxz_0zpvXjjA04Vpwz9zQ-MtT5QaKXOaUWElgpXDUZqqTRi-Xp1N0ns9i0wYKMKAY9G139vtLbYDluCLXXTMUsERmL-mCiDdQHq404GAZFnRCqwnZ6cSctqYsTH6xX60GttH-jNuQGnsc1AsAObF9Bt3VeEMQKyH3Rk4jAwU6UnvmPyhC-l9BalVaVK3zDMD7GkweDgUGKy4PwdERnGnt7mIT4fmWRSgkEkUWpAKDZwvHr0hbfUfcHjALyfCWU_NzR3aqQT_qnf52UIxkznhYEF-fye6_OyQrqLRoraki2ZG8k2yVbh_SNNnE68d0naTb7YIcSLZM44c4STfb5zhGaLVuFuSP1pgA7atk85Q8r57QIXlcb9tsP1qwK2m0L_d9qeYvUXAz4Q)
+
 
 
 ## Testing
@@ -679,10 +748,10 @@ You can fork this repository by using the following steps:
 
 ### Content
 
+| Source | Location | Type | Notes |
+| --- | --- | --- | --- |
 | [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
-| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
-| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
+| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | entire site responsive HTML/CSS/JS |
 | [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
 
 ### Media
