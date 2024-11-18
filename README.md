@@ -248,6 +248,24 @@ This confirms or ascerts to the user the user action they have undertaen rather 
 | The following image shows the success message delivered by bootstrap toasts |![screenshot](documentation/img/gen/toast-s.jpg)| 
 | TThe following image shows the alert message delivered by bootstrap toasts |![screenshot](documentation/img/gen/toast-a.jpg)| 
 
+**STATUS MESSAGE ON EMPTY SEARCH**
+
+When searching the site using the seach capability, i noticed that inthe event that no results were returned from the search the output was not a good user experience e.g. it was was just an empty contianer on screen. I added some Jinja Syntax and message to handle and the results in the all_trips template as shown below.
+
+```html
+<!-- the following Html handles the result if there is no results retunred for the search  -->
+{% empty %}
+	<div class="text-center">
+		<h4>No results returned for your Search</h4>
+		<a href="{% url 'alltrips' %}" class="shop-now-button-small btn btn-outline-light rounded-1 mt-3">
+			<span class="icon"><i class="fas fa-chevron-left"></i></span>
+			<span class="text-uppercase">Keep Looking for Trips</span>
+		</a>
+	</div>
+```
+
+![screenshot](documentation/img/gen/empty_srch.jpg)
+
 ### Future Features
 
 **ADD FILE WIDGET FOR MORE APPEALING USE** 

@@ -85,6 +85,16 @@
                     <hr>
                 </div>
                 {% endif %}
+                 
+                <!-- the following Html handles the result if there is no results returned for the search  -->
+                {% empty %}
+                    <div class="text-center">
+                        <h4>No results returned for your Search</h4>
+                        <a href="{% url 'alltrips' %}" class="shop-now-button-small btn btn-outline-light rounded-1 mt-3">
+                            <span class="icon"><i class="fas fa-chevron-left"></i></span>
+                            <span class="text-uppercase">Keep Looking for Trips</span>
+                        </a>
+                    </div>
                 {% endfor %}
             </div>
         </div>
