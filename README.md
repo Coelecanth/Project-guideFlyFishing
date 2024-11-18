@@ -248,6 +248,11 @@ This confirms or ascerts to the user the user action they have undertaen rather 
 | The following image shows the success message delivered by bootstrap toasts |![screenshot](documentation/img/gen/toast-s.jpg)| 
 | TThe following image shows the alert message delivered by bootstrap toasts |![screenshot](documentation/img/gen/toast-a.jpg)| 
 
+**CONTACT PAGE**
+
+One feature I added was a mechanism for registred users (such as guide)s to contact the site adminstration (maybe to enquire or add a trip), so I created an app which provides a basic form, which provides name, date, enquiry and email and then posts data to database where the site adminstration can respond to this. 
+The form is avialable through the user menu under "contact us", and you must be logged onto to access this. When You post a form you receive a confirmation message that the form has been sucesfully submitted.
+
 **STATUS MESSAGE ON EMPTY SEARCH**
 
 When searching the site using the seach capability, i noticed that inthe event that no results were returned from the search the output was not a good user experience e.g. it was was just an empty contianer on screen. I added some Jinja Syntax and message to handle and the results in the all_trips template as shown below.

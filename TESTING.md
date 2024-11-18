@@ -69,6 +69,7 @@ been commented to make resolution of HTML erros easier to find. ( e.g. starts he
  - checkout
  - checkout succes 
  - check out order history 
+ - contact 
 
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
@@ -95,6 +96,8 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | trips  | Main (see above) edit_poduct.html | | |
 | profile | [profile](https://p4guideflyfishing-879a54f37efc.herokuapp.com/profile/) | ![screenshot](documentation/img/html/profile.jpg) | |
 | profile | Main (see above) profile.html | | |
+| contact | [contact](https://p4guideflyfishing-879a54f37efc.herokuapp.com/contact/) | ![screenshot](documentation/img/html/contact.jpg) | |
+| contact | Main (see above) contact.html | | |
 
 ### CSS
 
@@ -160,6 +163,11 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | profiles | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/profiles/urls.py) | ![screenshot](documentation/img/python/prof-url.jpg)  | |
 | profiles | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/profiles/views.py) | ![screenshot](documentation/img/python/prof-view.jpg) | |
 | guidetrip.tests | tests.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guidetrip/tests.py) | ![screenshot](documentation/img/python/tests.jpg) | |
+| Contact | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guidetrip/tests.py) | ![screenshot](documentation/img/python/cont-view.jpg) | |
+| Contact | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guidetrip/tests.py) | ![screenshot](documentation/img/python/cont-urls.jpg) | |
+| Contact | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guidetrip/tests.py) | ![screenshot](documentation/img/python/cont-urls.jpg) | |
+| Contact | admins.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guidetrip/tests.py) | ![screenshot](documentation/img/python/cont-urls.jpg) | |
+| Contact | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Coelecanth/Project-guideFlyFishing/main/guidetrip/tests.py) | ![screenshot](documentation/img/python/cont-urls.jpg) | |
 
 
 ## Browser Compatibility
