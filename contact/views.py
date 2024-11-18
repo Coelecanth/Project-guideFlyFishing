@@ -24,4 +24,3 @@ def contact(request):
         "contact_form": contact_form,
     }
     return render(request, template, context)
-
