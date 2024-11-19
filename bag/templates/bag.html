@@ -10,6 +10,7 @@
     </div>
 </div>
 {% endblock %}
+
 <!-- Start of page  -->
 {% block content %}
 <div class="container mb-2">
@@ -20,11 +21,11 @@
             <hr>
         </div>
     </div>
-    <!-- mobile page display set as grid - STARTS HERE  -->
+
     <div class="row">
         <div class="col">
+
             {% if bag_items %}
-            <div class="d-block d-md-none">
                 <div class="row">
                     <div class="col">
                         {% include "bag-total.html" %}
@@ -32,198 +33,119 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        {% include "checkout-buttons.html" %}
                         <p class="text-white mb-5">A summary of your bag contents is below</p>
                     </div>
                 </div>
+
+                
                 {% for item in bag_items %}
-                <div class="row">
-                    <div class="col-12 col-sm-6 mb-2">
-                        {% include "product-image.html" %}
-                    </div>
-                    <div class="col-12 col-sm-6 mb-2">
-                        {% include "product-info.html" %}
-                    </div>
-                    <div class="col-12 col-sm-6 order-sm-last">
-                        <p class="my-0">Price Each: £{{ item.product.cost }}</p>
-                        <!-- quantity for items  -->
-                        <p>Quantity: {{ item.quantity }} </p>
-                        <!-- calculated cost for items  -->
-                        <p class="my-0">Total price: £{{ item.product.cost | calc_subtotal:item.quantity }}</p>
-                    </div>
-                    <!-- forms qauntity fields to adjust quantities small page -->
-                    <div class="col-12 col-sm-6">
+                
+                    <div class="row bg-light text-dark py-3 mx-1 rounded">
 
-                        <form class="justify-content-center form update-form" method="POST"
-                            action="{% url 'adjust_bag' item.item_id %}">
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <!-- decrement button small page -->
-                                        <button class="decrement-qty btn btn-light border-secondary btn-sm rounded-0"
-                                        data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}_mobile">
-                                        <span>
-                                            <i class="fas fa-minus fa-sm"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                                <!-- input field for quantity small page -->
-                                <input class="form-control form-control-sm field-size qty_input" type="number"
-                                    name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                    data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}_mobile">
-                                <div class="input-group-append">
-                                    <!-- increment button small page -->
-                                    <button class="increment-qty btn btn-light border-secondary btn-sm rounded-0"
-                                        data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}_mobile">
-                                        <span>
-                                            <i class="fas fa-plus fa-sm"></i>
-                                        </span>
-                                    </button>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- headers (hidden on mobile) -->
+                        <div class="row d-none d-md-flex fw-bold fs-5 mb-3 m-0 p-0 w-100">
+                            <div class="col-3"></div>
+                            <div class="col-3">Trip Information</div>
+                            <div class="col">Price</div>
+                            <div class="col text-center">Quantity</div>
+                            <div class="col text-end">Subtotal</div>
+                        </div>
 
-                        </form>
-                        <!-- Update and remove links  -->
-                        <!-- Do not put links inside the form as this break the update funcxtion it should remain outside the form tag -->
-                        <a class="update-link text-white px-3">
-                            <small>Update</small>
-                        </a>
-                        <a class="remove-item text-white px-3" id="remove_{{ item.item_id }}">
-                            <small>Remove</small>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <hr>
-                    </div>
-                </div>
-                {% endfor %}
-                <div class="text-center">
-                    <button class="shop-now-button-small btn btn-outline-black rounded-1 text-uppercase"
-                        onclick="refreshPage()"> <i class="fas fa-chevron-up"></i>Return to Top</button>
-                </div>
+                        <!-- image -->
+                        <div class="col-6 col-md-3 mb-5">
+                            {% include "product-image.html" %}
+                        </div>
 
+                        <!-- details -->
+                        <div class="col-6 col-md-3 mb-5">
+                            {% include "product-info.html" %}
+                        </div>
 
-            </div>
-            <!-- mobile page display set as grid - ENDS HERE  -->
+                        <!-- cost/price -->
+                        <div class="col-12 col-md-2">
+                            <span class="my-0 d-inline d-md-none">Price Each: </span>
+                            <strong>£{{ item.product.cost }}</strong>
+                        </div>
 
-            <!-- Page diaplay for all other size of pages  -->
-            <div class="table-responsive rounded-1 d-none d-md-block">
-                <table class="table table-sm table-borderless ">
-                    <thead class="text-black text-center">
-                        <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Trip Information</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Subtotal</th>
-                        </tr>
-                    </thead>
+                         <!-- quantity adjustments -/+ buttons -->
+                        <div class="col-12 col-md-2 my-4 my-md-0 p-md-0">
+                            <span class="my-0 d-inline d-md-none">Quantity: </span>
 
-                    {% for item in bag_items %}
-                    <tr class="text-center">
-                        <td class="p-3 w-25">
-                            {% if item.product.image %}
-                            <img class="img-fluid rounded" src="{{ item.product.image.url }}"
-                                alt="Venue image for trip">
-                            {% else %}
-                            <img class="card-img-top img-fluid" src="{% static 'img/noimage.jpg' %}"
-                                alt="No image for Venue for trip">
-                            {% endif %}
-                        </td>
-                        <td class="py-3 text-bag-para">
-                            <p class="my-0"><strong>{{ item.product.venue }}</strong></p>
-                            <p class="my-0 ">{{ item.product.locale }}</p>
-                            <p class="my-0 ">{{ item.product.dates }}</p>
-                        </td>
-                        <td class="py-3 text-bag-para">
-                            <p class="my-0">£{{ item.product.cost }}</p>
-                        </td>
-                        <td class="py-3 text-bag-para">
-                            <!-- Calculaleted quantity for items  -->
-                            {{ item.quantity }}
-                            <form class="d-flex justify-content-center form update-form" method="POST"
-                                action="{% url 'adjust_bag' item.item_id %}">
+                            <form class="justify-content-center form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <!-- decrement button -->
-                                            <button
-                                                class="decrement-qty btn btn-sm btn-black border-secondary rounded-0"
-                                                data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                                                <span>
-                                                    <i class="fas fa-minus fa-sm"></i>
-                                                </span>
+                                            <!-- decrement quantity -->
+                                            <button class="decrement-qty btn btn-light border-secondary btn-sm rounded-0" data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                <span><i class="fas fa-minus fa-sm"></i></span>
                                             </button>
                                         </div>
-                                        <!-- input field for quantity  -->
-                                        <input class="form-control form-control-sm field-size qty_input" 
-                                        type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                       
+                                        <!-- quantity input field -->
+                                        <input class="form-control form-control-sm field-size qty_input" type="number"
+                                            name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                        <!-- increment quantity -->
                                         <div class="input-group-append">
-                                            <!-- increment button -->
-                                            <button
-                                                class="increment-qty btn btn-sm btn-black border-secondary rounded-0"
-                                                data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                                                
-                                                <span>
-                                                    <i class="fas fa-plus fa-sm"></i>
-                                                </span>
+                                            <button class="increment-qty btn btn-light border-secondary btn-sm rounded-0" data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                <span><i class="fas fa-plus fa-sm"></i></span>
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-
                             </form>
-                            <!-- Update and remove links  -->
-                            <!-- Do not put links inside the form as this break the update funcxtion it should remain outside the form tag -->
-                            <a class="update-link text-dark px-3"><small>Update</small></a>
-                            <a class="remove-item text-danger px-3"
-                                id="remove_{{ item.item_id }}"><small>Remove</small></a>
 
-                        </td>
-                        <td class="py-3 text-bag-para text-right">
-                            <p class="my-0">£{{ item.product.cost | calc_subtotal:item.quantity }}</p>
-                        </td>
-
-                    </tr>
-                    {% endfor %}
-                    <tr>
-                        <td colspan="5">
-
-                            <h4 class="mt-4 text-end"><strong>Total: £{{ grand_total|floatformat:2 }}</strong>
-                            </h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="5">
-                            <div class="text-end">
-                                <a href="{% url 'alltrips' %}"
-                                    class="shop-now-button-small btn btn-outline-black rounded-1">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Keep looking for Guided Trips</span>
-                                </a>
-                                <a href="{% url 'checkout' %}"
-                                    class="shop-now-button-small btn btn-outline-black rounded-1">
-                                    <span class="text-uppercase">Secure Checkout</span>
-                                    <span class="icon">
-                                        <i class="fas fa-lock"></i>
-                                    </span>
-                                </a>
+                            <!-- Update and remove links (cannot go inside of "form" element!!)  -->
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <a class="update-link text-info">
+                                        <small>Update</small>
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6 text-md-end">
+                                    <a class="remove-item text-danger" id="remove_{{ item.item_id }}">
+                                        <small>Remove</small>
+                                    </a>
+                                </div>
                             </div>
-                        </td>
-                    </tr>
-                </table>
-                {% else %}
+                            
+                        </div>
+
+                        <!-- subtotal -->
+                        <div class="col-12 col-md-2 text-end">
+                            <span class="my-0 d-inline d-md-none">Subtotal: </span>
+                            <strong>£{{ item.product.cost | calc_subtotal:item.quantity }}</strong>
+                        </div>
+
+                    </div>
+
+                    <!-- divider -->
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <!-- total -->
+                <h4 class="mt-4 text-end fw-bolw">Total: £{{ grand_total|floatformat:2 }}</h4>
+
+                <!-- return / continue buttons -->
+                <br>
+                {% include "checkout-buttons.html" %}
+                <br>
+
+                <!-- to top -->
+                <div class="text-center">
+                    <button class="shop-now-button-small btn btn-outline-black rounded-1 text-uppercase" onclick="scrollToTop()">
+                        <i class="fas fa-chevron-up"></i> Return to Top
+                    </button>
+                </div>
+            
+            {% else %}
+                <!-- empty bag -->
                 <p class="lead mb-5 text-center">Your bag is empty.</p>
-                <div class="text-end">
+                <div class="text-center">
                     <a href="{% url 'alltrips' %}" class="shop-now-button-small btn btn-outline-light rounded-1 btn-lg">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
@@ -231,8 +153,9 @@
                         <span class="text-uppercase">Keep looking for Guided Trips</span>
                     </a>
                 </div>
-                {% endif %}
-            </div>
+
+            {% endif %}
+
         </div>
     </div>
 </div>
@@ -242,27 +165,22 @@
 {{ block.super }}
 {% include 'includes/qnty_inp.html' %}
 
-<script type="text/javascript">
+<script>
+    /* jshint esversion: 11, jquery: true */
+
     // Update quantity on click
     $('.update-link').click(function (e) {
-        var form = $(this).prev('.update-form');
-
-        var output = form.submit;
-        var output2 = form;
-        console.log("Form jQuery object:", output);
-        console.log("Form:", output2);
-
+        e.preventDefault();
+        let form = $(this).closest('.row').prev('.update-form');
         form.submit();
-
     });
 
     // Remove item and reload on click
     $('.remove-item').click(function (e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-
-        var url = `/bag/remove/${itemId}/`;
-        var data = {
+        let csrfToken = "{{ csrf_token }}";
+        let itemId = $(this).attr('id').split('remove_')[1];
+        let url = `/bag/remove/${itemId}/`;
+        let data = {
             'csrfmiddlewaretoken': csrfToken,
         };
 
@@ -272,9 +190,9 @@
             });
     });
 
-    function refreshPage() { // called from button in mobile view
-        window.scrollTo(0, 0); // Scrolls to the top of the page
-        location.reload(); // Refreshes the page
+    // Scroll to the top of the page
+    function scrollToTop() {
+        window.scrollTo(0, 0);
     }
 </script>
 
