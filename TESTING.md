@@ -115,9 +115,9 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| checkout | stripe_elements.js | ![screenshot](documentation/img/testing/stripe_js.jpg) | |
+| checkout | stripe_elements.js | ![screenshot](documentation/img/testing/stripe_js.jpg) | there is one variable undeclared as "var stripe = Stripe(stripePublicKey);" this is populated from the template/env.py os.environs  |
 | profiles | countryfield.js | ![screenshot](documentation/img/testing/country-sel.jpg) | |
-| Bag | embedded in bag.html | ![screenshot](documentation/img/testing/bag-JS-scipt.jpg) | |
+| Bag | embedded in bag.html | ![screenshot](documentation/img/testing/bag-JS-scipt.jpg) | the function scrollToTheTop is called from the temaplate from a button which has not been included here |
 | Bag | embedded in qnty_inp.html | ![screenshot](documentation/img/testing/emb-Qnty_input.htm.jpg) | |
 
 
